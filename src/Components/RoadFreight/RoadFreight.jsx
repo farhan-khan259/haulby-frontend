@@ -1,8 +1,9 @@
 import React from "react";
 import ServiceDetail from "../Common/ServiceDetail";
-import cta from "../../Assets/Pictures/cta.png";
-import services from "../../Assets/Pictures/services.png";
-import business from "../../Assets/Pictures/business.png";
+import lightFreight from "../../Assets/Pictures/HAULBY Visual Asset 13 _ 1376×768 _ KEEP SOURCE.png";
+import partLoad from "../../Assets/Pictures/HAULBY Visual Asset 15 _ 1376×768 _ KEEP SOURCE.png";
+import palletFreight from "../../Assets/Pictures/HAULBY Visual Asset 17 _ 1376×768 _ KEEP SOURCE.png";
+import articFreight from "../../Assets/Pictures/HAULBY Visual Asset 16 _ 1376×768 _ KEEP SOURCE.png";
 import "./RoadFreight.css";
 const o = (title, text, bullets) => ({ title, text, bullets, icon: "truck" });
 const data = {
@@ -11,7 +12,7 @@ const data = {
   accent: "Sorted.",
   heroText:
     "Compare road freight quotes for light commercial loads, part loads and larger consignments through independent UK operators.",
-  heroImage: cta,
+  heroImage: lightFreight,
   tags: ["Light freight", "Part loads", "Pallets", "Larger freight"],
   quoteTitle: "Where does your freight need to go?",
   quoteText:
@@ -24,7 +25,7 @@ const data = {
   optionsTitle: "Suitable road freight for your load.",
   optionsText:
     "From light commercial vehicles to specialist HGVs, let independent operators assess the job.",
-  cardImages: [cta, services, business],
+  cardImages: [lightFreight, partLoad, palletFreight, articFreight],
   options: [
     o(
       "Light Commercial Freight",
@@ -77,7 +78,7 @@ const data = {
       "Select a suitable operator and agree loading details.",
     ],
   ],
-  prepareImage: business,
+  prepareImage: partLoad,
   prepareKicker: "CLEAR FREIGHT DETAILS MAKE BETTER QUOTES",
   prepareTitle: "Prepare your load information.",
   prepareText:
@@ -91,7 +92,7 @@ const data = {
   workTitle: "Find road freight jobs.",
   workText:
     "If you operate suitable vans, curtain-siders, rigid trucks or HGVs, browse light freight and larger work that fits your fleet.",
-  workImage: cta,
+  workImage: lightFreight,
   faqs: [
     [
       "Can I post light freight for a van?",

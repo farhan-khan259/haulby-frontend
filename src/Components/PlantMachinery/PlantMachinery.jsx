@@ -1,8 +1,10 @@
 import React from "react";
 import ServiceDetail from "../Common/ServiceDetail";
-import business from "../../Assets/Pictures/business.png";
-import transporters from "../../Assets/Pictures/transporters.png";
-import cta from "../../Assets/Pictures/cta.png";
+import compactPlant from "../../Assets/Pictures/HAULBY Visual Asset 23 _ 1376×768 _ KEEP SOURCE.png";
+import plantHero from "../../Assets/Pictures/HAULBY Visual Asset 24 _ 1376×768 _ KEEP SOURCE.png";
+import gardenEquipment from "../../Assets/Pictures/HAULBY Visual Asset 25 _ 1376×768 _ KEEP SOURCE.png";
+import siteEquipment from "../../Assets/Pictures/HAULBY Visual Asset 26 _ 1376×768 _ KEEP SOURCE.png";
+import heavyMachinery from "../../Assets/Pictures/HAULBY Visual Asset 27 _ 1376×768 _ KEEP SOURCE.png";
 import "./PlantMachinery.css";
 const o = (title, text, bullets) => ({ title, text, bullets, icon: "truck" });
 const data = {
@@ -11,7 +13,7 @@ const data = {
   accent: "Sorted.",
   heroText:
     "Move compact plant, landscaping equipment and heavy machinery with independent UK transport operators suited to the load.",
-  heroImage: business,
+  heroImage: plantHero,
   tags: ["Mini plant", "Garden equipment", "Site tools", "Heavy machinery"],
   quoteTitle: "Where does your equipment need to go?",
   quoteText:
@@ -24,7 +26,7 @@ const data = {
   optionsTitle: "The right transport for your equipment.",
   optionsText:
     "From compact machines to heavier site plant, choose a category and provide accurate weight, dimension and loading information.",
-  cardImages: [business, transporters, cta],
+  cardImages: [compactPlant, gardenEquipment, siteEquipment, heavyMachinery],
   options: [
     o(
       "Mini Diggers & Compact Plant",
@@ -83,7 +85,7 @@ const data = {
       "Agree access, lifting arrangements and delivery details.",
     ],
   ],
-  prepareImage: business,
+  prepareImage: plantHero,
   prepareKicker: "SAFE TRANSPORT STARTS WITH ACCURATE DETAILS",
   prepareTitle: "Prepare your machinery details.",
   prepareText:
@@ -97,7 +99,7 @@ const data = {
   workTitle: "Find machinery transport work.",
   workText:
     "With a suitable flatbed, plant trailer or specialist low-loader, quote for equipment collections and site-to-site machinery moves.",
-  workImage: transporters,
+  workImage: gardenEquipment,
   faqs: [
     [
       "Can HAULBY arrange mini digger transport?",

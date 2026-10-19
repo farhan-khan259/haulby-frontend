@@ -1,8 +1,9 @@
 import React from "react";
 import ServiceDetail from "../Common/ServiceDetail";
-import cta from "../../Assets/Pictures/cta.png";
-import transporters from "../../Assets/Pictures/transporters.png";
-import services from "../../Assets/Pictures/services.png";
+import sameDayVan from "../../Assets/Pictures/HAULBY Visual Asset 10 _ 1376×768 _ KEEP SOURCE.png";
+import multiDrop from "../../Assets/Pictures/HAULBY Visual Asset 11 _ 1376×768 _ KEEP SOURCE.png";
+import scheduledVan from "../../Assets/Pictures/HAULBY Visual Asset 02 _ 1376×768 _ KEEP SOURCE.png";
+import courierRoad from "../../Assets/Pictures/HAULBY Visual Asset 12 _ 1376×768 _ KEEP SOURCE.png";
 import "./CourierDeliveries.css";
 const data = {
   short: "Courier Delivery",
@@ -10,7 +11,7 @@ const data = {
   accent: "Sorted.",
   heroText:
     "Compare quotes for same-day courier collections, scheduled deliveries and dedicated van journeys with independent UK operators.",
-  heroImage: cta,
+  heroImage: courierRoad,
   tags: ["Same-day requests", "Scheduled runs", "Multi-drop", "Dedicated van"],
   quoteTitle: "Where is your delivery going?",
   quoteText:
@@ -23,7 +24,7 @@ const data = {
   optionsTitle: "Choose your courier delivery service.",
   optionsText:
     "From urgent point-to-point deliveries to planned commercial collections, explain the goods, route and deadline.",
-  cardImages: [cta, transporters, services],
+  cardImages: [sameDayVan, scheduledVan, multiDrop, courierRoad],
   options: [
     [
       "Same-Day Courier Vans",
@@ -86,7 +87,7 @@ const data = {
       "Select the suitable option and agree the delivery.",
     ],
   ],
-  prepareImage: services,
+  prepareImage: multiDrop,
   prepareKicker: "DETAILS THAT HELP COURIERS PLAN",
   prepareTitle: "Prepare your delivery information.",
   prepareText:
@@ -100,7 +101,7 @@ const data = {
   workTitle: "Find courier delivery work.",
   workText:
     "With a suitable van or courier fleet, find urgent, scheduled and multi-stop delivery requests through HAULBY.",
-  workImage: cta,
+  workImage: sameDayVan,
   faqs: [
     [
       "Can I request a same-day courier?",

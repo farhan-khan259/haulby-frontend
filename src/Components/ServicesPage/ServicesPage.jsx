@@ -2,47 +2,50 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Header, Footer, ArrowButton, LineIcon } from "../Common/SiteChrome";
 import hero from "../../Assets/Pictures/APPROVED HAULBY Cinematic Transport Scene — Clean for editable text.png";
-import transporters from "../../Assets/Pictures/transporters.png";
-import business from "../../Assets/Pictures/business.png";
-import cta from "../../Assets/Pictures/cta.png";
-import servicesImg from "../../Assets/Pictures/services.png";
+import vehicleImage from "../../Assets/Pictures/HAULBY Visual Asset 01 _ 1376×768 _ KEEP SOURCE.png";
+import courierImage from "../../Assets/Pictures/HAULBY Visual Asset 02 _ 1376×768 _ KEEP SOURCE.png";
+import parcelsImage from "../../Assets/Pictures/HAULBY Visual Asset 03 _ 1376×768 _ KEEP SOURCE.png";
+import furnitureImage from "../../Assets/Pictures/HAULBY Visual Asset 04 _ 1376×768 _ KEEP SOURCE.png";
+import machineryImage from "../../Assets/Pictures/HAULBY Visual Asset 05 _ 1376×768 _ KEEP SOURCE.png";
+import freightImage from "../../Assets/Pictures/HAULBY Visual Asset 13 _ 1376×768 _ KEEP SOURCE.png";
+import driverImage from "../../Assets/Pictures/HAULBY Visual Asset 01 _ 1376×768 _ KEEP SOURCE.png";
 import "./ServicesPage.css";
 const services = [
   [
     "Vehicle Transport",
     "Cars, motorcycles, vans and pre-booked vehicle collections.",
     "/services/vehicle-transport",
-    transporters,
+    vehicleImage,
   ],
   [
     "Courier Deliveries",
     "Same-day, scheduled and dedicated UK van deliveries.",
     "/services/courier-deliveries",
-    cta,
+    courierImage,
   ],
   [
     "Parcels & Pallets",
     "Boxed goods, single pallets and trade consignments.",
     "/services/parcels-pallets",
-    servicesImg,
+    parcelsImage,
   ],
   [
     "Furniture & Home Moves",
     "Bulky-item collections and house removals, each with its own service.",
     "/services/furniture-delivery",
-    transporters,
+    furnitureImage,
   ],
   [
     "Plant & Machinery",
     "Compact machinery, tools and specialist plant collections.",
     "/services/plant-machinery",
-    business,
+    machineryImage,
   ],
   [
     "Road Freight",
     "Light commercial freight, part loads and larger road deliveries.",
     "/services/road-freight",
-    cta,
+    freightImage,
   ],
 ];
 const Head = ({ k, t, p, light = false }) => (
@@ -192,7 +195,7 @@ export default function ServicesPage() {
               Explore Transporter Membership
             </ArrowButton>
           </div>
-          <div style={{ backgroundImage: `url("${transporters}")` }} />
+          <div style={{ backgroundImage: `url("${driverImage}")` }} />
         </div>
       </section>
       <section className="services-choices">

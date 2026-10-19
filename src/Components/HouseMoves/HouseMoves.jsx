@@ -1,8 +1,10 @@
 import React from "react";
 import ServiceDetail from "../Common/ServiceDetail";
-import transporters from "../../Assets/Pictures/transporters.png";
-import services from "../../Assets/Pictures/services.png";
-import business from "../../Assets/Pictures/business.png";
+import houseRemoval from "../../Assets/Pictures/HAULBY Visual Asset 18 _ 1376×768 _ KEEP SOURCE.png";
+import flatMove from "../../Assets/Pictures/HAULBY Visual Asset 19 _ 1376×768 _ KEEP SOURCE.png";
+import removalsWork from "../../Assets/Pictures/HAULBY Visual Asset 20 _ 1376×768 _ KEEP SOURCE.png";
+import sharedMove from "../../Assets/Pictures/HAULBY Visual Asset 22 _ 1376×768 _ KEEP SOURCE.png";
+import packingHelp from "../../Assets/Pictures/HAULBY Visual Asset 29 _ 1376×768 _ KEEP SOURCE.png";
 import "./HouseMoves.css";
 const o = (title, text, bullets) => ({ title, text, bullets, icon: "home" });
 const data = {
@@ -11,7 +13,7 @@ const data = {
   accent: "Sorted.",
   heroText:
     "From studio flats to complete home removals, compare quotes from independent UK removal operators.",
-  heroImage: transporters,
+  heroImage: houseRemoval,
   tags: ["House removals", "Flat moves", "Packing options", "Student moves"],
   quoteTitle: "Where are you moving to?",
   quoteText:
@@ -24,7 +26,7 @@ const data = {
   optionsTitle: "Choose a removals service for your move.",
   optionsText:
     "Different properties and item volumes require different equipment, staffing and loading arrangements.",
-  cardImages: [transporters, services, business],
+  cardImages: [houseRemoval, flatMove, packingHelp, sharedMove],
   options: [
     o(
       "House Removals",
@@ -74,7 +76,7 @@ const data = {
       "Agree arrival, preparation and delivery details.",
     ],
   ],
-  prepareImage: business,
+  prepareImage: packingHelp,
   prepareKicker: "MAKE YOUR REMOVAL EASIER AND MORE ACCURATE",
   prepareTitle: "Prepare your home move details.",
   prepareText:
@@ -88,7 +90,7 @@ const data = {
   workTitle: "Find house removals work.",
   workText:
     "If you run a suitable removal van or moving team, find home-moving enquiries and submit quotes matching your capacity.",
-  workImage: transporters,
+  workImage: removalsWork,
   faqs: [
     [
       "Can I request a whole-house removal?",

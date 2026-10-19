@@ -1,8 +1,10 @@
 import React from "react";
 import ServiceDetail from "../Common/ServiceDetail";
-import transporters from "../../Assets/Pictures/transporters.png";
-import business from "../../Assets/Pictures/business.png";
-import cta from "../../Assets/Pictures/cta.png";
+import sofaDelivery from "../../Assets/Pictures/HAULBY Visual Asset 18 _ 1376×768 _ KEEP SOURCE.png";
+import furnitureHero from "../../Assets/Pictures/HAULBY Visual Asset 19 _ 1376×768 _ KEEP SOURCE.png";
+import furnitureMove from "../../Assets/Pictures/HAULBY Visual Asset 20 _ 1376×768 _ KEEP SOURCE.png";
+import marketplaceCollection from "../../Assets/Pictures/HAULBY Visual Asset 22 _ 1376×768 _ KEEP SOURCE.png";
+import applianceDelivery from "../../Assets/Pictures/HAULBY Visual Asset 31 _ 1376×768 _ KEEP SOURCE.png";
 import "./FurnitureDelivery.css";
 const o = (title, text, bullets, icon = "home") => ({
   title,
@@ -16,7 +18,7 @@ const data = {
   accent: "Sorted.",
   heroText:
     "Move sofas, beds, appliances and bulky purchases with suitable independent UK furniture transport operators.",
-  heroImage: transporters,
+  heroImage: furnitureHero,
   tags: ["Sofas & chairs", "Beds", "Appliances", "Online purchases"],
   quoteTitle: "Where does your furniture need to go?",
   quoteText:
@@ -29,7 +31,7 @@ const data = {
   optionsTitle: "A transport service for every bulky item.",
   optionsText:
     "Compare independent quotations for single items and furniture collections from homes, sellers or retailers.",
-  cardImages: [transporters, business, cta],
+  cardImages: [sofaDelivery, furnitureMove, applianceDelivery, marketplaceCollection],
   options: [
     o(
       "Sofas & Armchairs",
@@ -81,7 +83,7 @@ const data = {
       "Agree collection, item handling and delivery timing.",
     ],
   ],
-  prepareImage: business,
+  prepareImage: furnitureHero,
   prepareKicker: "HELP OPERATORS UNDERSTAND THE ITEM",
   prepareTitle: "Prepare your furniture details.",
   prepareText:
@@ -95,7 +97,7 @@ const data = {
   workTitle: "Find single-item transport work.",
   workText:
     "With suitable cover, a Luton or furniture-removal van, quote for individual furniture collections and bulky-item deliveries.",
-  workImage: transporters,
+  workImage: marketplaceCollection,
   faqs: [
     [
       "Can I arrange delivery for one sofa?",

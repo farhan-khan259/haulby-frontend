@@ -1,8 +1,9 @@
 import React from "react";
 import ServiceDetail from "../Common/ServiceDetail";
-import services from "../../Assets/Pictures/services.png";
-import cta from "../../Assets/Pictures/cta.png";
-import business from "../../Assets/Pictures/business.png";
+import businessConsignments from "../../Assets/Pictures/HAULBY Visual Asset 11 _ 1376×768 _ KEEP SOURCE.png";
+import parcelsBoxes from "../../Assets/Pictures/HAULBY Visual Asset 02 _ 1376×768 _ KEEP SOURCE.png";
+import singlePallet from "../../Assets/Pictures/HAULBY Visual Asset 17 _ 1376×768 _ KEEP SOURCE.png";
+import multiPallet from "../../Assets/Pictures/HAULBY Visual Asset 13 _ 1376×768 _ KEEP SOURCE.png";
 import "./ParcelsPallets.css";
 const opt = (title, text, bullets, icon = "box") => ({
   title,
@@ -16,7 +17,7 @@ const data = {
   accent: "Delivered.",
   heroText:
     "Compare quotes for boxed goods, parcel consignments and pallet deliveries through independent UK transport operators.",
-  heroImage: services,
+  heroImage: businessConsignments,
   tags: ["Parcels & boxes", "Single pallets", "Trade consignments"],
   quoteTitle: "Where is your consignment going?",
   quoteText:
@@ -29,7 +30,7 @@ const data = {
   optionsTitle: "Delivery options for every consignment.",
   optionsText:
     "Tell us about the quantity, packed dimensions and gross weight so suitable operators can assess the shipment.",
-  cardImages: [services, cta, business],
+  cardImages: [parcelsBoxes, singlePallet, multiPallet, businessConsignments],
   options: [
     opt(
       "Parcels & Boxes",
@@ -88,7 +89,7 @@ const data = {
       "Select an operator and agree collection and delivery.",
     ],
   ],
-  prepareImage: business,
+  prepareImage: singlePallet,
   prepareKicker: "CLEAR LOADING DETAILS MAKE BETTER QUOTES",
   prepareTitle: "Prepare your consignment details.",
   prepareText:
@@ -102,7 +103,7 @@ const data = {
   workTitle: "Find delivery and pallet jobs.",
   workText:
     "With a suitable courier van, rigid curtain-side vehicle or pallet-capable truck, find consignments through HAULBY.",
-  workImage: cta,
+  workImage: multiPallet,
   faqs: [
     [
       "Can I arrange just one pallet?",

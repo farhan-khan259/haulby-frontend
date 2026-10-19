@@ -1,8 +1,9 @@
 import React from "react";
 import ServiceDetail from "../Common/ServiceDetail";
-import transporters from "../../Assets/Pictures/transporters.png";
-import business from "../../Assets/Pictures/business.png";
-import cta from "../../Assets/Pictures/cta.png";
+import recoveryRoad from "../../Assets/Pictures/HAULBY Visual Asset 01 _ 1376×768 _ KEEP SOURCE.png";
+import motorcycleVan from "../../Assets/Pictures/HAULBY Visual Asset 07 _ 1376×768 _ KEEP SOURCE.png";
+import auctionCollection from "../../Assets/Pictures/HAULBY Visual Asset 08 _ 1376×768 _ KEEP SOURCE.png";
+import recoveryHero from "../../Assets/Pictures/HAULBY Visual Asset 09 _ 1376×768 _ KEEP SOURCE.png";
 import "./VehicleTransport.css";
 const data = {
   short: "Vehicle Transport",
@@ -10,7 +11,7 @@ const data = {
   accent: "Sorted.",
   heroText:
     "Move cars, vans and motorcycles through our network of independent UK transport operators.",
-  heroImage: transporters,
+  heroImage: recoveryHero,
   tags: ["Planned collections", "Auction vehicles", "Non-runners"],
   quoteTitle: "Where does your vehicle need to go?",
   quoteText:
@@ -23,7 +24,7 @@ const data = {
   optionsTitle: "A transport service for every vehicle.",
   optionsText:
     "Tell operators exactly what you need moved — from a running family car to a motorcycle or auction purchase.",
-  cardImages: [transporters, business, cta],
+  cardImages: [recoveryRoad, motorcycleVan, recoveryHero, auctionCollection],
   options: [
     [
       "Car & Van Transport",
@@ -80,7 +81,7 @@ const data = {
       "Confirm your preferred quote and manage the booking.",
     ],
   ],
-  prepareImage: business,
+  prepareImage: motorcycleVan,
   prepareKicker: "BETTER INFORMATION. BETTER QUOTES.",
   prepareTitle: "Tell us about your vehicle.",
   prepareText:
@@ -94,7 +95,7 @@ const data = {
   workTitle: "Find vehicle transport jobs.",
   workText:
     "Have a recovery flatbed, suitable van or transporter? Search opportunities, submit quotes and manage transport work through HAULBY.",
-  workImage: transporters,
+  workImage: recoveryRoad,
   faqs: [
     [
       "Can I transport a non-running car?",
