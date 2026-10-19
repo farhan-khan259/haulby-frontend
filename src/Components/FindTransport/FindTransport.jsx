@@ -81,30 +81,28 @@ export default function FindTransport() {
           </form>
           <p className="find-note">
             <LineIcon type="shield" /> Tell us what needs moving. HAULBY works
-            to find a suitable operator across the UK.
+            to find a suitable operator across the UK; transport is confirmed
+            once an operator accepts.
           </p>
         </div>
       </section>
       <section className="find-steps">
         <div className="find-shell">
           <Head
-            k="HOW IT WORKS"
+            k="THE QUOTATION JOURNEY"
             t="From your request to the right transporter."
             p="One clear request makes it easier for relevant operators to decide whether they can carry your goods."
           />
           <div>
             {[
-              ["01", "Tell us what needs moving"],
-              ["02", "Review available quotations"],
-              ["03", "Choose and arrange transport"],
-            ].map(([n, t]) => (
+              ["01", "Tell us what needs moving", "Choose a service and enter route, load, access and timing details."],
+              ["02", "Review available quotations", "Compare the price, service scope, operator information and terms."],
+              ["03", "Choose and arrange transport", "Select the option that works for you and confirm the agreed booking."],
+            ].map(([n, t, p]) => (
               <article key={n}>
                 <strong>{n}</strong>
                 <h3>{t}</h3>
-                <p>
-                  Provide route, item, access and timing details, then compare
-                  suitable offers.
-                </p>
+                <p>{p}</p>
               </article>
             ))}
           </div>
@@ -115,22 +113,19 @@ export default function FindTransport() {
           <Head
             k="A CATEGORY FOR YOUR LOAD"
             t="Find a service that fits your transport job."
-            p="The information operators need depends on whether you’re moving a vehicle, sending goods or arranging lifting assistance."
+            p="Tell us what you’re moving, its dimensions and any access restrictions so an appropriately equipped operator can quote."
           />
           <div>
             {[
-              ["Car and motorcycle collections", "Vehicle Transport"],
-              ["Courier and parcel deliveries", "Courier Deliveries"],
-              ["Furniture, home moves and freight", "All Transport Services"],
-            ].map(([t, l]) => (
+              ["Car and motorcycle collections", "Post the make, model, condition, pickup location and any loading restrictions.", "Vehicle Transport", "/services/vehicle-transport"],
+              ["Courier and parcel deliveries", "Explain quantities, dimensions, deadlines and whether you need a dedicated van.", "Courier Deliveries", "/services/courier-deliveries"],
+              ["Furniture, home moves and freight", "Describe the items, weight, access, carrying help and any specialist vehicle needs.", "All Transport Services", "/services"],
+            ].map(([t, p, l, href]) => (
               <article key={t}>
                 <i />
                 <h3>{t}</h3>
-                <p>
-                  Describe the goods, condition, dimensions, route and any
-                  specialist handling needs.
-                </p>
-                <Link to="/services">{l} →</Link>
+                <p>{p}</p>
+                <Link to={href}>{l} →</Link>
               </article>
             ))}
           </div>
@@ -147,20 +142,23 @@ export default function FindTransport() {
           <div>
             {[
               [
-                "Distance, route and dates",
-                "Journey mileage, collection windows and flexibility can affect offers.",
+                "Distance, routes and dates",
+                "Journey mileage, collections, delivery windows and flexibility can affect offers and availability.",
+                "route",
               ],
               [
                 "Size, weight and loading",
-                "Payload, equipment, dimensions and site access can change the service needed.",
+                "Vehicle payload, equipment, item dimensions, stairs or site access can change the service needed.",
+                "truck",
               ],
               [
                 "Service and booking terms",
-                "Compare loading help, inclusions, cancellation terms and relevant insurance details.",
+                "Compare the operator's loading plan, equipment, service inclusions, cancellation terms and relevant insurance details.",
+                "shield",
               ],
-            ].map(([t, p]) => (
+            ].map(([t, p, icon]) => (
               <article key={t}>
-                <LineIcon type="route" />
+                <LineIcon type={icon} />
                 <h3>{t}</h3>
                 <p>{p}</p>
               </article>
