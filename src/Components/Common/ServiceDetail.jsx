@@ -1,0 +1,270 @@
+import React from "react";
+import { Link } from "react-router-dom";
+import { Header, Footer, ArrowButton, LineIcon } from "./SiteChrome";
+import "./ServiceDetail.css";
+
+const SectionHead = ({ kicker, title, text, light = false }) => (
+  <div className={`detail-heading ${light ? "light" : ""}`}>
+    <span>{kicker}</span>
+    <h2>{title}</h2>
+    {text && <p>{text}</p>}
+  </div>
+);
+
+export default function ServiceDetail({ data }) {
+  return (
+    <main className="detail-page">
+      <Header />
+      <section className="detail-hero">
+        <div className="detail-hero-copy">
+          <div className="detail-shell">
+            <small>
+              HOME / TRANSPORT SERVICES / {data.short.toUpperCase()}
+            </small>
+            <h1>
+              {data.title}
+              <em>{data.accent}</em>
+            </h1>
+            <p>{data.heroText}</p>
+            <div className="detail-actions">
+              <ArrowButton>Get {data.short} Quotes</ArrowButton>
+              <ArrowButton outline href="/services">
+                Explore {data.short} Services
+              </ArrowButton>
+            </div>
+            <b>{data.tags.join(" • ")}</b>
+          </div>
+        </div>
+        <div
+          className="detail-hero-image"
+          style={{ backgroundImage: `url("${data.heroImage}")` }}
+        />
+      </section>
+      <section className="detail-quote" id="quote">
+        <div className="detail-shell">
+          <SectionHead
+            kicker={`START YOUR ${data.short.toUpperCase()} QUOTE`}
+            title={data.quoteTitle}
+            text={data.quoteText}
+          />
+          <form onSubmit={(e) => e.preventDefault()}>
+            <label>
+              Collection postcode
+              <input placeholder="e.g. PE11 4TA" />
+            </label>
+            <label>
+              Delivery postcode
+              <input placeholder="e.g. M1 1AE" />
+            </label>
+            <label>
+              {data.typeLabel}
+              <select>
+                <option>{data.typePlaceholder}</option>
+              </select>
+            </label>
+            <button>
+              Continue <span>→</span>
+            </button>
+          </form>
+          <small>{data.quoteNote}</small>
+        </div>
+      </section>
+      <section className="detail-options">
+        <div className="detail-shell">
+          <SectionHead
+            kicker={data.optionsKicker}
+            title={data.optionsTitle}
+            text={data.optionsText}
+          />
+          <div className="detail-option-grid">
+            {data.options.map((item, i) => (
+              <article key={item.title}>
+                <div
+                  className="detail-photo"
+                  style={{
+                    backgroundImage: `url("${item.image || data.cardImages[i % data.cardImages.length]}")`,
+                  }}
+                />
+                <div>
+                  <span className="detail-icon">
+                    <LineIcon type={item.icon} />
+                  </span>
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
+                  <ul>
+                    {item.bullets.map((x) => (
+                      <li key={x}>{x}</li>
+                    ))}
+                  </ul>
+                  <Link to="#quote">Get {item.title} Quotes →</Link>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section className="detail-dark">
+        <div className="detail-shell">
+          <SectionHead
+            light
+            kicker={data.darkKicker}
+            title={data.darkTitle}
+            text={data.darkText}
+          />
+          <div className="detail-mini-grid">
+            {data.darkCards.map(([t, p]) => (
+              <article key={t}>
+                <LineIcon type="route" />
+                <div>
+                  <h3>{t}</h3>
+                  <p>{p}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section className="detail-steps">
+        <div className="detail-shell">
+          <SectionHead
+            kicker="HOW HAULBY WORKS"
+            title={`Arrange ${data.short.toLowerCase()} in three steps.`}
+          />
+          <div className="detail-step-grid">
+            {data.steps.map(([t, p], i) => (
+              <article key={t}>
+                <strong>0{i + 1}</strong>
+                <h3>{t}</h3>
+                <p>{p}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section className="detail-prepare">
+        <div className="detail-shell">
+          <div
+            className="detail-prepare-image"
+            style={{ backgroundImage: `url("${data.prepareImage}")` }}
+          />
+          <div>
+            <SectionHead
+              kicker={data.prepareKicker}
+              title={data.prepareTitle}
+              text={data.prepareText}
+            />
+            <ul>
+              {data.prepareBullets.map((x) => (
+                <li key={x}>{x}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section className="detail-work">
+        <div className="detail-shell">
+          <div>
+            <SectionHead
+              light
+              kicker="FOR HAULBY'S TRANSPORT OPERATORS"
+              title={data.workTitle}
+              text={data.workText}
+            />
+            <ArrowButton href="/#work">
+              Explore Transporter Membership
+            </ArrowButton>
+          </div>
+          <div style={{ backgroundImage: `url("${data.workImage}")` }} />
+        </div>
+      </section>
+      <section className="detail-faq">
+        <div className="detail-shell">
+          <SectionHead
+            kicker="FREQUENT QUESTIONS"
+            title={`${data.short} questions, answered.`}
+          />
+          <div className="detail-faq-grid">
+            {data.faqs.map(([q, a]) => (
+              <article key={q}>
+                <h3>{q}</h3>
+                <p>{a}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section className="detail-cost">
+        <div className="detail-shell">
+          <SectionHead
+            kicker={data.costKicker}
+            title={data.costTitle}
+            text={data.costText}
+          />
+          <div className="detail-cost-grid">
+            {data.costs.map(([t, p, l]) => (
+              <article key={t}>
+                <i />
+                <h3>{t}</h3>
+                <p>{p}</p>
+                <Link to="#quote">{l} →</Link>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section className="detail-compare">
+        <div className="detail-shell">
+          <SectionHead
+            light
+            kicker={data.compareKicker}
+            title={data.compareTitle}
+            text={data.compareText}
+          />
+          <div className="detail-cost-grid dark">
+            {data.compareCards.map(([t, p]) => (
+              <article key={t}>
+                <i />
+                <h3>{t}</h3>
+                <p>{p}</p>
+                <Link to="/services">Explore Services →</Link>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section className="detail-faq practical">
+        <div className="detail-shell">
+          <SectionHead
+            kicker="PRACTICAL QUESTIONS"
+            title={data.practicalTitle}
+          />
+          <div className="detail-faq-grid">
+            {data.practical.map(([q, a]) => (
+              <article key={q}>
+                <h3>{q}</h3>
+                <p>{a}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section className="detail-cta">
+        <div className="detail-shell">
+          <SectionHead
+            light
+            kicker=""
+            title={data.ctaTitle}
+            text={data.ctaText}
+          />
+          <div className="detail-actions">
+            <ArrowButton>Get {data.short} Quotes</ArrowButton>
+            <ArrowButton outline href="/#work">
+              Find Transport Work
+            </ArrowButton>
+          </div>
+        </div>
+      </section>
+      <Footer />
+    </main>
+  );
+}

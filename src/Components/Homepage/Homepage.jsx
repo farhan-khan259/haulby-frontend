@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Homepage.css";
 import heroImage from "../../Assets/Pictures/APPROVED HAULBY Cinematic Transport Scene — Clean for editable text.png";
 import logoImage from "../../Assets/Pictures/APPROVED HAULBY Landscape Logo — transparent artwork.jpg";
@@ -181,8 +182,8 @@ function Homepage() {
             <span></span>
           </button>
           <nav className={menuOpen ? "open" : ""}>
-            <a href="#quote">Find Transport</a>
-            <a href="#services">Services</a>
+            <Link to="/find-transport">Find Transport</Link>
+            <Link to="/services">Services</Link>
             <a href="#steps">How It Works</a>
             <a href="#business">For Businesses</a>
             <a href="#work">For Transporters</a>

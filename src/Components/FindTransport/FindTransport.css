@@ -1,0 +1,313 @@
+.find-page {
+  background: #f4f8fb;
+  color: #102d45;
+}
+.find-shell {
+  width: min(1680px, calc(100% - 80px));
+  margin: auto;
+}
+.find-hero {
+  min-height: 610px;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+.find-hero small {
+  font-size: 9px;
+  color: #91a9b6;
+}
+.find-hero h1 {
+  font-size: 49px;
+  line-height: 1.05;
+  margin: 30px 0;
+}
+.find-hero h1 em {
+  display: block;
+  color: #08d5cf;
+  font-style: normal;
+}
+.find-hero p {
+  max-width: 525px;
+  font-size: 14px;
+  color: #c9d8df;
+  line-height: 1.55;
+  margin-bottom: 35px;
+}
+.find-hero b {
+  display: block;
+  margin-top: 25px;
+  font-size: 9px;
+  color: #a6bbc6;
+}
+.find-head {
+  max-width: 830px;
+  margin-bottom: 38px;
+}
+.find-head > span,
+.find-request > .find-shell > b {
+  font-size: 9px;
+  color: #008f90;
+  font-weight: 800;
+}
+.find-head h2 {
+  font-size: 31px;
+  margin: 12px 0;
+}
+.find-head p {
+  font-size: 12px;
+  color: #62788a;
+  line-height: 1.55;
+}
+.find-head.light h2 {
+  color: #fff;
+}
+.find-head.light p {
+  color: #adc0ca;
+}
+.find-request,
+.find-steps,
+.find-services,
+.find-prepare,
+.find-faq {
+  padding: 55px 0;
+}
+.find-categories {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin: 20px 0 35px;
+}
+.find-categories button {
+  padding: 18px;
+  border: 1px solid #dbe6ec;
+  background: #fff;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-align: left;
+}
+.find-categories button.active {
+  border-color: #08d5cf;
+  box-shadow: 0 0 0 2px rgba(8, 213, 207, 0.12);
+}
+.find-categories i {
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  background: #052d49;
+  color: #08d5cf;
+  display: grid;
+  place-items: center;
+}
+.find-categories svg {
+  width: 20px;
+}
+.find-categories span {
+  display: grid;
+  gap: 5px;
+}
+.find-categories strong {
+  font-size: 12px;
+}
+.find-categories small {
+  font-size: 9px;
+  color: #6d8290;
+}
+.find-request form {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.9fr;
+  gap: 18px;
+}
+.find-request label {
+  font-size: 10px;
+  font-weight: 700;
+}
+.find-request input {
+  display: block;
+  width: 100%;
+  height: 49px;
+  margin-top: 8px;
+  border: 1px solid #d8e5ec;
+  border-radius: 8px;
+  padding: 0 14px;
+}
+.find-request form button {
+  height: 49px;
+  margin-top: 19px;
+  border: 0;
+  border-radius: 8px;
+  background: #08d5cf;
+  font-weight: 800;
+}
+.find-note {
+  padding: 16px;
+  background: #062b48;
+  color: #d0dce2;
+  border-radius: 7px;
+  font-size: 9px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.find-note svg {
+  width: 20px;
+  color: #08d5cf;
+}
+.find-steps {
+  background: #eef4f7;
+}
+.find-steps .find-shell > div:last-child,
+.find-services .find-shell > div:last-child,
+.find-dark .find-shell > div:last-child {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+.find-steps article,
+.find-services article {
+  padding: 25px;
+  background: #fff;
+  border: 1px solid #dfe9ee;
+  border-radius: 8px;
+}
+.find-steps strong {
+  font-size: 30px;
+  color: #00aaa9;
+}
+.find-steps h3,
+.find-services h3,
+.find-dark h3 {
+  font-size: 14px;
+}
+.find-steps p,
+.find-services p,
+.find-dark p {
+  font-size: 10px;
+  color: #62788a;
+  line-height: 1.5;
+}
+.find-services article i {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background: #08d5cf;
+}
+.find-services a {
+  color: #00aaa9;
+  font-size: 9px;
+  font-weight: 800;
+  text-decoration: none;
+}
+.find-dark,
+.find-cta {
+  background: #031d31;
+  color: #fff;
+  padding: 62px 0;
+}
+.find-dark article {
+  padding: 23px;
+  background: #0a3150;
+  border: 1px solid #174d69;
+  border-radius: 9px;
+}
+.find-dark svg {
+  width: 23px;
+  color: #08d5cf;
+}
+.find-dark p {
+  color: #afc2cb;
+}
+.find-prepare .find-shell > div:last-child {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.find-prepare span {
+  padding: 16px;
+  background: #fff;
+  border: 1px solid #dfe9ee;
+  border-radius: 8px;
+  color: #00aaa9;
+  font-size: 12px;
+}
+.find-prepare b,
+.find-prepare small {
+  display: block;
+  margin-left: 22px;
+  color: #203d52;
+}
+.find-prepare small {
+  font-size: 9px;
+  color: #7c909c;
+  margin-top: 5px;
+}
+.find-faq {
+  background: #eef4f7;
+}
+.find-faq .find-shell > div:last-child {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+.find-faq article {
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #dfe9ee;
+  border-radius: 8px;
+}
+.find-faq h3 {
+  font-size: 11px;
+}
+.find-faq p {
+  font-size: 9px;
+  color: #62788a;
+}
+.find-cta {
+  border-bottom: 2px solid #08d5cf;
+}
+.find-cta .find-shell > div:last-child {
+  display: flex;
+  gap: 14px;
+}
+@media (max-width: 900px) {
+  .find-shell {
+    width: calc(100% - 40px);
+  }
+  .find-categories {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 600px) {
+  .find-shell {
+    width: calc(100% - 28px);
+  }
+  .find-hero {
+    min-height: 550px;
+    background-position: 64% center;
+  }
+  .find-hero h1 {
+    font-size: 35px;
+  }
+  .find-head h2 {
+    font-size: 26px;
+  }
+  .find-categories,
+  .find-request form,
+  .find-steps .find-shell > div:last-child,
+  .find-services .find-shell > div:last-child,
+  .find-dark .find-shell > div:last-child,
+  .find-prepare .find-shell > div:last-child,
+  .find-faq .find-shell > div:last-child {
+    grid-template-columns: 1fr;
+  }
+  .find-request form button {
+    margin-top: 0;
+  }
+  .find-cta .find-shell > div:last-child {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,311 @@
+.services-page {
+  background: #f4f8fb;
+  color: #102d45;
+}
+.services-shell {
+  width: min(1680px, calc(100% - 80px));
+  margin: auto;
+}
+.services-hero {
+  min-height: 650px;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+.services-hero .services-shell > span,
+.services-head > span,
+.services-picker b {
+  color: #00aaa9;
+  font-size: 9px;
+  font-weight: 800;
+}
+.services-hero h1 {
+  font-size: 48px;
+  line-height: 1.05;
+  margin: 24px 0;
+}
+.services-hero h1 em {
+  display: block;
+  color: #08d5cf;
+  font-style: normal;
+}
+.services-hero p {
+  max-width: 560px;
+  color: #ccdae1;
+  line-height: 1.55;
+}
+.services-hero .services-shell > div {
+  display: flex;
+  gap: 14px;
+  margin: 32px 0;
+}
+.services-hero small {
+  font-size: 9px;
+}
+.services-picker,
+.services-list,
+.services-steps,
+.services-choices,
+.services-questions {
+  padding: 52px 0;
+}
+.services-picker h2 {
+  font-size: 27px;
+}
+.services-picker .services-shell > div {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+}
+.services-picker a {
+  padding: 18px;
+  background: #eef4f7;
+  border: 1px solid #dbe7ed;
+  border-radius: 7px;
+  text-decoration: none;
+  color: #17364e;
+  font-size: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.services-head {
+  max-width: 800px;
+  margin-bottom: 40px;
+}
+.services-head h2 {
+  font-size: 31px;
+  margin: 12px 0;
+}
+.services-head p {
+  font-size: 12px;
+  color: #62788a;
+}
+.services-head.light h2 {
+  color: #fff;
+}
+.services-head.light p {
+  color: #adc0ca;
+}
+.services-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.services-cards article {
+  background: #fff;
+  border: 1px solid #d8e5ec;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.services-photo {
+  height: 220px;
+  background-size: cover;
+  background-position: center;
+}
+.services-cards article > div:last-child {
+  padding: 20px;
+}
+.services-cards i {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  background: #052d49;
+  color: #08d5cf;
+  border-radius: 7px;
+}
+.services-cards svg {
+  width: 19px;
+}
+.services-cards h3 {
+  font-size: 16px;
+}
+.services-cards p,
+.services-cards li {
+  font-size: 10px;
+  color: #62788a;
+  line-height: 1.5;
+}
+.services-cards ul {
+  padding-left: 16px;
+}
+.services-cards a,
+.services-choices a {
+  display: block;
+  padding: 13px;
+  background: #052d49;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 10px;
+}
+.services-popular,
+.services-dark,
+.services-cta {
+  padding: 60px 0;
+  background: #031d31;
+  color: #fff;
+}
+.services-popular .services-shell > div:last-child {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+.services-popular span {
+  padding: 17px;
+  background: #0a3150;
+  border-radius: 7px;
+  color: #08d5cf;
+  font-size: 11px;
+}
+.services-popular small {
+  display: block;
+  color: #9eb5c1;
+  margin-top: 7px;
+}
+.services-steps .services-shell > div:last-child,
+.services-choices .services-shell > div:last-child,
+.services-dark .services-shell > div:last-child {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+.services-steps article,
+.services-choices article {
+  padding: 24px;
+  background: #eef4f7;
+  border-radius: 8px;
+}
+.services-steps strong {
+  font-size: 30px;
+  color: #00aaa9;
+}
+.services-steps p,
+.services-choices p,
+.services-dark p {
+  font-size: 10px;
+  color: #62788a;
+  line-height: 1.5;
+}
+.services-driver {
+  background: #031d31;
+  color: #fff;
+}
+.services-driver > .services-shell {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 350px;
+}
+.services-driver > .services-shell > div:first-child {
+  padding: 55px 50px 55px 0;
+}
+.services-driver > .services-shell > div:last-child {
+  background-size: cover;
+  background-position: center;
+}
+.services-choices article a {
+  display: inline-block;
+  background: transparent;
+  color: #00aaa9;
+  padding: 0;
+}
+.services-dark article {
+  padding: 23px;
+  background: #0a3150;
+  border-radius: 9px;
+}
+.services-dark i {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background: #08d5cf;
+}
+.services-dark article h3 {
+  font-size: 14px;
+}
+.services-dark p {
+  color: #aac0ca;
+}
+.services-questions .services-shell > div:last-child {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+.services-questions article {
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #dfeaf0;
+  border-radius: 8px;
+}
+.services-questions h3 {
+  font-size: 12px;
+}
+.services-questions p {
+  font-size: 10px;
+  color: #62788a;
+}
+.services-cta {
+  border-bottom: 2px solid #08d5cf;
+}
+.services-cta .services-shell > div:last-child {
+  display: flex;
+  gap: 14px;
+}
+@media (max-width: 900px) {
+  .services-shell {
+    width: calc(100% - 40px);
+  }
+  .services-picker .services-shell > div {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .services-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+  .services-popular .services-shell > div:last-child {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 600px) {
+  .services-shell {
+    width: calc(100% - 28px);
+  }
+  .services-hero {
+    min-height: 560px;
+    background-position: 63% center;
+  }
+  .services-hero h1 {
+    font-size: 35px;
+  }
+  .services-hero .services-shell > div,
+  .services-cta .services-shell > div:last-child {
+    flex-direction: column;
+  }
+  .services-picker .services-shell > div,
+  .services-cards,
+  .services-popular .services-shell > div:last-child,
+  .services-steps .services-shell > div:last-child,
+  .services-choices .services-shell > div:last-child,
+  .services-dark .services-shell > div:last-child,
+  .services-questions .services-shell > div:last-child {
+    grid-template-columns: 1fr;
+  }
+  .services-driver > .services-shell {
+    width: 100%;
+    grid-template-columns: 1fr;
+  }
+  .services-driver > .services-shell > div:first-child {
+    padding: 45px 14px;
+  }
+  .services-driver > .services-shell > div:last-child {
+    min-height: 230px;
+    order: -1;
+  }
+  .services-photo {
+    height: 200px;
+  }
+  .services-head h2 {
+    font-size: 26px;
+  }
+}
