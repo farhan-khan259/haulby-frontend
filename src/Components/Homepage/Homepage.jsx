@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { Footer } from "../Common/SiteChrome";
 import "./Homepage.css";
 import heroImage from "../../Assets/Pictures/APPROVED HAULBY Cinematic Transport Scene — Clean for editable text.png";
 import logoImage from "../../Assets/Pictures/APPROVED HAULBY Landscape Logo — transparent artwork.jpg";
@@ -673,95 +674,7 @@ function Homepage() {
         </div>
       </section>
 
-      <footer>
-        <div className="container footer-intro">
-          <span>ONE PLATFORM. THE WHOLE JOURNEY.</span>
-          <h2>Connecting transport. Creating opportunity.</h2>
-        </div>
-        <div className="container footer-top">
-          <div className="footer-brand">
-            <Logo />
-            <p>
-              HAULBY connects customers and businesses with independent
-              transport providers across the UK.
-            </p>
-            <a href="#top">haulby.co.uk</a>
-          </div>
-          {[
-            [
-              "FIND TRANSPORT",
-              [
-                "Get Quotes",
-                "Vehicle Transport",
-                "Parcels & Couriers",
-                "Home Moves",
-                "Pallets & Freight",
-                "Plant & Machinery",
-              ],
-            ],
-            [
-              "FOR TRANSPORTERS",
-              [
-                "Find Work",
-                "Membership Plans",
-                "Operator Requirements",
-                "Dashboard Opportunities",
-                "Transporter Login",
-              ],
-            ],
-            [
-              "COMPANY",
-              [
-                "How It Works",
-                "For Businesses",
-                "About HAULBY",
-                "Trust & Safety",
-                "Help Centre",
-              ],
-            ],
-            [
-              "HELP & LEGAL",
-              [
-                "Contact Us",
-                "Privacy Policy",
-                "Cookie Policy",
-                "Terms of Use",
-                "Transporter Agreement",
-                "Complaints Procedure",
-              ],
-            ],
-          ].map(([h, links]) => (
-            <div className="footer-col" key={h}>
-              <h3>{h}</h3>
-              {links.map((x) => (
-                <a href="#top" key={x}>
-                  {x}
-                </a>
-              ))}
-            </div>
-          ))}
-        </div>
-        <div className="container footer-links">
-          <span>
-            <b>UK-WIDE COVERAGE</b>A marketplace for journeys across Britain
-          </span>
-          <span>
-            <b>BUILT FOR TRANSPORTERS</b>Vehicle, courier and freight
-            opportunities
-          </span>
-          <span>
-            <b>TRANSPORT CHOICE</b>Compare independent transport providers
-          </span>
-        </div>
-        <div className="container copyright">
-          <span>© 2026 HAULBY. All rights reserved.</span>
-          <span>
-            HAULBY is a marketplace. Transport is provided by independent
-            operators.
-          </span>
-          <a href="#top">Accessibility</a>
-        </div>
-      </footer>
+      <Footer />
     </main>
   );
 }

@@ -81,87 +81,117 @@
   color: #fff;
 }
 .chrome-footer {
+  position: relative;
+  overflow: hidden;
   background: #021725;
   color: #9db3bf;
-  border-top: 2px solid var(--haulby-cyan);
+  border-top: 4px solid var(--haulby-cyan);
+}
+.chrome-footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 48px;
+  width: min(720px, 48vw);
+  aspect-ratio: 546 / 166;
+  background: url("../../Assets/Pictures/Vector.png") top right / contain
+    no-repeat;
+
+  pointer-events: none;
+}
+.chrome-footer .chrome-container {
+  position: relative;
+  
 }
 .chrome-intro {
-  padding: 35px 0 24px;
+  padding: 58px 0 45px;
   border-bottom: 1px solid #173b50;
 }
 .chrome-intro span,
 .chrome-column h3,
 .chrome-benefits b {
   color: var(--haulby-cyan);
-  font-size: 9px;
+  font-size: 14px;
   font-weight: 800;
 }
 .chrome-intro h2 {
   color: #fff;
-  font-size: 20px;
-  margin: 14px 0 0;
+  font-size: 32px;
+  margin: 24px 0 0;
 }
 .chrome-footer-grid {
   display: grid;
-  grid-template-columns: 1.45fr repeat(4, 1fr);
-  gap: 38px;
-  padding: 45px 0;
+  grid-template-columns: 1.65fr repeat(4, 1fr);
+  gap: 44px;
+  padding: 54px 0 48px;
 }
 .chrome-brand .chrome-logo {
-  width: 225px;
+  width: 400px;
+  height: auto;
+  background: transparent;
+  isolation: auto;
+  mix-blend-mode: screen;
+}
+.chrome-brand .chrome-logo img {
+  display: block;
+  background: transparent;
+  mix-blend-mode: screen;
 }
 .chrome-brand p {
-  font-size: 11px;
-  line-height: 1.65;
-  max-width: 265px;
+  font-size: 18px;
+  line-height: 1.55;
+  max-width: 440px;
+  margin: 34px 0 20px;
 }
 .chrome-brand > a {
   color: var(--haulby-cyan);
-  font-size: 11px;
+  font-size: 17px;
   font-weight: 800;
   text-decoration: none;
 }
 .chrome-column {
   display: flex;
   flex-direction: column;
-  gap: 11px;
+  gap: 24px;
 }
 .chrome-column h3 {
-  margin: 8px 0 6px;
+  margin: 8px 0 4px;
 }
 .chrome-column a {
-  font-size: 10px;
+  font-size: 17px;
   color: #a8bec9;
   text-decoration: none;
 }
 .chrome-benefits {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  padding: 17px 20px;
+  min-height: 122px;
+  padding: 22px 28px;
   border: 1px solid #17465f;
   background: #06263c;
-  border-radius: 7px;
+  border-radius: 18px;
+  align-items: center;
 }
 .chrome-benefits span {
-  font-size: 9px;
+  font-size: 15px;
   border-right: 1px solid #17465f;
-  padding-left: 10px;
+  padding-left: 26px;
 }
 .chrome-benefits span:last-child {
   border: 0;
 }
 .chrome-benefits b {
   display: block;
-  margin-bottom: 7px;
+  margin-bottom: 16px;
 }
 .chrome-copy {
-  min-height: 70px;
+  min-height: 96px;
   border-top: 1px solid #173b50;
   margin-top: 28px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 8px;
+  font-size: 14px;
 }
 .chrome-copy a {
   color: var(--haulby-cyan);
@@ -219,9 +249,38 @@
   }
   .chrome-footer-grid {
     grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 34px 24px;
   }
   .chrome-brand {
     grid-row: span 2;
+  }
+  .chrome-brand .chrome-logo {
+    width: 250px;
+  }
+  .chrome-brand p {
+    max-width: 310px;
+    font-size: 14px;
+    margin-top: 24px;
+  }
+  .chrome-column {
+    gap: 15px;
+  }
+  .chrome-column a {
+    font-size: 13px;
+  }
+  .chrome-intro span,
+  .chrome-column h3,
+  .chrome-benefits b {
+    font-size: 11px;
+  }
+  .chrome-intro h2 {
+    font-size: 27px;
+  }
+  .chrome-benefits span {
+    font-size: 12px;
+  }
+  .chrome-copy {
+    font-size: 11px;
   }
 }
 @media (max-width: 600px) {
@@ -231,6 +290,7 @@
   .chrome-footer-grid {
     grid-template-columns: 1fr 1fr;
     gap: 30px 18px;
+    padding: 40px 0;
   }
   .chrome-brand {
     grid-column: 1/-1;
@@ -239,6 +299,19 @@
   .chrome-brand .chrome-logo {
     width: 190px;
   }
+  .chrome-brand p {
+    font-size: 12px;
+  }
+  .chrome-intro {
+    padding: 38px 0 30px;
+  }
+  .chrome-intro h2 {
+    font-size: 23px;
+    line-height: 1.25;
+  }
+  .chrome-column a {
+    font-size: 11px;
+  }
   .chrome-benefits {
     grid-template-columns: 1fr;
     gap: 15px;
@@ -246,6 +319,7 @@
   .chrome-benefits span {
     border: 0;
     padding: 0;
+    font-size: 11px;
   }
   .chrome-copy {
     padding: 20px 0;
@@ -261,22 +335,72 @@
 
 /* Match the visual scale and rhythm established by the homepage. */
 @media (min-width: 901px) {
-  .chrome-header { height: 112px; }
-  .chrome-logo { width: 260px; height: 84px; }
-  .chrome-nav nav { gap: clamp(24px, 3vw, 50px); }
-  .chrome-nav nav a { font-size: 15px; font-weight: 500; }
-  .chrome-register { padding: 17px 26px; border-radius: 13px; font-weight: 700 !important; }
-  .chrome-button { min-width: 220px; height: 64px; padding: 0 25px; border-radius: 12px; font-size: 15px; }
-  .chrome-intro { padding: 44px 0 29px; }
-  .chrome-intro span, .chrome-column h3, .chrome-benefits b { font-size: 10px; }
-  .chrome-intro h2 { font-size: 24px; }
-  .chrome-footer-grid { gap: 48px; padding: 55px 0 45px; }
-  .chrome-brand .chrome-logo { width: 260px; }
-  .chrome-brand p { max-width: 310px; font-size: 13px; line-height: 1.6; }
-  .chrome-brand > a { font-size: 12px; }
-  .chrome-column { gap: 13px; }
-  .chrome-column a { font-size: 12px; }
-  .chrome-benefits { padding: 20px 24px; }
-  .chrome-benefits span { font-size: 11px; }
-  .chrome-copy { min-height: 86px; font-size: 10px; }
+  .chrome-header {
+    height: 112px;
+  }
+  .chrome-logo {
+    width: 260px;
+    height: 84px;
+  }
+  .chrome-nav nav {
+    gap: clamp(24px, 3vw, 50px);
+  }
+  .chrome-nav nav a {
+    font-size: 15px;
+    font-weight: 500;
+  }
+  .chrome-register {
+    padding: 17px 26px;
+    border-radius: 13px;
+    font-weight: 700 !important;
+  }
+  .chrome-button {
+    min-width: 220px;
+    height: 64px;
+    padding: 0 25px;
+    border-radius: 12px;
+    font-size: 15px;
+  }
+  .chrome-intro {
+    padding: 44px 0 29px;
+  }
+  .chrome-intro span,
+  .chrome-column h3,
+  .chrome-benefits b {
+    font-size: 10px;
+  }
+  .chrome-intro h2 {
+    font-size: 24px;
+  }
+  .chrome-footer-grid {
+    gap: 48px;
+    padding: 55px 0 45px;
+  }
+  .chrome-brand .chrome-logo {
+    width: 260px;
+  }
+  .chrome-brand p {
+    max-width: 310px;
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  .chrome-brand > a {
+    font-size: 12px;
+  }
+  .chrome-column {
+    gap: 13px;
+  }
+  .chrome-column a {
+    font-size: 12px;
+  }
+  .chrome-benefits {
+    padding: 20px 24px;
+  }
+  .chrome-benefits span {
+    font-size: 11px;
+  }
+  .chrome-copy {
+    min-height: 86px;
+    font-size: 10px;
+  }
 }
