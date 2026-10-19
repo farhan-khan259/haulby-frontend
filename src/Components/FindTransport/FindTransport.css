@@ -351,6 +351,72 @@
   .find-hero p { max-width: 620px; font-size: 20px; line-height: 1.5; margin: 0 0 38px; }
 }
 
+/* Final desktop alignment: one consistent spacing rhythm for the page. */
+@media (min-width: 901px) {
+  .find-request,
+  .find-steps,
+  .find-services,
+  .find-dark { padding: 76px 0; }
+
+  .find-request .find-head,
+  .find-steps .find-head,
+  .find-services .find-head,
+  .find-dark .find-head {
+    max-width: 1220px;
+    margin-bottom: 52px;
+  }
+
+  .find-request .find-head h2,
+  .find-steps .find-head h2,
+  .find-services .find-head h2,
+  .find-dark .find-head h2 { font-size: clamp(39px, 2.7vw, 46px); }
+
+  .find-request .find-head p,
+  .find-steps .find-head p,
+  .find-services .find-head p,
+  .find-dark .find-head p { font-size: 17px; }
+
+  .find-request > .find-shell > b { font-size: 14px; }
+  .find-categories { gap: 20px 24px; margin: 28px 0 32px; }
+  .find-categories button { min-height: 132px; padding: 20px; gap: 18px; border-radius: 18px; }
+  .find-categories i { width: 64px; height: 64px; border-radius: 13px; }
+  .find-categories svg { width: 30px; height: 30px; }
+  .find-categories span { gap: 12px; }
+  .find-categories strong { font-size: 20px; }
+  .find-categories small { font-size: 15px; }
+
+  .find-request form { margin-top: 23px; gap: 24px; align-items: end; }
+  .find-request label { font-size: 15px; }
+  .find-request input,
+  .find-request form button { height: 68px; border-radius: 14px; font-size: 16px; }
+  .find-request input { margin-top: 12px; }
+  .find-request form button { margin-top: 0; }
+  .find-note { min-height: 62px; margin: 36px 0 0; padding: 14px 20px; font-size: 14px; }
+  .find-note svg { width: 27px; height: 27px; }
+
+  .find-steps .find-shell > div:last-child,
+  .find-services .find-shell > div:last-child,
+  .find-dark .find-shell > div:last-child { gap: 24px; }
+
+  .find-steps article { min-height: 235px; padding: 26px; }
+  .find-steps strong { font-size: 44px; }
+  .find-steps h3 { margin: 26px 0 28px; }
+
+  .find-services article { min-height: 285px; padding: 26px; }
+  .find-services h3 { margin: 28px 0 36px; }
+
+  .find-dark article { min-height: 270px; padding: 26px; }
+  .find-dark h3 { margin: 28px 0 30px; }
+
+  .find-steps h3,
+  .find-services h3,
+  .find-dark h3 { font-size: 21px; }
+  .find-steps p,
+  .find-services p,
+  .find-dark p { font-size: 16px; line-height: 1.5; }
+  .find-services a { font-size: 15px; }
+}
+
 @media (min-width: 901px) {
   .find-request { padding: 82px 0 34px; }
   .find-request .find-head { margin-bottom: 54px; }
@@ -497,4 +563,34 @@
 @media (min-width: 901px) {
   .find-hero h1 { font-size: clamp(50px, 4.2vw, 67px); line-height: 1.08; letter-spacing: -2.5px; margin: 21px 0 31px; }
   .find-hero p { max-width: 620px; font-size: 20px; line-height: 1.5; margin: 0 0 38px; }
+  .find-request, .find-steps, .find-services, .find-dark { padding: 76px 0; }
+  .find-request .find-head, .find-steps .find-head, .find-services .find-head, .find-dark .find-head { max-width: 1220px; margin-bottom: 52px; }
+  .find-request .find-head h2, .find-steps .find-head h2, .find-services .find-head h2, .find-dark .find-head h2 { font-size: clamp(39px, 2.7vw, 46px); }
+  .find-request .find-head p, .find-steps .find-head p, .find-services .find-head p, .find-dark .find-head p { font-size: 17px; }
+  .find-request > .find-shell > b { font-size: 14px; }
+  .find-categories { gap: 20px 24px; margin: 28px 0 32px; }
+  .find-categories button { min-height: 132px; padding: 20px; gap: 18px; border-radius: 18px; }
+  .find-categories i { width: 64px; height: 64px; border-radius: 13px; }
+  .find-categories svg { width: 30px; height: 30px; }
+  .find-categories span { gap: 12px; }
+  .find-categories strong { font-size: 20px; }
+  .find-categories small { font-size: 15px; }
+  .find-request form { margin-top: 23px; gap: 24px; align-items: end; }
+  .find-request label { font-size: 15px; }
+  .find-request input, .find-request form button { height: 68px; border-radius: 14px; font-size: 16px; }
+  .find-request input { margin-top: 12px; }
+  .find-request form button { margin-top: 0; }
+  .find-note { min-height: 62px; margin: 36px 0 0; padding: 14px 20px; font-size: 14px; }
+  .find-note svg { width: 27px; height: 27px; }
+  .find-steps .find-shell > div:last-child, .find-services .find-shell > div:last-child, .find-dark .find-shell > div:last-child { gap: 24px; }
+  .find-steps article { min-height: 235px; padding: 26px; }
+  .find-steps strong { font-size: 44px; }
+  .find-steps h3 { margin: 26px 0 28px; }
+  .find-services article { min-height: 285px; padding: 26px; }
+  .find-services h3 { margin: 28px 0 36px; }
+  .find-dark article { min-height: 270px; padding: 26px; }
+  .find-dark h3 { margin: 28px 0 30px; }
+  .find-steps h3, .find-services h3, .find-dark h3 { font-size: 21px; }
+  .find-steps p, .find-services p, .find-dark p { font-size: 16px; line-height: 1.5; }
+  .find-services a { font-size: 15px; }
 }
