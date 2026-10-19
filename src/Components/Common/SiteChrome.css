@@ -258,3 +258,25 @@
     width: 100%;
   }
 }
+
+/* Match the visual scale and rhythm established by the homepage. */
+@media (min-width: 901px) {
+  .chrome-header { height: 112px; }
+  .chrome-logo { width: 260px; height: 84px; }
+  .chrome-nav nav { gap: clamp(24px, 3vw, 50px); }
+  .chrome-nav nav a { font-size: 15px; font-weight: 500; }
+  .chrome-register { padding: 17px 26px; border-radius: 13px; font-weight: 700 !important; }
+  .chrome-button { min-width: 220px; height: 64px; padding: 0 25px; border-radius: 12px; font-size: 15px; }
+  .chrome-intro { padding: 44px 0 29px; }
+  .chrome-intro span, .chrome-column h3, .chrome-benefits b { font-size: 10px; }
+  .chrome-intro h2 { font-size: 24px; }
+  .chrome-footer-grid { gap: 48px; padding: 55px 0 45px; }
+  .chrome-brand .chrome-logo { width: 260px; }
+  .chrome-brand p { max-width: 310px; font-size: 13px; line-height: 1.6; }
+  .chrome-brand > a { font-size: 12px; }
+  .chrome-column { gap: 13px; }
+  .chrome-column a { font-size: 12px; }
+  .chrome-benefits { padding: 20px 24px; }
+  .chrome-benefits span { font-size: 11px; }
+  .chrome-copy { min-height: 86px; font-size: 10px; }
+}

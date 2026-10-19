@@ -18,9 +18,9 @@ export default function ServiceDetail({ data }) {
       <section className="detail-hero">
         <div className="detail-hero-copy">
           <div className="detail-shell">
-            <small>
-              HOME / TRANSPORT SERVICES / {data.short.toUpperCase()}
-            </small>
+            <span className="detail-hero-eyebrow">
+              ANYTHING. ANYWHERE. NATIONWIDE.
+            </span>
             <h1>
               {data.title}
               <em>{data.accent}</em>

@@ -28,7 +28,9 @@ export default function FindTransport() {
         style={{ backgroundImage: `url("${hero}")` }}
       >
         <div className="find-shell">
-          <small>HOME / FIND TRANSPORT</small>
+          <span className="find-hero-eyebrow">
+            ANYTHING. ANYWHERE. NATIONWIDE.
+          </span>
           <h1>
             Find Transport.<em>Your way.</em>
           </h1>

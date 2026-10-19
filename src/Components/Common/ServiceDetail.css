@@ -502,3 +502,88 @@
     max-width: none;
   }
 }
+
+/* Unified homepage-style hero treatment. */
+.detail-hero-eyebrow {
+  display: block;
+  color: var(--haulby-cyan);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .25px;
+}
+.detail-hero-eyebrow::before {
+  content: "";
+  display: block;
+  width: 74px;
+  height: 4px;
+  margin-bottom: 16px;
+  background: var(--haulby-cyan);
+}
+@media (min-width: 901px) {
+  .detail-hero h1 { font-size: clamp(50px, 4.2vw, 67px); line-height: 1.08; letter-spacing: -2.5px; margin: 21px 0 31px; }
+  .detail-hero p { max-width: 620px; font-size: 20px; line-height: 1.5; margin: 0 0 38px; }
+}
+@media (max-width: 600px) {
+  .detail-hero-eyebrow { font-size: 9px; }
+  .detail-hero-eyebrow::before { width: 52px; height: 3px; margin-bottom: 12px; }
+  .detail-hero h1 { font-size: 39px; line-height: 1.04; letter-spacing: -1.8px; }
+  .detail-hero p { font-size: 13px; line-height: 1.6; }
+}
+
+/* Homepage-aligned desktop typography and spacing. */
+@media (min-width: 901px) {
+  .detail-hero { height: 620px; }
+  .detail-hero-copy .detail-shell { width: calc(100% - 80px); max-width: 720px; margin: 0 40px; }
+  .detail-hero small { font-size: 10px; }
+  .detail-hero h1 { font-size: 56px; margin: 38px 0 26px; }
+  .detail-hero p { max-width: 620px; font-size: 17px; line-height: 1.6; }
+  .detail-hero b { font-size: 11px; }
+  .detail-heading { max-width: 920px; margin-bottom: 44px; }
+  .detail-heading > span { font-size: 10px; letter-spacing: .35px; }
+  .detail-heading h2 { font-size: 39px; margin: 14px 0 17px; }
+  .detail-heading p { font-size: 15px; line-height: 1.6; }
+  .detail-quote, .detail-options, .detail-steps, .detail-prepare, .detail-faq, .detail-cost { padding: 74px 0; }
+  .detail-dark, .detail-compare, .detail-cta { padding: 74px 0; }
+  .detail-quote form { padding: 28px; gap: 21px; }
+  .detail-quote label { font-size: 12px; }
+  .detail-quote input, .detail-quote select { height: 55px; font-size: 13px; }
+  .detail-quote button { height: 55px; margin-top: 25px; font-size: 12px; }
+  .detail-quote > .detail-shell > small { font-size: 11px; }
+  .detail-option-grid { gap: 28px; }
+  .detail-option-grid article { min-height: 290px; }
+  .detail-option-grid article > div:last-child { padding: 27px; }
+  .detail-icon { width: 42px; height: 42px; }
+  .detail-option-grid h3 { font-size: 18px; }
+  .detail-option-grid p, .detail-option-grid li { font-size: 12px; line-height: 1.55; }
+  .detail-option-grid a, .detail-cost-grid a { font-size: 11px; }
+  .detail-mini-grid article { padding: 25px; }
+  .detail-mini-grid h3 { font-size: 16px; }
+  .detail-mini-grid p { font-size: 12px; line-height: 1.45; }
+  .detail-step-grid article { min-height: 220px; padding: 28px; }
+  .detail-step-grid strong { font-size: 38px; }
+  .detail-step-grid h3 { font-size: 16px; }
+  .detail-step-grid p { font-size: 12px; line-height: 1.55; }
+  .detail-prepare li { font-size: 13px; }
+  .detail-work > .detail-shell { min-height: 410px; }
+  .detail-work > .detail-shell > div:first-child { padding: 72px 70px 72px 0; }
+  .detail-faq-grid article { min-height: 125px; padding: 23px; }
+  .detail-faq-grid h3 { font-size: 13px; }
+  .detail-faq-grid p { font-size: 11px; line-height: 1.55; }
+  .detail-cost-grid article { min-height: 235px; padding: 27px; }
+  .detail-cost-grid h3 { font-size: 16px; }
+  .detail-cost-grid p { font-size: 12px; line-height: 1.6; }
+}
+
+@media (max-width: 600px) {
+  .detail-heading h2 { font-size: 29px; line-height: 1.15; }
+  .detail-heading p { font-size: 13px; }
+  .detail-option-grid h3, .detail-mini-grid h3, .detail-step-grid h3, .detail-cost-grid h3 { font-size: 15px; }
+  .detail-option-grid p, .detail-option-grid li, .detail-mini-grid p, .detail-step-grid p, .detail-cost-grid p { font-size: 11px; }
+  .detail-faq-grid h3 { font-size: 12px; }
+  .detail-faq-grid p { font-size: 10.5px; }
+}
+
+@media (min-width: 901px) {
+  .detail-hero h1 { font-size: clamp(50px, 4.2vw, 67px); line-height: 1.08; letter-spacing: -2.5px; margin: 21px 0 31px; }
+  .detail-hero p { max-width: 620px; font-size: 20px; line-height: 1.5; margin: 0 0 38px; }
+}

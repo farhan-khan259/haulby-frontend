@@ -182,6 +182,7 @@ function Homepage() {
             <span></span>
           </button>
           <nav className={menuOpen ? "open" : ""}>
+          <Link to="/">Home</Link>
             <Link to="/find-transport">Find Transport</Link>
             <Link to="/services">Services</Link>
             <a href="#steps">How It Works</a>

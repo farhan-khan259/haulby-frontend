@@ -311,3 +311,76 @@
     flex-direction: column;
   }
 }
+
+/* Unified homepage-style hero treatment. */
+.find-hero-eyebrow {
+  display: block;
+  color: #08d5cf;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .25px;
+}
+.find-hero-eyebrow::before {
+  content: "";
+  display: block;
+  width: 74px;
+  height: 4px;
+  margin-bottom: 16px;
+  background: #08d5cf;
+}
+@media (min-width: 901px) {
+  .find-hero h1 { font-size: clamp(50px, 4.2vw, 67px); line-height: 1.08; letter-spacing: -2.5px; margin: 21px 0 31px; }
+  .find-hero p { max-width: 620px; font-size: 20px; line-height: 1.5; margin: 0 0 38px; }
+}
+@media (max-width: 600px) {
+  .find-hero-eyebrow { font-size: 9px; }
+  .find-hero-eyebrow::before { width: 52px; height: 3px; margin-bottom: 12px; }
+  .find-hero h1 { font-size: 39px; line-height: 1.04; letter-spacing: -1.8px; }
+  .find-hero p { font-size: 13px; line-height: 1.6; }
+}
+
+/* Keep secondary-page hierarchy consistent with the homepage. */
+@media (min-width: 901px) {
+  .find-hero { min-height: 690px; }
+  .find-hero small { font-size: 10px; }
+  .find-hero h1 { font-size: 58px; }
+  .find-hero p { max-width: 620px; font-size: 17px; line-height: 1.6; }
+  .find-hero b { font-size: 11px; }
+  .find-head { max-width: 920px; margin-bottom: 44px; }
+  .find-head > span, .find-request > .find-shell > b { font-size: 10px; }
+  .find-head h2 { font-size: 39px; margin: 14px 0 17px; }
+  .find-head p { font-size: 15px; line-height: 1.6; }
+  .find-request, .find-steps, .find-services, .find-prepare, .find-faq { padding: 74px 0; }
+  .find-dark, .find-cta { padding: 74px 0; }
+  .find-categories { gap: 20px; margin: 24px 0 44px; }
+  .find-categories button { min-height: 92px; padding: 21px; }
+  .find-categories i { width: 44px; height: 44px; }
+  .find-categories strong { font-size: 14px; }
+  .find-categories small { font-size: 11px; }
+  .find-request form { gap: 21px; }
+  .find-request label { font-size: 12px; }
+  .find-request input, .find-request form button { height: 55px; font-size: 13px; }
+  .find-note { padding: 18px; font-size: 11px; }
+  .find-steps article, .find-services article, .find-dark article { min-height: 220px; padding: 27px; }
+  .find-steps strong { font-size: 38px; }
+  .find-steps h3, .find-services h3, .find-dark h3 { font-size: 16px; }
+  .find-steps p, .find-services p, .find-dark p { font-size: 12px; line-height: 1.6; }
+  .find-services a { font-size: 11px; }
+  .find-prepare span { padding: 20px; font-size: 14px; }
+  .find-prepare small { font-size: 11px; }
+  .find-faq article { min-height: 125px; padding: 23px; }
+  .find-faq h3 { font-size: 13px; }
+  .find-faq p { font-size: 11px; line-height: 1.55; }
+}
+
+@media (max-width: 600px) {
+  .find-head h2 { font-size: 29px; }
+  .find-head p { font-size: 13px; }
+  .find-categories strong, .find-steps h3, .find-services h3, .find-dark h3 { font-size: 14px; }
+  .find-categories small, .find-steps p, .find-services p, .find-dark p { font-size: 11px; }
+}
+
+@media (min-width: 901px) {
+  .find-hero h1 { font-size: clamp(50px, 4.2vw, 67px); line-height: 1.08; letter-spacing: -2.5px; margin: 21px 0 31px; }
+  .find-hero p { max-width: 620px; font-size: 20px; line-height: 1.5; margin: 0 0 38px; }
+}

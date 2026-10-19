@@ -28,6 +28,7 @@ export function Header() {
           <i />
         </button>
         <nav className={open ? "is-open" : ""}>
+        <Link to="/">Home</Link>
           <Link to="/find-transport">Find Transport</Link>
           <Link to="/services">Services</Link>
           <Link to="/#steps">How It Works</Link>
