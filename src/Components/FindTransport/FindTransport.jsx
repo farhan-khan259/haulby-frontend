@@ -177,16 +177,29 @@ export default function FindTransport() {
           />
           <div>
             {[
-              "Collection and delivery",
-              "Items or vehicle details",
-              "Handling requirements",
-              "Photographs if helpful",
-            ].map((x) => (
-              <span key={x}>
-                ✓ <b>{x}</b>
-                <small>
-                  Clear, accurate details help operators assess the request.
-                </small>
+              [
+                "Collection and delivery",
+                "Postcodes, available dates and access information",
+              ],
+              [
+                "Items or vehicle details",
+                "What needs moving, including quantity, size and condition",
+              ],
+              [
+                "Handling requirements",
+                "Loading assistance, stairs, tail lifts or specialist equipment",
+              ],
+              [
+                "Photographs if helpful",
+                "Images of unusual loads or difficult access situations",
+              ],
+            ].map(([title, text]) => (
+              <span key={title}>
+                <i aria-hidden="true">✓</i>
+                <span>
+                  <b>{title}</b>
+                  <small>{text}</small>
+                </span>
               </span>
             ))}
           </div>
@@ -197,17 +210,26 @@ export default function FindTransport() {
           <Head k="COMMON QUESTIONS" t="Questions before you request quotes" />
           <div>
             {[
-              "Does HAULBY transport the goods itself?",
-              "Can I compare more than one transport quote?",
-              "Can I request UK-wide collections?",
-              "What happens after I submit my transport request?",
-            ].map((q) => (
-              <article key={q}>
-                <h3>{q}</h3>
-                <p>
-                  No. HAULBY is a marketplace. Independent operators provide the
-                  agreed transport service.
-                </p>
+              [
+                "Does HAULBY transport the goods itself?",
+                "No. HAULBY is a marketplace. The independent transport operator you choose carries out the agreed job.",
+              ],
+              [
+                "Can I compare more than one transport quote?",
+                "We work to source suitable quotes for your request, widening the search when needed. You choose which offer to accept.",
+              ],
+              [
+                "Can I request UK-wide collections?",
+                "Post your journey anywhere in the UK. HAULBY works to match it with suitable operators, including harder-to-cover routes.",
+              ],
+              [
+                "What happens after I submit my transport request?",
+                "The request can be reviewed by relevant operators. You can then consider any offers and decide whether to book.",
+              ],
+            ].map(([question, answer]) => (
+              <article key={question}>
+                <h3>{question}</h3>
+                <p>{answer}</p>
               </article>
             ))}
           </div>
