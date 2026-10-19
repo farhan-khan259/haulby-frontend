@@ -96,16 +96,29 @@
 .services-cards article {
   background: #fff;
   border: 1px solid #d8e5ec;
-  border-radius: 10px;
+  border-radius: 14px;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 .services-photo {
-  height: 220px;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  flex: 0 0 auto;
   background-size: cover;
   background-position: center;
+  border-bottom: 3px solid #08d5cf;
 }
 .services-cards article > div:last-child {
   padding: 20px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+.services-card-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 .services-cards i {
   display: grid;
@@ -121,6 +134,11 @@
 }
 .services-cards h3 {
   font-size: 16px;
+  margin: 0;
+}
+.services-cards p {
+  min-height: 48px;
+  margin: 18px 0;
 }
 .services-cards p,
 .services-cards li {
@@ -129,7 +147,22 @@
   line-height: 1.5;
 }
 .services-cards ul {
-  padding-left: 16px;
+  margin: 0 0 22px;
+  padding: 16px 0 0;
+  border-top: 1px solid #d8e5ec;
+  list-style: none;
+}
+.services-cards li {
+  position: relative;
+  padding: 4px 0 4px 25px;
+  color: #102d45;
+}
+.services-cards li::before {
+  content: "✓";
+  position: absolute;
+  left: 2px;
+  color: #009f9d;
+  font-weight: 800;
 }
 .services-cards a,
 .services-choices a {
@@ -140,6 +173,9 @@
   text-decoration: none;
   border-radius: 6px;
   font-size: 10px;
+}
+.services-cards article > div:last-child > a {
+  margin-top: auto;
 }
 .services-popular,
 .services-dark,
@@ -302,9 +338,7 @@
     min-height: 230px;
     order: -1;
   }
-  .services-photo {
-    height: 200px;
-  }
+  .services-photo { height: auto; }
   .services-head h2 {
     font-size: 26px;
   }
@@ -348,10 +382,10 @@
   .services-picker h2 { font-size: 34px; }
   .services-picker a { min-height: 62px; padding: 20px; font-size: 12px; align-items: center; }
   .services-head { max-width: 920px; margin-bottom: 44px; }
-  .services-head h2 { font-size: 39px; margin: 14px 0 17px; }
+  .services-head h2 { font-size: clamp(31px, 2.4vw, 39px); margin: 14px 0 17px; }
   .services-head p { font-size: 15px; line-height: 1.6; }
   .services-cards { gap: 28px; }
-  .services-photo { height: 250px; }
+  .services-photo { height: auto; }
   .services-cards article > div:last-child { padding: 25px; }
   .services-cards i { width: 42px; height: 42px; }
   .services-cards h3 { font-size: 18px; }

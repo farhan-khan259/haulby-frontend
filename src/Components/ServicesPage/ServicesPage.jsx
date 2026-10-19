@@ -8,6 +8,16 @@ import parcelsImage from "../../Assets/Pictures/HAULBY Visual Asset 03 _ 1376×7
 import furnitureImage from "../../Assets/Pictures/HAULBY Visual Asset 04 _ 1376×768 _ KEEP SOURCE.png";
 import machineryImage from "../../Assets/Pictures/HAULBY Visual Asset 05 _ 1376×768 _ KEEP SOURCE.png";
 import freightImage from "../../Assets/Pictures/HAULBY Visual Asset 13 _ 1376×768 _ KEEP SOURCE.png";
+import carImage from "../../Assets/Pictures/HAULBY Visual Asset 06 _ 1376×768 _ KEEP SOURCE.png";
+import motorcycleImage from "../../Assets/Pictures/HAULBY Visual Asset 07 _ 1376×768 _ KEEP SOURCE.png";
+import vanImage from "../../Assets/Pictures/HAULBY Visual Asset 08 _ 1376×768 _ KEEP SOURCE.png";
+import recoveryImage from "../../Assets/Pictures/HAULBY Visual Asset 09 _ 1376×768 _ KEEP SOURCE.png";
+import sameDayImage from "../../Assets/Pictures/HAULBY Visual Asset 10 _ 1376×768 _ KEEP SOURCE.png";
+import palletImage from "../../Assets/Pictures/HAULBY Visual Asset 11 _ 1376×768 _ KEEP SOURCE.png";
+import partLoadImage from "../../Assets/Pictures/HAULBY Visual Asset 12 _ 1376×768 _ KEEP SOURCE.png";
+import houseMoveImage from "../../Assets/Pictures/HAULBY Visual Asset 14 _ 1376×768 _ KEEP SOURCE.png";
+import officeImage from "../../Assets/Pictures/HAULBY Visual Asset 15 _ 1376×768 _ KEEP SOURCE.png";
+import boatImage from "../../Assets/Pictures/HAULBY Visual Asset 16 _ 1376×768 _ KEEP SOURCE.png";
 import driverImage from "../../Assets/Pictures/HAULBY Visual Asset 01 _ 1376×768 _ KEEP SOURCE.png";
 import "./ServicesPage.css";
 const services = [
@@ -16,38 +26,133 @@ const services = [
     "Cars, motorcycles, vans and pre-booked vehicle collections.",
     "/services/vehicle-transport",
     vehicleImage,
+    ["Car & van transport", "Motorcycle transport", "Vehicle recovery", "Auction collections"],
+    "truck",
   ],
   [
     "Courier Deliveries",
     "Same-day, scheduled and dedicated UK van deliveries.",
     "/services/courier-deliveries",
     courierImage,
+    ["Same-day couriers", "Scheduled van deliveries", "Business multi-drop", "Dedicated van jobs"],
+    "box",
   ],
   [
     "Parcels & Pallets",
     "Boxed goods, single pallets and trade consignments.",
     "/services/parcels-pallets",
     parcelsImage,
+    ["Boxes & parcels", "Single pallets", "Multi-pallet loads", "Business consignments"],
+    "truck",
   ],
   [
     "Furniture & Home Moves",
     "Bulky-item collections and house removals, each with its own service.",
     "/services/furniture-delivery",
     furnitureImage,
+    ["Furniture collections", "Single-item transport", "Home Moves →", "Office removals"],
+    "home",
   ],
   [
     "Plant & Machinery",
     "Compact machinery, tools and specialist plant collections.",
     "/services/plant-machinery",
     machineryImage,
+    ["Mini excavators", "Equipment collections", "Garden machinery", "Suitable plant trailers"],
+    "route",
   ],
   [
     "Road Freight",
     "Light commercial freight, part loads and larger road deliveries.",
     "/services/road-freight",
     freightImage,
+    ["Light freight", "Part loads", "Palletised freight", "Rigid & artic loads"],
+    "route",
   ],
 ];
+const additionalServices = [
+  [
+    "Car Transport",
+    "Independent transport options for private purchases, auctions and planned vehicle moves.",
+    "/services/car-transport",
+    carImage,
+    ["Private car transport", "Auction collections", "Non-running cars", "Dealer and trade cars"],
+    "truck",
+  ],
+  [
+    "Motorcycle Transport",
+    "Specialist motorcycle and scooter collection services with suitable loading arrangements.",
+    "/services/motorcycle-transport",
+    motorcycleImage,
+    ["Motorcycle collections", "Scooter delivery", "Non-running motorbikes", "Dealer motorcycles"],
+    "route",
+  ],
+  [
+    "Van Transport",
+    "Commercial van and minibus transport for purchases, collections and fleet movements.",
+    "/services/van-transport",
+    vanImage,
+    ["Small van collections", "High-roof vans", "Non-running vans", "Fleet movements"],
+    "truck",
+  ],
+  [
+    "Vehicle Recovery",
+    "Planned vehicle recovery and collection moves with appropriate transport equipment.",
+    "/services/vehicle-recovery",
+    recoveryImage,
+    ["Pre-booked recovery", "Garage transfers", "Non-running vehicles", "Damaged vehicles"],
+    "truck",
+  ],
+  [
+    "Same-Day Courier",
+    "Urgent courier collections and dedicated van transport where suitable operators have capacity.",
+    "/services/same-day-courier",
+    sameDayImage,
+    ["Urgent documents", "Same-day collections", "Dedicated courier", "Emergency deliveries"],
+    "box",
+  ],
+  [
+    "Pallet Delivery",
+    "Single and multi-pallet transport for warehouse, trade and business consignments.",
+    "/services/pallet-delivery",
+    palletImage,
+    ["Single pallets", "Multi-pallet delivery", "Warehouse pallets", "Tail-lift requests"],
+    "box",
+  ],
+  [
+    "Part Loads & Backloads",
+    "Flexible freight options for consignments sharing available vehicle capacity.",
+    "/services/part-loads-backloads",
+    partLoadImage,
+    ["Part-load freight", "Return-load opportunities", "Mixed goods", "Regular part loads"],
+    "route",
+  ],
+  [
+    "House Moves",
+    "Flexible removal services for homes, flats, students and smaller moves.",
+    "/services/house-moves",
+    houseMoveImage,
+    ["House removals", "Flat moves", "Packing help", "Student moves"],
+    "home",
+  ],
+  [
+    "Office Removals",
+    "Planned business relocations for furniture, equipment and workplace contents.",
+    "/services/office-removals",
+    officeImage,
+    ["Small offices", "IT equipment", "Business furniture", "Multi-site moves"],
+    "home",
+  ],
+  [
+    "Boat & Trailer Transport",
+    "Transport enquiries for small boats and trailers with suitable towing and loading equipment.",
+    "/services/boat-trailer-transport",
+    boatImage,
+    ["Small boats", "Trailer repositioning", "Marina collections", "Specialist towing"],
+    "route",
+  ],
+];
+const allServices = [...services, ...additionalServices];
 const Head = ({ k, t, p, light = false }) => (
   <div className={`services-head ${light ? "light" : ""}`}>
     <span>{k}</span>
@@ -102,27 +207,23 @@ export default function ServicesPage() {
           <Head
             k="OUR TRANSPORT SERVICES"
             t="Find the right way to move it."
-            p="Six main service categories. Explore the options, then get quotes from independent transport operators."
+            p="Explore all available transport services, then get quotes from independent transport operators."
           />
           <div className="services-cards">
-            {services.map(([t, p, href, img], i) => (
+            {allServices.map(([t, p, href, img, bullets, icon]) => (
               <article key={t}>
                 <div
                   className="services-photo"
                   style={{ backgroundImage: `url("${img}")` }}
                 />
                 <div>
-                  <i>
-                    <LineIcon
-                      type={i === 3 ? "home" : i === 2 ? "box" : "truck"}
-                    />
-                  </i>
-                  <h3>{t}</h3>
+                  <div className="services-card-title">
+                    <i><LineIcon type={icon} /></i>
+                    <h3>{t}</h3>
+                  </div>
                   <p>{p}</p>
                   <ul>
-                    <li>UK-wide requests</li>
-                    <li>Independent operator quotes</li>
-                    <li>Clear booking details</li>
+                    {bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}
                   </ul>
                   <Link to={href}>Explore {t} →</Link>
                 </div>

@@ -31,9 +31,9 @@ export function Header() {
         <Link to="/">Home</Link>
           <Link to="/find-transport">Find Transport</Link>
           <Link to="/services">Services</Link>
-          <Link to="/#steps">How It Works</Link>
-          <Link to="/#business">For Businesses</Link>
-          <Link to="/#work">For Transporters</Link>
+          <Link to="/how-it-works">How It Works</Link>
+          <Link to="/for-businesses">For Businesses</Link>
+          <Link to="/how-it-works/transporters">For Transporters</Link>
           <Link to="/#login">Log In</Link>
           <Link className="chrome-register" to="/#register">
             Register
@@ -59,7 +59,7 @@ const columns = [
   [
     "FOR TRANSPORTERS",
     [
-      ["Find Work", "/#work"],
+      ["Find Work", "/how-it-works/transporters"],
       ["Membership Plans", "/#work"],
       ["Operator Requirements", "/#work"],
       ["Backload Opportunities", "/#work"],
@@ -69,8 +69,8 @@ const columns = [
   [
     "COMPANY",
     [
-      ["How It Works", "/#steps"],
-      ["For Businesses", "/#business"],
+      ["How It Works", "/how-it-works"],
+      ["For Businesses", "/for-businesses"],
       ["About HAULBY", "/"],
       ["Trust & Safety", "/"],
       ["Help Centre", "/"],
