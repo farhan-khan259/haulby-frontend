@@ -14,31 +14,37 @@ const services = [
     "truck",
     "Vehicle Transport",
     "Cars, motorcycles, vans and vehicle collections.",
+    "/services/vehicle-transport",
   ],
   [
     "box",
     "Parcels & Couriers",
     "Same-day and scheduled delivery for personal and trade consignments.",
+    "/services/courier-deliveries",
   ],
   [
     "home",
     "Furniture & Home Moves",
     "Single items, bulky goods and complete moves.",
+    "/services/furniture-delivery",
   ],
   [
     "pallet",
     "Pallets & Road Freight",
     "Pallets, part loads, full loads and commercial freight services.",
+    "/services/road-freight",
   ],
   [
     "plant",
     "Plant & Machinery",
     "Equipment and machinery transport with the right vehicle.",
+    "/services/plant-machinery",
   ],
   [
     "route",
     "More Transport Services",
     "Explore all the categories available across HAULBY.",
+    "/services",
   ],
 ];
 
@@ -145,10 +151,10 @@ function Logo() {
 
 function Button({ children, secondary = false, href = "#quote" }) {
   return (
-    <a className={`button ${secondary ? "button-outline" : ""}`} href={href}>
+    <Link className={`button ${secondary ? "button-outline" : ""}`} to={href}>
       {children}
       <span>→</span>
-    </a>
+    </Link>
   );
 }
 
@@ -185,13 +191,13 @@ function Homepage() {
           <Link to="/">Home</Link>
             <Link to="/find-transport">Find Transport</Link>
             <Link to="/services">Services</Link>
-            <a href="#steps">How It Works</a>
-            <a href="#business">For Businesses</a>
-            <a href="#work">For Transporters</a>
-            <a href="#login">Log In</a>
-            <a href="#register" className="nav-register">
+            <Link to="/how-it-works">How It Works</Link>
+            <Link to="/for-businesses">For Businesses</Link>
+            <Link to="/how-it-works/transporters">For Transporters</Link>
+            <Link to="/how-it-works/transporters">Log In</Link>
+            <Link to="/how-it-works/transporters" className="nav-register">
               Register
-            </a>
+            </Link>
           </nav>
         </div>
       </header>
@@ -241,34 +247,7 @@ function Homepage() {
         </div>
       </section>
 
-      <section className="trust-strip">
-        <div className="container trust-grid">
-          <div>
-            <Icon name="users" />
-            <span>
-              <strong>Nationwide coverage</strong>Across the UK
-            </span>
-          </div>
-          <div>
-            <Icon name="shield" />
-            <span>
-              <strong>Operator checks</strong>Clear verification standards
-            </span>
-          </div>
-          <div>
-            <Icon name="star" />
-            <span>
-              <strong>Compare quotes</strong>Choose the right offer
-            </span>
-          </div>
-          <div>
-            <Icon name="layers" />
-            <span>
-              <strong>All transport types</strong>One connected platform
-            </span>
-          </div>
-        </div>
-      </section>
+    
 
       <section className="section quote-section" id="quote">
         <div className="container">
@@ -320,19 +299,19 @@ function Homepage() {
             light
             eyebrow="ONE MARKETPLACE • EVERY MAJOR TRANSPORT CATEGORY"
             title="What do you need transporting?"
-            text="From one parcel to specialist vehicle movements, tell us what is going and get matched to operators."
+            text="From one parcel to specialist vehicle movements, start with the right service and get matched to suitable operators."
           />
           <div className="service-grid">
-            {services.map(([icon, title, text]) => (
+            {services.map(([icon, title, text, href]) => (
               <article className="service-card" key={title}>
                 <span className="icon-box">
                   <Icon name={icon} />
                 </span>
                 <h3>{title}</h3>
                 <p>{text}</p>
-                <a href="#quote">
+                <Link to={href}>
                   Explore service <span>→</span>
-                </a>
+                </Link>
               </article>
             ))}
           </div>
@@ -393,7 +372,7 @@ function Homepage() {
               <li>Quotes and booking management</li>
               <li>Vehicle and fleet profiles</li>
             </ul>
-            <Button href="#register">Find Transport Work</Button>
+            <Button href="/how-it-works/transporters">Find Transport Work</Button>
           </div>
           <div className="work-panel">
             <span>AVAILABLE TRANSPORT JOBS</span>
@@ -563,7 +542,7 @@ function Homepage() {
       <section className="section arrange-section">
         <div className="container">
           <SectionTitle
-            eyebrow="A MARKETPLACE FOR EVERYDAY LOADS"
+            eyebrow="A MARKETPLACE FOR DIFFERENT LOADS"
             title="What can you arrange through HAULBY?"
             text="Different jobs need different equipment. Select the service that best describes your goods so operators can assess the journey."
           />
@@ -571,26 +550,29 @@ function Homepage() {
             {[
               [
                 "Vehicle collections and transport",
-                "Arrange UK car, motorcycle and van collection, including private purchases.",
+                "Arrange UK car, motorcycle and van collections, including auction purchases. Give the vehicle’s condition and loading requirements so operators can assess suitable equipment.",
                 "Explore Vehicle Transport",
+                "/services/vehicle-transport",
               ],
               [
                 "Parcels, furniture and deliveries",
-                "Request parcel deliveries, bulky-item collections or furniture transport.",
+                "Request parcel deliveries, bulky-item collections or furniture transport. Dimensions, handling needs and access information help operators plan a more accurate quote.",
                 "Explore Courier Services",
+                "/services/courier-deliveries",
               ],
               [
                 "Freight, pallets and equipment",
-                "Describe pallets, part loads, machinery or commercial freight.",
+                "Describe pallets, part loads, machinery or commercial freight. Include dimensions, approximate weight, loading facilities and any specialist equipment needed.",
                 "View Freight Services",
+                "/services/road-freight",
               ],
-            ].map(([t, p, l]) => (
+            ].map(([t, p, l, href]) => (
               <article key={t}>
                 <h3>{t}</h3>
                 <p>{p}</p>
-                <a href="#services">
+                <Link to={href}>
                   {l} <span>→</span>
-                </a>
+                </Link>
               </article>
             ))}
           </div>
@@ -609,22 +591,28 @@ function Homepage() {
             {[
               [
                 "Check the transport arrangements",
-                "Confirm collection and delivery addresses, timing, loading access, vehicle suitability and assistance.",
+                "Confirm collection/delivery addresses, dates, access restrictions and load needs. The operator must arrange sufficient labour and equipment for the agreed service.",
+                "How HAULBY Works",
+                "/how-it-works",
               ],
               [
                 "Review terms and protection",
-                "Look at the operator’s terms, cancellation rules, exclusions and the protection relevant to your goods.",
+                "Look at the operator’s relevant insurance information, exclusions, service terms and any claims process. Do not assume every booking provides identical cover.",
+                "Trust & Safety",
+                "/how-it-works",
               ],
               [
                 "Prepare for collection",
-                "Present the vehicle or goods in the agreed condition and share access or loading details.",
+                "Record valuable goods' condition and any packing needs. The transporter must arrange loading and unloading as agreed; keep handling details in the booking record.",
+                "Get Transport Quotes",
+                "/find-transport",
               ],
-            ].map(([t, p]) => (
+            ].map(([t, p, label, href]) => (
               <article key={t}>
                 <span></span>
                 <h3>{t}</h3>
                 <p>{p}</p>
-                <a href="#quote">Read HAULBY Guide →</a>
+                <Link to={href}>{label} →</Link>
               </article>
             ))}
           </div>
@@ -649,11 +637,11 @@ function Homepage() {
               ],
               [
                 "Can businesses arrange deliveries?",
-                "Yes. Businesses can manage transport requests and booking records, including repeat or multi-location movement.",
+                "Yes. Businesses can manage transport requests and booking records, including repeat or multi-location requirements.",
               ],
               [
                 "Will every request receive quotes?",
-                "No job or route can guarantee a quote. HAULBY works to expose each request to suitable operators.",
+                "We aim to source transport for every suitable request across the UK. We'll work to connect your job with an operator who can carry it.",
               ],
             ].map(([t, p]) => (
               <article key={t}>

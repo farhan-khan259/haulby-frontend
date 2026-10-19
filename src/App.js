@@ -1,5 +1,6 @@
 import './App.css';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { useEffect } from 'react';
+import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
 import Homepage from './Components/Homepage/Homepage';
 import FindTransport from './Components/FindTransport/FindTransport';
 import ServicesPage from './Components/ServicesPage/ServicesPage';
@@ -26,9 +27,31 @@ import ForBusinesses from './Components/ForBusinesses/ForBusinesses';
 import CarDealers from './Components/CarDealers/CarDealers';
 import RetailersOnlineSellers from './Components/RetailersOnlineSellers/RetailersOnlineSellers';
 
+function RouteScrollHandler() {
+  const { pathname, hash } = useLocation();
+
+  useEffect(() => {
+    const frame = window.requestAnimationFrame(() => {
+      if (hash) {
+        const target = document.getElementById(hash.slice(1));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          return;
+        }
+      }
+      window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+    });
+
+    return () => window.cancelAnimationFrame(frame);
+  }, [pathname, hash]);
+
+  return null;
+}
+
 function App() {
   return (
     <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+      <RouteScrollHandler />
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/find-transport" element={<FindTransport />} />
@@ -62,3 +85,4 @@ function App() {
 }
 
 export default App;
+

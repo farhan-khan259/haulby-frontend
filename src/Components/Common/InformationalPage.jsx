@@ -15,7 +15,7 @@ export default function InformationalPage({ data }) {
       <Header />
       <section className="informational-hero">
         <div className="informational-hero-copy"><div className="informational-shell">
-          <span className="informational-eyebrow">HAULBY / HOW IT WORKS</span>
+          <span className="informational-eyebrow">ANYTHING. ANYWHERE. NATIONWIDE.</span>
           <h1>{data.title}</h1><p>{data.description}</p>
           <ArrowButton href="#overview">Explore {data.title}</ArrowButton>
         </div></div>
