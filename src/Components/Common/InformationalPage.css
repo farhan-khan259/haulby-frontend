@@ -39,6 +39,7 @@
 .informational-cta { padding: 45px 0 50px; background: #0a3150; border-bottom: 2px solid #08d5cf; }
 .informational-cta .informational-heading { margin-bottom: 26px; }
 .informational-cta .informational-heading h2 { font-size: 31px; }
+.informational-cta-actions { display: flex; flex-wrap: wrap; gap: 14px; }
 
 @media (max-width: 1100px) {
   .informational-shell { width: calc(100% - 48px); }
@@ -84,4 +85,5 @@
   .informational-faq article { min-height: 0; padding: 17px; }
   .informational-cta { padding: 40px 0 44px; }
   .informational-cta .informational-heading h2 { font-size: 28px; }
+  .informational-cta-actions { flex-direction: column; }
 }

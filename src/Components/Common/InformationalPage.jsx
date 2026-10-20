@@ -56,7 +56,7 @@ export default function InformationalPage({ data }) {
         <Heading kicker={faqSection.kicker || "FREQUENTLY ASKED QUESTIONS"} title={faqSection.title || "Frequently asked questions"} text={faqSection.text || "Practical answers for customers and transporters."} />
         <div className="informational-faq">{data.faqs.map(([q,a]) => <article key={q}><h3>{q}</h3><p>{a}</p></article>)}</div>
       </div></section>
-      <section className="informational-cta"><div className="informational-shell"><Heading light kicker={cta.kicker || "HAULBY"} title={cta.title || "Ready for the next step?"} text={cta.text || data.description}/><ArrowButton href={cta.href || "/find-transport"}>{cta.buttonLabel || "Continue"}</ArrowButton></div></section>
+      <section className="informational-cta"><div className="informational-shell"><Heading light kicker={cta.kicker || "HAULBY"} title={cta.title || "Ready for the next step?"} text={cta.text || data.description}/><div className="informational-cta-actions"><ArrowButton href={cta.href || "/find-transport"}>{cta.buttonLabel || "Continue"}</ArrowButton>{cta.secondaryLink && <ArrowButton outline href={cta.secondaryLink.href}>{cta.secondaryLink.label}</ArrowButton>}</div></div></section>
       <Footer />
     </main>
   );

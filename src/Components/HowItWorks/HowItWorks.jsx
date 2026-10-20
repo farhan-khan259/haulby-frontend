@@ -78,6 +78,10 @@ export default function HowItWorks() {
         cta: {
           title: "Ready to arrange transport?",
           text: "Understand the HAULBY marketplace, from request to transport booking.",
+          secondaryLink: {
+            label: "How It Works for Customers",
+            href: "/how-it-works/customers",
+          },
         },
       }}
     />
