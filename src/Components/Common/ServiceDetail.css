@@ -569,14 +569,15 @@
     margin-right: 0;
     margin-left: max(5vw, calc((100vw - 1680px) / 2));
   }
-  .vehicle-detail .detail-hero-eyebrow.is-breadcrumb {
-    color: #c1d0dc;
-    font-size: 13px;
+  .vehicle-detail .detail-hero-eyebrow {
+    color: #00d7cf;
+    font-size: 11px;
+    letter-spacing: 1px;
   }
   .vehicle-detail .detail-hero-eyebrow::before {
-    width: 80px;
+    width: 74px;
     height: 4px;
-    margin-bottom: 28px;
+    margin-bottom: 18px;
   }
   .vehicle-detail .detail-hero h1 {
     margin: 48px 0 58px;
@@ -675,12 +676,6 @@
     min-width: 438px;
     height: 76px;
     font-size: 17px;
-  }
-}
-
-@media (max-width: 900px) {
-  .vehicle-detail .detail-hero-eyebrow.is-breadcrumb {
-    color: #c1d0dc;
   }
 }
 

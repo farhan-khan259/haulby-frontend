@@ -8,7 +8,6 @@ import "./VehicleTransport.css";
 const data = {
   variant: "vehicle",
   short: "Vehicle Transport",
-  breadcrumb: "HOME  /  TRANSPORT SERVICES  /  VEHICLE TRANSPORT",
   title: "Vehicle Transport.",
   accent: "Sorted.",
   heroText:
