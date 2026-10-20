@@ -12,7 +12,11 @@ const opt = (title, text, bullets, icon = "box") => ({
   icon,
 });
 const data = {
+  variant: "parcels",
+  styleVariant: "vehicle",
   short: "Parcel & Pallet",
+  quoteCta: "Get Parcel & Pallet Quotes",
+  workCta: "Find Delivery Work",
   title: "Parcels & Pallets.",
   accent: "Delivered.",
   heroText:
@@ -61,18 +65,21 @@ const data = {
   darkText:
     "Provide the full dimensions, gross weight and collection requirements to get accurate transport quotes.",
   darkCards: [
-    ["Parcel collections", "Arrange transport for carefully packaged boxes."],
+    ["Parcel collections", "Arrange transport for carefully packaged boxes.", "truck"],
     [
       "Single pallet jobs",
       "Move one pallet between compatible loading locations.",
+      "route",
     ],
     [
       "Commercial stock moves",
       "Send boxed or palletised stock between businesses.",
+      "route",
     ],
     [
       "Mixed-item consignments",
       "List every package and pallet included in the load.",
+      "shield",
     ],
   ],
   steps: [
@@ -102,44 +109,44 @@ const data = {
   ],
   workTitle: "Find delivery and pallet jobs.",
   workText:
-    "With a suitable courier van, rigid curtain-side vehicle or pallet-capable truck, find consignments through HAULBY.",
+    "With a suitable courier van, light curtain-side vehicle or pallet-capable truck, find consignments and quote for suitable requests.",
   workImage: multiPallet,
   faqs: [
     [
       "Can I arrange just one pallet?",
-      "Yes. Supply its gross weight, size, collection details and loading arrangements.",
+      "Yes. Supply its full gross weight, size, collection details and loading arrangements.",
     ],
     [
       "Can I combine boxes and pallets?",
-      "Describe every item so operators can confirm capacity and suitable securing arrangements.",
+      "Describe all items in your request so operators can confirm total capacity and suitable securing arrangements.",
     ],
     [
       "Does HAULBY provide pallet vehicles?",
-      "Independent operators provide the delivery service selected through HAULBY.",
+      "No. Independent transport operators provide the delivery services selected through HAULBY.",
     ],
     [
       "Do pallet collections need a forklift?",
-      "Not always. Explain whether loading equipment or a tail-lift is available.",
+      "Describe loading docks and available site facilities so the operator can bring or coordinate the necessary equipment.",
     ],
   ],
   costKicker: "PARCEL & PALLET DELIVERY PRICES",
   costTitle: "What affects parcel and pallet delivery costs?",
   costText:
-    "A quote depends on the actual consignment, route and loading arrangements rather than the number of pieces alone.",
+    "A quote depends on the actual consignment, route and loading arrangements rather than the number of pallets alone.",
   costs: [
     [
       "Size, quantity and loaded weight",
-      "Give dimensions and gross weight for every pallet or package.",
+      "Give the dimensions and gross weight for every pallet, including the pallet itself, and count all boxes. Capacity and safe loading depend on the full load.",
       "Request Delivery Quotes",
     ],
     [
       "Addresses and collection timing",
-      "Distance, loading windows, waiting time and site access affect planning.",
-      "View HAULBY Works",
+      "Distance, loading windows, waiting times, location and delivery flexibility can change which operators are suitable.",
+      "How HAULBY Works",
     ],
     [
       "Handling and equipment",
-      "A forklift, pallet truck, loading dock or tail-lift may be required.",
+      "A forklift, pallet truck, loading dock or tail-lift may be needed. The operator must plan the necessary handling equipment and crew, coordinating with any controlled site facilities.",
       "Compare Freight Options",
     ],
   ],
@@ -150,34 +157,40 @@ const data = {
   compareCards: [
     [
       "Boxes and packaged parcels",
-      "Separate bundled items may suit courier or delivery van transport.",
+      "Separate or bundled items may suit a courier or delivery van if their combined weight, dimensions and handling needs are appropriate.",
+      "Courier Deliveries",
+      "/services/courier-deliveries",
     ],
     [
       "A single secured pallet",
-      "Provide footprint, height, gross loaded mass and handling details.",
+      "Provide the footprint, height, gross loaded mass and condition of the pallet, with clear loading and unloading information.",
+      "Single Pallet Transport",
+      "/services/pallet-delivery",
     ],
     [
       "Several pallets or commercial stock",
-      "Use road freight when capacity and loading equipment matter.",
+      "Heavier and multi-pallet loads need suitable vehicle payload, safe restraint and site access. Declare special handling restrictions.",
+      "Road Freight",
+      "/services/road-freight",
     ],
   ],
   practicalTitle: "More parcel and pallet delivery questions",
   practical: [
     [
       "How do I prepare goods for pallet transport?",
-      "Secure goods on a stable pallet and supply accurate dimensions.",
+      "Ensure goods are secured as a stable unit on a sound pallet, with appropriate wrapping or strapping for the load.",
     ],
     [
       "Can I send a bulky boxed item?",
-      "Yes. Include its measurements and weight.",
+      "Yes. Include its measurements and approximate weight so operators can assess the required van, team and handling equipment.",
     ],
     [
       "Does a 3.5-tonne vehicle carry any pallet load?",
-      "No. Suitability depends on weight, dimensions and payload.",
+      "No. It may carry only loads within its actual payload, dimensions and appropriate loading and securing limits.",
     ],
     [
       "Who is responsible for the delivery?",
-      "The independent operator carries out the agreed service.",
+      "The selected independent operator carries out the service under the agreed terms. Confirm any special protection or insurance requirements.",
     ],
   ],
   ctaTitle: "Ready to send your shipment?",

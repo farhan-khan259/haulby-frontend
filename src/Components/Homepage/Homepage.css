@@ -113,10 +113,7 @@
   font-weight: 800;
 }
 .hero .eyebrow::before,
-.about-section .section-heading::before,
-.arrange-section .section-heading::before,
-.included-section .section-heading::before,
-.final-cta .section-heading::before {
+.section-heading > span::before {
   content: "";
   display: block;
   width: 74px;

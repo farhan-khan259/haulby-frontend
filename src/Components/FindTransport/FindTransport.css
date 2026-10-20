@@ -604,7 +604,7 @@
   letter-spacing: .2px;
   line-height: 1.2;
 }
-.find-page .find-head.has-bar > span::before {
+.find-page .find-head > span::before {
   content: "";
   display: block;
   width: 74px;
@@ -639,7 +639,7 @@
 
 @media (max-width: 600px) {
   .find-page .find-head > span { font-size: 9px; }
-  .find-page .find-head.has-bar > span::before {
+  .find-page .find-head > span::before {
     width: 52px;
     height: 3px;
     margin-bottom: 12px;

@@ -752,3 +752,21 @@
   .detail-hero h1 { font-size: clamp(50px, 4.2vw, 67px); line-height: 1.08; letter-spacing: -2.5px; margin: 21px 0 31px; }
   .detail-hero p { max-width: 620px; font-size: 20px; line-height: 1.5; margin: 0 0 38px; }
 }
+
+/* Keep the cyan section marker consistent on every service-detail route. */
+.detail-page .detail-heading > span::before {
+  content: "";
+  display: block;
+  width: 74px;
+  height: 4px;
+  margin-bottom: 16px;
+  background: #00d7cf;
+}
+
+@media (max-width: 600px) {
+  .detail-page .detail-heading > span::before {
+    width: 52px;
+    height: 3px;
+    margin-bottom: 12px;
+  }
+}
