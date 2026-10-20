@@ -11,8 +11,8 @@ const cats = [
   ["Plant & Machinery", "Equipment and small plant", "truck"],
   ["Other Transport", "Specialist or unusual items", "route"],
 ];
-const Head = ({ k, t, p, light = false }) => (
-  <div className={`find-head ${light ? "light" : ""}`}>
+const Head = ({ k, t, p, light = false, bar = false }) => (
+  <div className={`find-head${light ? " light" : ""}${bar ? " has-bar" : ""}`}>
     <span>{k}</span>
     <h2>{t}</h2>
     {p && <p>{p}</p>}
@@ -45,6 +45,7 @@ export default function FindTransport() {
       <section className="find-request" id="request">
         <div className="find-shell">
           <Head
+            bar
             k="START A TRANSPORT REQUEST"
             t="What do you need moving?"
             p="Select the closest category. Your next steps collect the full journey, item and access details."
@@ -111,6 +112,7 @@ export default function FindTransport() {
       <section className="find-services">
         <div className="find-shell">
           <Head
+            bar
             k="A CATEGORY FOR YOUR LOAD"
             t="Find a service that fits your transport job."
             p="Tell us what you’re moving, its dimensions and any access restrictions so an appropriately equipped operator can quote."
@@ -135,6 +137,7 @@ export default function FindTransport() {
         <div className="find-shell">
           <Head
             light
+            bar
             k="UNDERSTANDING TRANSPORT QUOTES"
             t="What affects the price of transport?"
             p="Quotes reflect the work required for the specific journey and what the operator includes."
