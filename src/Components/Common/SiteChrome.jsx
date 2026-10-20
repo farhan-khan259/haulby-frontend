@@ -34,8 +34,8 @@ export function Header() {
           <Link to="/how-it-works">How It Works</Link>
           <Link to="/for-businesses">For Businesses</Link>
           <Link to="/find-transport-work">For Transporters</Link>
-          <Link to="/">Log In</Link>
-          <Link className="chrome-register" to="/">
+          <Link to="/login">Log In</Link>
+          <Link className="chrome-register" to="/register">
             Register
           </Link>
         </nav>
@@ -63,7 +63,7 @@ const columns = [
       ["Membership Plans", "/transporter-membership"],
       ["Operator Requirements", "/operator-requirements"],
       ["Backload Opportunities", "/find-transport-work"],
-      ["Transporter Login", "/"],
+      ["Transporter Login", "/login"],
     ],
   ],
   [

@@ -41,6 +41,16 @@ import UKTransportCoverage from './Components/UKTransportCoverage/UKTransportCov
 import AreaLandingPage from './Components/AreaLandingPage/AreaLandingPage';
 import PageNotFound from './Components/PageNotFound/PageNotFound';
 import LegalPage from './Components/LegalPage/LegalPage';
+import ChooseAccountType from './Components/Authentication/ChooseAccountType/ChooseAccountType';
+import CustomerRegistration from './Components/Authentication/CustomerRegistration/CustomerRegistration';
+import BusinessRegistration from './Components/Authentication/BusinessRegistration/BusinessRegistration';
+import TransporterRegistration from './Components/Authentication/TransporterRegistration/TransporterRegistration';
+import Login from './Components/Authentication/Login/Login';
+import ForgotPassword from './Components/Authentication/ForgotPassword/ForgotPassword';
+import ResetPassword from './Components/Authentication/ResetPassword/ResetPassword';
+import EmailVerification from './Components/Authentication/EmailVerification/EmailVerification';
+import OrganisationInvitation from './Components/Authentication/OrganisationInvitation/OrganisationInvitation';
+import MultiFactorAuthentication from './Components/Authentication/MultiFactorAuthentication/MultiFactorAuthentication';
 
 function RouteScrollHandler() {
   const { pathname, hash } = useLocation();
@@ -112,6 +122,16 @@ function App() {
         <Route path="/transporter-agreement" element={<LegalPage document="transporter" />} />
         <Route path="/complaints-procedure" element={<LegalPage document="complaints" />} />
         <Route path="/accessibility" element={<LegalPage document="accessibility" />} />
+        <Route path="/register" element={<ChooseAccountType />} />
+        <Route path="/register/customer" element={<CustomerRegistration />} />
+        <Route path="/register/business" element={<BusinessRegistration />} />
+        <Route path="/register/transporter" element={<TransporterRegistration />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
+        <Route path="/verify-email" element={<EmailVerification />} />
+        <Route path="/invite/:token" element={<OrganisationInvitation />} />
+        <Route path="/security/mfa" element={<MultiFactorAuthentication />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>

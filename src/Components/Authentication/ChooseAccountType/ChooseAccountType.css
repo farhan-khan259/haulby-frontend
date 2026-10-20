@@ -1,0 +1,3 @@
+@import "../Common/AuthPage.css";
+.account-choice span { font-weight: 400; }
+@media (max-width: 640px) { .auth-page:has(.account-choice) .auth-fields { gap: 24px; } }
