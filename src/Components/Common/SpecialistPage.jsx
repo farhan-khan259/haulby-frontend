@@ -125,7 +125,7 @@ export default function SpecialistPage({ config }) {
         ]),
     practicalTitle:
       config.practicalTitle || `More about ${service.toLowerCase()}`,
-    practical: config.faqs,
+    practical: config.practical || config.faqs,
     ctaTitle:
       config.ctaTitle || `Ready to arrange ${service.toLowerCase()}?`,
     ctaText:
