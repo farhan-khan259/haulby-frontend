@@ -1,3 +1,7 @@
 .detail-page {
   --service-accent: #08d5cf;
 }
+
+.courier-detail .detail-cta {
+  background: #0c3150;
+}

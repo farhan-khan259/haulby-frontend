@@ -6,7 +6,11 @@ import scheduledVan from "../../Assets/Pictures/HAULBY Visual Asset 02 _ 1376×7
 import courierRoad from "../../Assets/Pictures/HAULBY Visual Asset 12 _ 1376×768 _ KEEP SOURCE.png";
 import "./CourierDeliveries.css";
 const data = {
+  variant: "courier",
+  styleVariant: "vehicle",
   short: "Courier Delivery",
+  quoteCta: "Get Courier Quotes",
+  workCta: "Find Courier Work",
   title: "Courier Deliveries.",
   accent: "Sorted.",
   heroText:
@@ -58,19 +62,23 @@ const data = {
   darkCards: [
     [
       "Urgent business deliveries",
-      "Time-sensitive collections where a courier can assess the job.",
+      "Time-sensitive collections when a courier can take the job.",
+      "truck",
     ],
     [
       "Scheduled parcel runs",
       "Organise collection and delivery windows in advance.",
+      "route",
     ],
     [
       "Multi-drop collections",
       "Provide every stop, quantity and handling requirement.",
+      "route",
     ],
     [
       "Dedicated van loads",
       "Book suitable van space for larger or multiple goods.",
+      "shield",
     ],
   ],
   steps: [
@@ -105,77 +113,83 @@ const data = {
   faqs: [
     [
       "Can I request a same-day courier?",
-      "Yes. Tell us the deadline so operators can assess suitability and availability.",
+      "Yes. Tell us the deadline so we can work to find a suitable courier and confirm a realistic collection time.",
     ],
     [
       "Can I arrange a dedicated van?",
-      "Yes. Dedicated delivery capacity can be requested for specific goods.",
+      "You can request direct van capacity. Operators decide whether they can service the route and load.",
     ],
     [
       "Does HAULBY deliver the items itself?",
-      "No. Independent transport operators perform the agreed courier service.",
+      "No. HAULBY connects customers with independent operators who provide the agreed courier service.",
     ],
     [
       "Can I book regular business courier jobs?",
-      "Business users can create repeat requests for recurring or multi-stop needs.",
+      "Businesses can create delivery requests for recurring or multi-stop transport requirements.",
     ],
   ],
-  costKicker: "UK-WIDE COURIER COSTS",
+  costKicker: "UK VAN COURIER QUOTES",
   costTitle: "What affects same-day and scheduled courier costs?",
   costText:
-    "Courier prices reflect timing, mileage and the handling required by the number of packages.",
+    "Courier prices reflect timing, mileage and the delivery work required—not simply the number of packages.",
   costs: [
     [
       "Urgency and collection window",
-      "Give the collection address and latest delivery time.",
-      "Get Courier Quote",
+      "Give the collection readiness and latest delivery time. We'll prioritise matching urgent jobs with couriers able to meet the window.",
+      "Get Courier Quotes",
     ],
     [
       "Mileage, stops and waiting",
-      "Collection and delivery addresses, extra stops and waiting affect the route.",
-      "Find Transport Work",
+      "Collection and delivery addresses, extra stops, waiting periods, route flexibility and tolls can affect an operator's offer.",
+      "How Transport Works",
     ],
     [
       "Van capacity and service terms",
-      "The size, total mass and handling requirements affect suitable vehicles.",
+      "The size, total mass, loading requirements and whether a dedicated vehicle is needed should be included before comparing quotes.",
       "Courier Service Categories",
     ],
   ],
-  compareKicker: "COMPARE COURIER SERVICES",
+  compareKicker: "CHOOSE A COURIER SERVICE",
   compareTitle: "Same-day, scheduled or dedicated van delivery?",
   compareText:
-    "The best courier option depends on when items must move, how many stops are required and the capacity needed.",
+    "The best courier option depends on when the items must move, how many stops are required and the capacity needed.",
   compareCards: [
     [
       "Same-day collection",
-      "Give accurate pickup times and delivery deadlines.",
+      "Give accurate pickup times and delivery deadlines. We'll work to find a courier able to meet the required service.",
+      "Same-Day Courier",
+      "/services/same-day-courier",
     ],
     [
-      "Scheduled business deliveries",
-      "Plan recurring or scheduled business runs.",
+      "Scheduled and business deliveries",
+      "A planned collection may suit a regular delivery round, a business van run or several stops. Declare any fixed arrival times.",
+      "Business Transport",
+      "/for-businesses",
     ],
     [
       "Dedicated van for larger goods",
-      "Request suitable capacity for multiple items.",
+      "Bulky consignments require an appropriately equipped vehicle and operator-provided handling, rather than an unsuitable standard parcel service.",
+      "Parcels & Pallets",
+      "/services/parcels-pallets",
     ],
   ],
   practicalTitle: "More courier delivery questions",
   practical: [
     [
       "What information is needed for a courier quote?",
-      "Provide addresses, number of items, sizes, weights and delivery deadline.",
+      "Collection and delivery locations, number of items, size, weight, timing, access and any special handling requirements.",
     ],
     [
       "Can I request delivery between UK regions?",
-      "Yes. Post any route and suitable operators may quote.",
+      "Yes. Post any cross-region courier request and we'll work to connect it with a suitable UK operator.",
     ],
     [
       "Is a same-day delivery guaranteed?",
-      "No. Availability depends on suitable operators and timing.",
+      "No. Ask the operator to confirm collection and delivery timing and its terms before booking.",
     ],
     [
       "Can a courier carry palletised goods?",
-      "Use the Parcels & Pallets category for palletised freight.",
+      "Only if the vehicle and loading equipment are suitable. Use the Parcels & Pallets category to describe pallet handling requirements.",
     ],
   ],
   ctaTitle: "Ready to arrange a courier?",

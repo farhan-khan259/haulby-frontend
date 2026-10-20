@@ -13,7 +13,7 @@ const SectionHead = ({ kicker, title, text, light = false }) => (
 
 export default function ServiceDetail({ data }) {
   return (
-    <main className={`detail-page${data.variant ? ` ${data.variant}-detail` : ""}`}>
+    <main className={`detail-page${data.variant ? ` ${data.variant}-detail` : ""}${data.styleVariant ? ` ${data.styleVariant}-detail` : ""}`}>
       <Header />
       <section className="detail-hero">
         <div className="detail-hero-copy">
@@ -27,7 +27,7 @@ export default function ServiceDetail({ data }) {
             </h1>
             <p>{data.heroText}</p>
             <div className="detail-actions">
-              <ArrowButton>Get {data.short} Quotes</ArrowButton>
+              <ArrowButton>{data.quoteCta || `Get ${data.short} Quotes`}</ArrowButton>
               <ArrowButton outline href="/services">
                 Explore {data.short} Services
               </ArrowButton>
@@ -257,9 +257,9 @@ export default function ServiceDetail({ data }) {
             text={data.ctaText}
           />
           <div className="detail-actions">
-            <ArrowButton>Get {data.short} Quotes</ArrowButton>
+            <ArrowButton>{data.quoteCta || `Get ${data.short} Quotes`}</ArrowButton>
             <ArrowButton outline href="/#work">
-              Find {data.short} Work
+              {data.workCta || `Find ${data.short} Work`}
             </ArrowButton>
           </div>
         </div>
