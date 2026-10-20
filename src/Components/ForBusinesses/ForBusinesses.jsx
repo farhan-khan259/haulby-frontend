@@ -6,9 +6,10 @@ export default function ForBusinesses() {
   return (
     <InformationalPage
       data={{
-        title: "For Businesses",
+        title: "Business Transport",
         description:
-          "Organise quotations and transport requests for UK businesses.",
+          "Request and manage UK business transport for customer orders, pallets, equipment and recurring collections from one business account.",
+        heroButtonLabel: "Explore For Businesses",
         steps: [
           [
             "Business delivery requests",
@@ -23,24 +24,62 @@ export default function ForBusinesses() {
             "Keep business shipping requests accessible to authorised staff.",
           ],
         ],
+        overview: {
+          kicker: "BUSINESS TRANSPORT REQUIREMENTS",
+          title: "Manage business deliveries in HAULBY",
+          text: "Manage business deliveries in HAULBY: practical steps for this type of enquiry.",
+        },
+        information: {
+          kicker: "MULTIPLE CONSIGNMENTS & RECORDS",
+          title: "Business shipping details to confirm",
+          text: "Business shipping details to confirm: check the details before proceeding.",
+          cards: [
+            [
+              "What to include in your request",
+              "Create enquiries for one-off and recurring consignments.",
+            ],
+            [
+              "Operator and service terms",
+              "Let authorised team members manage quotes and records.",
+            ],
+            [
+              "Before confirming the booking",
+              "Check supplier invoices, delivery proof and direct payment.",
+            ],
+          ],
+        },
+        nextSteps: {
+          text: "Use the appropriate quote or account flow for the next step.",
+        },
+        importantDetails: {
+          title: "Key terms and responsibilities",
+          text: "Your independent transport supplier invoices you directly. Track consignments and retain agreed delivery evidence.",
+        },
+        faqSection: {
+          text: "Questions about this specific service and how HAULBY works.",
+        },
         faqs: [
           [
             "Can we organise recurring transport?",
-            "Yes. Describe repeated consignments and requirements.",
+            "Yes. Describe repeated business consignments and their requirements.",
           ],
           [
-            "What should I check before booking?",
-            "Review terms, operator information and load details.",
+            "Can employees organise deliveries for our business?",
+            "Authorised business-account users can create requests and manage the company's bookings.",
           ],
           [
-            "How does HAULBY work to cover jobs?",
-            "Suitable operators can consider business requests.",
+            "Who is responsible for moving and unloading our goods?",
+            "Your selected operator must arrange the people and handling equipment included in the agreed service.",
           ],
           [
-            "Where can I get more help?",
-            "Use the Help Centre or contact route.",
+            "How are business delivery invoices handled?",
+            "The transport supplier invoices your business directly; HAULBY provides shipment and delivery records.",
           ],
         ],
+        cta: {
+          title: "Ready to arrange transport?",
+          text: "Organise quotations and transport requests for UK businesses.",
+        },
       }}
     />
   );
