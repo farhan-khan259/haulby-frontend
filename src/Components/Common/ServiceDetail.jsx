@@ -168,7 +168,7 @@ export default function ServiceDetail({ data }) {
           <div>
             <SectionHead
               light
-              kicker="FOR HAULBY'S TRANSPORT OPERATORS"
+              kicker={data.workKicker || "FOR HAULBY'S TRANSPORT OPERATORS"}
               title={data.workTitle}
               text={data.workText}
             />
