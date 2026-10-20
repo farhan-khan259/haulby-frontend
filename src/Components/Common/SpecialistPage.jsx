@@ -13,12 +13,16 @@ export default function SpecialistPage({ config }) {
     workCta: config.workCta,
     heroImage: config.images[0],
     tags: config.tags,
-    quoteTitle: "Where does the load need to go?",
+    quoteTitle: config.quoteTitle || "Where does the load need to go?",
     quoteText:
+      config.quoteText ||
       "Enter the route and job type. Add equipment, weight, condition and collection requirements in the next steps.",
-    typeLabel: "Service type",
-    typePlaceholder: `Choose ${service} type`,
-    quoteNote: "Include accurate details for every collection and delivery.",
+    typeLabel: config.typeLabel || "Service type",
+    typePlaceholder:
+      config.typePlaceholder || `Choose ${service} type`,
+    quoteNote:
+      config.quoteNote ||
+      "Include accurate details for every collection and delivery.",
     optionsKicker: config.optionsKicker || `${service.toUpperCase()} TRANSPORT`,
     optionsTitle:
       config.optionsTitle || `Choose your ${service.toLowerCase()} service.`,
