@@ -6,7 +6,9 @@ import auctionCollection from "../../Assets/Pictures/HAULBY Visual Asset 08 _ 13
 import recoveryHero from "../../Assets/Pictures/HAULBY Visual Asset 09 _ 1376×768 _ KEEP SOURCE.png";
 import "./VehicleTransport.css";
 const data = {
+  variant: "vehicle",
   short: "Vehicle Transport",
+  breadcrumb: "HOME  /  TRANSPORT SERVICES  /  VEHICLE TRANSPORT",
   title: "Vehicle Transport.",
   accent: "Sorted.",
   heroText:
@@ -40,13 +42,13 @@ const data = {
     ],
     [
       "Non-Running Vehicles",
-      "Moving a non-running vehicle? Include access, rolling and loading conditions.",
+      "Moving a non-running vehicle? Include access, rolling and loading conditions in your request.",
       ["Non-runners", "Planned recovery transport"],
       "truck",
     ],
     [
       "Auction & Trade Collections",
-      "Move vehicles purchased from auctions, dealers or trade suppliers.",
+      "Move vehicles purchased from auctions, dealers or trade suppliers to your chosen destination.",
       ["Auction pickup", "Motor trade collections"],
       "box",
     ],
@@ -56,15 +58,17 @@ const data = {
   darkText:
     "Use HAULBY to describe your requirements and receive quotes from suitable independent operators.",
   darkCards: [
-    ["Auction purchases", "Arrange collection from UK vehicle auction sites."],
-    ["Private purchases", "Move a newly purchased car without driving it."],
+    ["Auction purchases", "Arrange collection from UK vehicle auction sites.", "truck"],
+    ["Private purchases", "Move a newly purchased car without driving it.", "route"],
     [
       "Motor trade movements",
       "Dealer-to-dealer and trade vehicle collections.",
+      "route",
     ],
     [
       "Non-running vehicles",
       "Explain loading and access requirements upfront.",
+      "shield",
     ],
   ],
   steps: [
@@ -99,77 +103,83 @@ const data = {
   faqs: [
     [
       "Can I transport a non-running car?",
-      "Include its condition and loading details so operators can assess the right equipment.",
+      "Include the vehicle's condition and loading details so operators can assess whether they can take the job.",
     ],
     [
       "Do you cover collections across the UK?",
-      "Yes. Post your journey and suitable operators can quote.",
+      "Yes. Post any UK journey and we'll work to connect it with suitable vehicle transport operators.",
     ],
     [
       "Who transports my vehicle?",
-      "The independent operator you select performs the agreed service.",
+      "An independent operator you select performs the transport service under the agreed booking terms.",
     ],
     [
       "Can I arrange motorcycle transport?",
-      "Yes. Choose the relevant category and provide suitable collection details.",
+      "Yes. Select the relevant category and provide collection requirements and vehicle details.",
     ],
   ],
-  costKicker: "CAR TRANSPORT COSTS",
+  costKicker: "CAR TRANSPORT COSTS UK",
   costTitle: "What affects vehicle transport quotations?",
   costText:
-    "A vehicle transport quote reflects the route, vehicle condition and practical equipment required.",
+    "A vehicle transport quote reflects the route, vehicle condition and practical equipment required—not mileage alone.",
   costs: [
     [
       "Distance and collection route",
-      "Local collection and cross-country moves have different timing, mileage and return-load options.",
+      "Local collections and cross-country vehicle moves involve different driving time, mileage and schedules. Fixed auction slots or hard-to-reach addresses can affect the journey.",
       "Get Car Transport Quotes",
     ],
     [
       "Vehicle size and condition",
-      "Vehicle type, size, model and whether it runs affect equipment and handling.",
+      "Provide the make, model and approximate weight. Explain whether the vehicle starts, steers, rolls and brakes; non-runners may require winches or other loading equipment.",
       "Non-running Vehicle Transport",
     ],
     [
       "Transporter and loading method",
-      "Open flatbed, trailers and enclosed transport offer different services.",
-      "View Vehicle Transport Works",
+      "Open flatbeds, trailers and enclosed transport offer different services. Discuss lowered cars, missing keys, unusual dimensions and protection needs before booking.",
+      "How Vehicle Transport Works",
     ],
   ],
-  compareKicker: "BOOK WITH THE RIGHT COLLECTION",
+  compareKicker: "BEFORE YOUR VEHICLE COLLECTION",
   compareTitle: "Prepare your car or motorcycle for transport",
   compareText:
     "Clear collection details and a documented handover help the operator understand the job.",
   compareCards: [
     [
       "Confirm the pickup arrangements",
-      "Share access, collection contact and timing details.",
+      "Share the correct address, access limits and contact details. For auction collections, confirm opening hours, vehicle release information and key availability.",
+      "Start a Transport Request",
+      "/find-transport",
     ],
     [
       "Record the vehicle condition",
-      "Take clear photographs and note existing damage.",
+      "Note existing damage and take dated photographs. Remove personal belongings unless agreed, and disclose leaks, loose components or mechanical limitations.",
+      "Compare Service Details",
+      "/services/vehicle-transport",
     ],
     [
       "Check the proposed service",
-      "Review loading arrangements, timing and protection information.",
+      "Agree the planned vehicle, loading arrangements, collection window, delivery handover, applicable terms and relevant insurance information.",
+      "Operator Checks & Safety",
+      "/services/vehicle-transport",
     ],
   ],
   practicalTitle: "More vehicle transport questions",
   practical: [
     [
       "Can you arrange transport for a non-running car?",
-      "Yes. Explain the condition and loading requirements.",
+      "Some operators can. State whether it can roll, steer and brake, whether keys are present and any access problems.",
     ],
     [
-      "What detail do I need for a car transport quote?",
-      "Provide collection and delivery postcodes, vehicle details and condition.",
+      "What details do I need for a car transport quote?",
+      "Collection and delivery postcodes, make and model, running condition, preferred dates and loading restrictions.",
     ],
     [
       "How much does UK car transport cost?",
-      "It depends on distance, vehicle dimensions, access and timing.",
+      "It depends on mileage, vehicle dimensions, condition, access, timing and service terms. Compare quotes for your actual journey.",
     ],
     [
       "Who transports my car?",
-      "The independent operator carries out the service under the agreed terms.",
+      "The independent operator you select carries out the work. Review their terms and insurance details before confirming.",
     ],
   ],
   ctaTitle: "Ready to move your vehicle?",

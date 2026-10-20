@@ -4,7 +4,7 @@ import { Header, Footer, ArrowButton, LineIcon } from "./SiteChrome";
 import "./ServiceDetail.css";
 
 const SectionHead = ({ kicker, title, text, light = false }) => (
-  <div className={`detail-heading ${light ? "light" : ""}`}>
+  <div className={`detail-heading${light ? " light" : ""}`}>
     <span>{kicker}</span>
     <h2>{title}</h2>
     {text && <p>{text}</p>}
@@ -13,13 +13,13 @@ const SectionHead = ({ kicker, title, text, light = false }) => (
 
 export default function ServiceDetail({ data }) {
   return (
-    <main className="detail-page">
+    <main className={`detail-page${data.variant ? ` ${data.variant}-detail` : ""}`}>
       <Header />
       <section className="detail-hero">
         <div className="detail-hero-copy">
           <div className="detail-shell">
-            <span className="detail-hero-eyebrow">
-              ANYTHING. ANYWHERE. NATIONWIDE.
+            <span className={`detail-hero-eyebrow${data.breadcrumb ? " is-breadcrumb" : ""}`}>
+              {data.breadcrumb || "ANYTHING. ANYWHERE. NATIONWIDE."}
             </span>
             <h1>
               {data.title}
@@ -112,9 +112,9 @@ export default function ServiceDetail({ data }) {
             text={data.darkText}
           />
           <div className="detail-mini-grid">
-            {data.darkCards.map(([t, p]) => (
+            {data.darkCards.map(([t, p, icon]) => (
               <article key={t}>
-                <LineIcon type="route" />
+                <LineIcon type={icon || "route"} />
                 <div>
                   <h3>{t}</h3>
                   <p>{p}</p>
@@ -221,12 +221,12 @@ export default function ServiceDetail({ data }) {
             text={data.compareText}
           />
           <div className="detail-cost-grid dark">
-            {data.compareCards.map(([t, p]) => (
+            {data.compareCards.map(([t, p, label, href]) => (
               <article key={t}>
                 <i />
                 <h3>{t}</h3>
                 <p>{p}</p>
-                <Link to="/services">Explore Services →</Link>
+                <Link to={href || "/services"}>{label || "Explore Services"} →</Link>
               </article>
             ))}
           </div>
@@ -259,7 +259,7 @@ export default function ServiceDetail({ data }) {
           <div className="detail-actions">
             <ArrowButton>Get {data.short} Quotes</ArrowButton>
             <ArrowButton outline href="/#work">
-              Find Transport Work
+              Find {data.short} Work
             </ArrowButton>
           </div>
         </div>
