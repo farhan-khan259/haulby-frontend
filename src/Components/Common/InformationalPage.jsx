@@ -10,6 +10,24 @@ const Heading = ({ kicker, title, text, light = false }) => (
 );
 
 export default function InformationalPage({ data }) {
+  const overview = data.overview || {};
+  const information = data.information || {};
+  const nextSteps = data.nextSteps || {};
+  const importantDetails = data.importantDetails || {};
+  const faqSection = data.faqSection || {};
+  const cta = data.cta || {};
+  const informationCards = information.cards || [
+    ["What to know", data.description],
+    [
+      "Check the terms",
+      "Compare the actual operator terms, access conditions and suitability for your journey.",
+    ],
+    [
+      "Confirm before acting",
+      "Keep requirements, eligibility and service details accurate and clearly explained.",
+    ],
+  ];
+
   return (
     <main className="informational-page">
       <Header />
@@ -22,23 +40,23 @@ export default function InformationalPage({ data }) {
         <div className="informational-hero-image" style={{ backgroundImage: `url("${data.image || hero}")` }} />
       </section>
       <section className="informational-section" id="overview"><div className="informational-shell">
-        <Heading kicker="WHAT THIS PAGE HELPS YOU DO" title="What this page helps you do" text={data.description} />
-        <div className="informational-grid">{data.steps.map(([t,p]) => <article key={t}><i/><h3>{t}</h3><p>{p}</p></article>)}</div>
+        <Heading kicker={overview.kicker || "WHAT THIS PAGE HELPS YOU DO"} title={overview.title || "What this page helps you do"} text={overview.text || data.description} />
+        <div className="informational-grid">{(overview.cards || data.steps).map(([t,p]) => <article key={t}><i/><h3>{t}</h3><p>{p}</p></article>)}</div>
       </div></section>
       <section className="informational-section alternate"><div className="informational-shell">
-        <Heading kicker="KEY INFORMATION AND REQUIREMENTS" title="Key information and requirements" text={data.description} />
-        <div className="informational-grid">{[["What to know",data.description],["Check the terms","Compare the actual operator terms, access conditions and suitability for your journey."],["Confirm before acting","Keep requirements, eligibility and service details accurate and clearly explained."]].map(([t,p]) => <article key={t}><i/><h3>{t}</h3><p>{p}</p></article>)}</div>
+        <Heading kicker={information.kicker || "KEY INFORMATION AND REQUIREMENTS"} title={information.title || "Key information and requirements"} text={information.text || data.description} />
+        <div className="informational-grid">{informationCards.map(([t,p]) => <article key={t}><i/><h3>{t}</h3><p>{p}</p></article>)}</div>
       </div></section>
       <section className="informational-section"><div className="informational-shell">
-        <Heading kicker="NEXT STEPS" title="Next steps" text="Follow a clear journey and check relevant requirements before committing." />
-        <div className="informational-grid compact">{data.steps.map(([t],i) => <article key={t}><strong>0{i+1}</strong><h3>{t}</h3></article>)}</div>
+        <Heading kicker={nextSteps.kicker || "NEXT STEPS"} title={nextSteps.title || "Next steps"} text={nextSteps.text || "Follow a clear journey and check relevant requirements before committing."} />
+        <div className="informational-grid compact">{(nextSteps.cards || data.steps).map(([t],i) => <article key={t}><strong>0{i+1}</strong><h3>{t}</h3></article>)}</div>
       </div></section>
-      <section className="informational-dark"><div className="informational-shell"><Heading light kicker="IMPORTANT DETAILS" title="Clear information for every user" text="HAULBY works to match suitable jobs through its UK-wide operator network. Transport is confirmed with an eligible operator under agreed terms." /></div></section>
+      <section className="informational-dark"><div className="informational-shell"><Heading light kicker={importantDetails.kicker || "IMPORTANT DETAILS"} title={importantDetails.title || "Clear information for every user"} text={importantDetails.text || "HAULBY works to match suitable jobs through its UK-wide operator network. Transport is confirmed with an eligible operator under agreed terms."} /></div></section>
       <section className="informational-section alternate"><div className="informational-shell">
-        <Heading kicker="FREQUENTLY ASKED QUESTIONS" title="Frequently asked questions" text="Practical answers for customers and transporters." />
+        <Heading kicker={faqSection.kicker || "FREQUENTLY ASKED QUESTIONS"} title={faqSection.title || "Frequently asked questions"} text={faqSection.text || "Practical answers for customers and transporters."} />
         <div className="informational-faq">{data.faqs.map(([q,a]) => <article key={q}><h3>{q}</h3><p>{a}</p></article>)}</div>
       </div></section>
-      <section className="informational-cta"><div className="informational-shell"><Heading light kicker="HAULBY" title="Ready for the next step?" text={data.description}/><ArrowButton href="/find-transport">Continue</ArrowButton></div></section>
+      <section className="informational-cta"><div className="informational-shell"><Heading light kicker={cta.kicker || "HAULBY"} title={cta.title || "Ready for the next step?"} text={cta.text || data.description}/><ArrowButton href={cta.href || "/find-transport"}>{cta.buttonLabel || "Continue"}</ArrowButton></div></section>
       <Footer />
     </main>
   );
