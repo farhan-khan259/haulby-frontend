@@ -49,7 +49,7 @@ export default function SpecialistPage({ config }) {
         title,
         `Provide clear details for ${title.toLowerCase()}.`,
       ]),
-    steps: [
+    steps: config.steps || [
       [
         "Post your transport request",
         "Add collection, destination and load information.",
@@ -64,8 +64,10 @@ export default function SpecialistPage({ config }) {
       ],
     ],
     prepareImage: config.images[5],
-    prepareKicker: "INFORMATION FOR ACCURATE QUOTES",
-    prepareTitle: `Prepare your ${service.toLowerCase()} details.`,
+    prepareKicker:
+      config.prepareKicker || "INFORMATION FOR ACCURATE QUOTES",
+    prepareTitle:
+      config.prepareTitle || `Prepare your ${service.toLowerCase()} details.`,
     prepareText: config.prepareText,
     prepareBullets: config.prepareBullets,
     workKicker:
