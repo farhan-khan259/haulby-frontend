@@ -59,11 +59,11 @@ const columns = [
   [
     "FOR TRANSPORTERS",
     [
-      ["Find Work", "/how-it-works/transporters"],
+      ["Find Work", "/find-transport-work"],
       ["Membership Plans", "/transporter-membership"],
       ["Operator Requirements", "/operator-requirements"],
       ["Backload Opportunities", "/find-transport-work"],
-      ["Transporter Login", "/how-it-works/transporters"],
+      ["Transporter Login", "/"],
     ],
   ],
   [
@@ -80,11 +80,11 @@ const columns = [
     "HELP & LEGAL",
     [
       ["Contact Us", "/contact"],
-      ["Privacy Policy", "/"],
-      ["Cookie Policy", "/"],
-      ["Terms of Use", "/"],
-      ["Transporter Agreement", "/"],
-      ["Complaints Procedure", "/"],
+      ["Privacy Policy", "/privacy-policy"],
+      ["Cookie Policy", "/cookie-policy"],
+      ["Terms of Use", "/terms-of-use"],
+      ["Transporter Agreement", "/transporter-agreement"],
+      ["Complaints Procedure", "/complaints-procedure"],
     ],
   ],
 ];
@@ -134,7 +134,7 @@ export function Footer() {
           HAULBY is a marketplace. Transport is provided by independent
           operators.
         </span>
-        <Link to="/">Accessibility</Link>
+        <Link to="/accessibility">Accessibility</Link>
       </div>
     </footer>
   );
