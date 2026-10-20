@@ -8,17 +8,17 @@ import parcelsImage from "../../Assets/Pictures/HAULBY Visual Asset 03 _ 1376×7
 import furnitureImage from "../../Assets/Pictures/HAULBY Visual Asset 04 _ 1376×768 _ KEEP SOURCE.png";
 import machineryImage from "../../Assets/Pictures/HAULBY Visual Asset 05 _ 1376×768 _ KEEP SOURCE.png";
 import freightImage from "../../Assets/Pictures/HAULBY Visual Asset 13 _ 1376×768 _ KEEP SOURCE.png";
-import carImage from "../../Assets/Pictures/HAULBY Visual Asset 06 _ 1376×768 _ KEEP SOURCE.png";
+import carImage from "../../Assets/Pictures/HAULBY Visual Asset 08 _ 1376×768 _ KEEP SOURCE.png";
 import motorcycleImage from "../../Assets/Pictures/HAULBY Visual Asset 07 _ 1376×768 _ KEEP SOURCE.png";
-import vanImage from "../../Assets/Pictures/HAULBY Visual Asset 08 _ 1376×768 _ KEEP SOURCE.png";
+import vanImage from "../../Assets/Pictures/HAULBY Visual Asset 01 _ 1376×768 _ KEEP SOURCE.png";
 import recoveryImage from "../../Assets/Pictures/HAULBY Visual Asset 09 _ 1376×768 _ KEEP SOURCE.png";
 import sameDayImage from "../../Assets/Pictures/HAULBY Visual Asset 10 _ 1376×768 _ KEEP SOURCE.png";
 import palletImage from "../../Assets/Pictures/HAULBY Visual Asset 11 _ 1376×768 _ KEEP SOURCE.png";
-import partLoadImage from "../../Assets/Pictures/HAULBY Visual Asset 12 _ 1376×768 _ KEEP SOURCE.png";
-import houseMoveImage from "../../Assets/Pictures/HAULBY Visual Asset 14 _ 1376×768 _ KEEP SOURCE.png";
-import officeImage from "../../Assets/Pictures/HAULBY Visual Asset 15 _ 1376×768 _ KEEP SOURCE.png";
-import boatImage from "../../Assets/Pictures/HAULBY Visual Asset 16 _ 1376×768 _ KEEP SOURCE.png";
-import driverImage from "../../Assets/Pictures/HAULBY Visual Asset 01 _ 1376×768 _ KEEP SOURCE.png";
+import partLoadImage from "../../Assets/Pictures/HAULBY Visual Asset 15 _ 1376×768 _ KEEP SOURCE.png";
+import houseMoveImage from "../../Assets/Pictures/HAULBY Visual Asset 18 _ 1376×768 _ KEEP SOURCE.png";
+import officeImage from "../../Assets/Pictures/HAULBY Visual Asset 21 _ 1376×768 _ KEEP SOURCE.png";
+import boatImage from "../../Assets/Pictures/HAULBY Visual Asset 37 _ 1376×768 _ KEEP SOURCE.png";
+import driverImage from "../../Assets/Pictures/transporters.png";
 import "./ServicesPage.css";
 const services = [
   [
@@ -153,8 +153,81 @@ const additionalServices = [
   ],
 ];
 const allServices = [...services, ...additionalServices];
-const Head = ({ k, t, p, light = false }) => (
-  <div className={`services-head ${light ? "light" : ""}`}>
+const popularRequests = [
+  ["Car Recovery", "Recovery flatbed or vehicle movement", "/services/vehicle-recovery"],
+  ["Auction Vehicle Collection", "Collection from a dealer or auction", "/services/car-transport"],
+  ["Motorcycle Transport", "Bikes and scooters", "/services/motorcycle-transport"],
+  ["Furniture Delivery", "Large and awkward items", "/services/furniture-delivery"],
+  ["Pallet Collections", "Commercial and personal freight", "/services/pallet-delivery"],
+  ["Small Plant Transport", "Tools and compact machinery", "/services/plant-machinery"],
+  ["eBay & Marketplace Items", "Bought or sold bulky goods", "/services/courier-deliveries"],
+  ["Part Loads & Backloads", "Use available vehicle capacity", "/services/part-loads-backloads"],
+];
+const bookingSteps = [
+  ["Choose a transport service", "Pick a category or describe your requirements."],
+  ["Compare operator quotes", "Review relevant offers and provider details."],
+  ["Confirm your booking", "Select a transporter and organise the move."],
+];
+const serviceChoices = [
+  [
+    "Cars, vans and motorcycles",
+    "Use Vehicle Transport for car collections, motorcycles, non-running vehicles and auction purchases. Share the vehicle condition and access requirements.",
+    "Vehicle Transport",
+    "/services/vehicle-transport",
+  ],
+  [
+    "Parcels and general deliveries",
+    "Use Parcels & Couriers for boxes, collections, time-sensitive shipments and dedicated vans. Furniture moves also need accurate item lists and lifting details.",
+    "Parcels & Couriers",
+    "/services/courier-deliveries",
+  ],
+  [
+    "Pallets, freight and machinery",
+    "Commercial loads and equipment can require specific payload, restraint and loading arrangements. Include weight, dimensions and site restrictions.",
+    "All Service Categories",
+    "/services",
+  ],
+];
+const quoteFactors = [
+  [
+    "Journey and route flexibility",
+    "Collection and delivery mileage, tolls, empty mileage and flexibility around dates may affect an offer. A route fitting existing work may be priced differently.",
+    "Get Transport Quotes",
+    "/find-transport",
+  ],
+  [
+    "Goods and loading requirements",
+    "Item size, weight and quantity determine vehicle capacity. Stairs, narrow access, forklifts or specialist vehicle loading can change the work required.",
+    "How Booking Works",
+    "/how-it-works",
+  ],
+  [
+    "Timing and service expectations",
+    "Tell us about deadlines, multiple stops, restricted access or specialist handling so operators can plan the right staff and equipment.",
+    "Trust & Safety",
+    "/",
+  ],
+];
+const practicalQuestions = [
+  [
+    "Which transport service should I choose?",
+    "Start with the category closest to the goods you need moved and include dimensions, condition and special requirements.",
+  ],
+  [
+    "Can I send more than one item?",
+    "Yes. List all items and their approximate weights, dimensions and collection requirements so operators can assess the load.",
+  ],
+  [
+    "Can businesses arrange freight or deliveries?",
+    "Business customers can request pallets, vans, freight, repeated deliveries and multi-stop work.",
+  ],
+  [
+    "Why can two quotations be different?",
+    "Compare operators' vehicles, dates, routes and terms. Loading and unloading must be appropriately staffed and equipped within the accepted service.",
+  ],
+];
+const Head = ({ k, t, p, light = false, bar = false }) => (
+  <div className={`services-head${light ? " light" : ""}${bar ? " has-bar" : ""}`}>
     <span>{k}</span>
     <h2>{t}</h2>
     {p && <p>{p}</p>}
@@ -236,25 +309,17 @@ export default function ServicesPage() {
         <div className="services-shell">
           <Head
             light
+            bar
             k="POPULAR TRANSPORT REQUESTS"
             t="More ways to get things moving"
             p="Find the category that matches your job, or start with a quote request and provide the details."
           />
           <div>
-            {[
-              "Car Recovery",
-              "Auction Vehicle Collection",
-              "Motorcycle Transport",
-              "Furniture Delivery",
-              "Pallet Collections",
-              "Small Plant Transport",
-              "Marketplace Items",
-              "Part Loads & Backloads",
-            ].map((x) => (
-              <span key={x}>
-                ↗ {x}
-                <small>Explore transport options</small>
-              </span>
+            {popularRequests.map(([title, description, href]) => (
+              <Link to={href} key={title}>
+                <strong><span aria-hidden="true">→</span>{title}</strong>
+                <small>{description}</small>
+              </Link>
             ))}
           </div>
         </div>
@@ -266,18 +331,11 @@ export default function ServicesPage() {
             t="From your request to a booked transporter."
           />
           <div>
-            {[
-              ["01", "Choose a transport service"],
-              ["02", "Compare operator quotes"],
-              ["03", "Confirm your booking"],
-            ].map(([n, t]) => (
-              <article key={n}>
-                <strong>{n}</strong>
-                <h3>{t}</h3>
-                <p>
-                  Provide clear details, review relevant offers and choose the
-                  suitable operator.
-                </p>
+            {bookingSteps.map(([title, description], index) => (
+              <article key={title}>
+                <strong>0{index + 1}</strong>
+                <h3>{title}</h3>
+                <p>{description}</p>
               </article>
             ))}
           </div>
@@ -292,7 +350,7 @@ export default function ServicesPage() {
               t="Have a van or recovery truck?"
               p="Join the marketplace to find suitable work, quote for available jobs and make better use of your journeys."
             />
-            <ArrowButton href="/#work">
+            <ArrowButton href="/how-it-works/transporters">
               Explore Transporter Membership
             </ArrowButton>
           </div>
@@ -302,15 +360,18 @@ export default function ServicesPage() {
       <section className="services-choices">
         <div className="services-shell">
           <Head
+            bar
             k="CHOOSING A TRANSPORT SERVICE"
             t="Which category fits your transport request?"
+            p="The right category helps operators understand the load, suitable vehicle and any handling or specialist equipment needed."
           />
           <div>
-            {services.slice(0, 3).map(([t, p, href]) => (
-              <article key={t}>
-                <h3>{t}</h3>
-                <p>{p}</p>
-                <Link to={href}>View Service →</Link>
+            {serviceChoices.map(([title, description, label, href]) => (
+              <article key={title}>
+                <i />
+                <h3>{title}</h3>
+                <p>{description}</p>
+                <Link to={href}>{label} →</Link>
               </article>
             ))}
           </div>
@@ -320,22 +381,18 @@ export default function ServicesPage() {
         <div className="services-shell">
           <Head
             light
+            bar
             k="UNDERSTANDING TRANSPORT QUOTES"
             t="What can affect the price of a journey?"
+            p="Operators price the work involved, not simply the distance between two postcodes."
           />
           <div>
-            {[
-              "Journey and route flexibility",
-              "Goods and loading requirements",
-              "Timing and service expectations",
-            ].map((t) => (
-              <article key={t}>
+            {quoteFactors.map(([title, description, label, href]) => (
+              <article key={title}>
                 <i />
-                <h3>{t}</h3>
-                <p>
-                  Accurate route, item, access and timing details help operators
-                  provide a relevant quote.
-                </p>
+                <h3>{title}</h3>
+                <p>{description}</p>
+                <Link to={href}>{label} →</Link>
               </article>
             ))}
           </div>
@@ -344,22 +401,15 @@ export default function ServicesPage() {
       <section className="services-questions">
         <div className="services-shell">
           <Head
+            bar
             k="PRACTICAL QUESTIONS"
             t="Transport services: important questions"
           />
           <div>
-            {[
-              "Which transport service should I choose?",
-              "Can I send more than one item?",
-              "Can businesses arrange freight or deliveries?",
-              "Why can quotations be different?",
-            ].map((q) => (
-              <article key={q}>
-                <h3>{q}</h3>
-                <p>
-                  Describe the goods, route, dimensions and access so operators
-                  can assess the request.
-                </p>
+            {practicalQuestions.map(([question, answer]) => (
+              <article key={question}>
+                <h3>{question}</h3>
+                <p>{answer}</p>
               </article>
             ))}
           </div>
@@ -369,6 +419,7 @@ export default function ServicesPage() {
         <div className="services-shell">
           <Head
             light
+            bar
             k=""
             t="Ready to get moving?"
             p="Request transport quotes or find new jobs as an independent operator."
@@ -377,7 +428,7 @@ export default function ServicesPage() {
             <ArrowButton href="/find-transport">
               Get Transport Quotes
             </ArrowButton>
-            <ArrowButton outline href="/#work">
+            <ArrowButton outline href="/how-it-works/transporters">
               Find Work
             </ArrowButton>
           </div>
