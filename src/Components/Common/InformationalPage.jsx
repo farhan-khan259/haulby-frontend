@@ -16,6 +16,7 @@ export default function InformationalPage({ data }) {
   const importantDetails = data.importantDetails || {};
   const faqSection = data.faqSection || {};
   const cta = data.cta || {};
+  const secondaryLinks = cta.secondaryLinks || (cta.secondaryLink ? [cta.secondaryLink] : []);
   const informationCards = information.cards || [
     ["What to know", data.description],
     [
@@ -56,7 +57,7 @@ export default function InformationalPage({ data }) {
         <Heading kicker={faqSection.kicker || "FREQUENTLY ASKED QUESTIONS"} title={faqSection.title || "Frequently asked questions"} text={faqSection.text || "Practical answers for customers and transporters."} />
         <div className="informational-faq">{data.faqs.map(([q,a]) => <article key={q}><h3>{q}</h3><p>{a}</p></article>)}</div>
       </div></section>
-      <section className="informational-cta"><div className="informational-shell"><Heading light kicker={cta.kicker || "HAULBY"} title={cta.title || "Ready for the next step?"} text={cta.text || data.description}/><div className="informational-cta-actions"><ArrowButton href={cta.href || "/find-transport"}>{cta.buttonLabel || "Continue"}</ArrowButton>{cta.secondaryLink && <ArrowButton outline href={cta.secondaryLink.href}>{cta.secondaryLink.label}</ArrowButton>}</div></div></section>
+      <section className="informational-cta"><div className="informational-shell"><Heading light kicker={cta.kicker || "HAULBY"} title={cta.title || "Ready for the next step?"} text={cta.text || data.description}/><div className="informational-cta-actions"><ArrowButton href={cta.href || "/find-transport"}>{cta.buttonLabel || "Continue"}</ArrowButton>{secondaryLinks.map(({ href, label }) => <ArrowButton outline href={href} key={href}>{label}</ArrowButton>)}</div></div></section>
       <Footer />
     </main>
   );
