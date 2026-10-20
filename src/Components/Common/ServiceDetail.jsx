@@ -96,7 +96,9 @@ export default function ServiceDetail({ data }) {
                       <li key={x}>{x}</li>
                     ))}
                   </ul>
-                  <Link to="#quote">Get {item.title} Quotes →</Link>
+                  {!data.hideOptionLinks && (
+                    <Link to="#quote">Get {item.title} Quotes →</Link>
+                  )}
                 </div>
               </article>
             ))}

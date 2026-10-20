@@ -96,19 +96,19 @@ const data = {
   faqs: [
     [
       "Can I post light freight for a van?",
-      "Yes. If suitable van operators can carry the load they can quote.",
+      "Yes, if suitable van operators can carry the load within their actual vehicle limits and securely restrain it.",
     ],
     [
       "Can I arrange part loads or backloads?",
-      "Describe the goods, route and available dates.",
+      "Describe the goods, route and available dates. Quotations depend on suitable existing journeys and capacity.",
     ],
     [
       "Will I need a larger lorry?",
-      "Capacity depends on weight and dimensions.",
+      "Loads requiring greater capacity may need a rigid or articulated vehicle. The operator must assess actual weights and legal limits.",
     ],
     [
       "Does HAULBY run its own freight fleet?",
-      "No. Independent operators fulfil bookings.",
+      "No. HAULBY connects shippers with independent transport companies who fulfil the booked service.",
     ],
   ],
   costKicker: "ROAD FREIGHT COST FACTORS",
@@ -118,55 +118,55 @@ const data = {
   costs: [
     [
       "Freight size, mass and loading",
-      "Total weight and dimensions affect vehicle type and payload.",
+      "Total gross weight, dimensions, stackability and securing requirements influence whether a van, curtain-side or rigid lorry is suitable.",
       "Get Road Freight Quotes",
     ],
     [
       "Routes, timing and additional stops",
-      "Mileage, delivery windows and extra stops affect planning.",
-      "Find Work",
+      "Mileage, delivery windows, restricted access and waiting time can affect offers. Flexible collections may improve matching options.",
+      "How It Works",
     ],
     [
       "Service scope and protection",
-      "Confirm loading support, responsibility and service information.",
+      "Confirm forklift or tail-lift requirements, responsibility for loading, relevant insurance information and any special handling charges.",
       "Business Shipping",
     ],
   ],
-  compareKicker: "MATCH THE VEHICLE TO THE FREIGHT",
+  compareKicker: "CHOOSE A SUITABLE FREIGHT VEHICLE",
   compareTitle: "Light freight, part loads or larger road freight?",
   compareText:
     "Matching equipment and capacity to the shipment is more important than choosing a vehicle by name alone.",
   compareCards: [
     [
-      "Vans and light vehicles",
-      "Light commercial consignments may suit smaller vehicles.",
+      "Vans and 3.5-tonne light vehicles",
+      "Light commercial consignments may suit properly rated vans or curtain-side vehicles, subject to payload and restraint requirements.",
     ],
     [
       "Shared and part-load journeys",
-      "Use suitable planned capacity when dates are flexible.",
+      "A compatible part load or return journey can use spare space. Specify cargo footprint, dimensions, collection date flexibility and load restrictions.",
     ],
     [
       "Rigid and articulated road freight",
-      "High-volume or heavier consignments may require licensed operation.",
+      "High-volume or heavier consignments may need larger vehicles and appropriately licensed operators. State any site and delivery restrictions.",
     ],
   ],
   practicalTitle: "Road freight and part-load FAQs",
   practical: [
     [
       "How do I calculate total freight weight?",
-      "Include all goods, packaging and loading materials.",
+      "Include all goods, packaging, pallets and handling containers when stating the load's gross weight.",
     ],
     [
       "Can I request regular trade deliveries?",
-      "Business users can post repeat or multi-location needs.",
+      "Yes. Businesses can post repeat or multi-location transport requirements and compare suitable operator offers.",
     ],
     [
       "Can I move machinery as road freight?",
-      "Use Plant & Machinery for specialist equipment.",
+      "Some packaged equipment may qualify; specialist or heavy machinery should use the dedicated Plant & Machinery category.",
     ],
     [
       "Who handles loading and unloading?",
-      "Clarify responsibilities before booking.",
+      "This depends on the selected operator and equipment. Agree responsibilities and available loading facilities before booking.",
     ],
   ],
   ctaTitle: "Ready to transport your freight?",
