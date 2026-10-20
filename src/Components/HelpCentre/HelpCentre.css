@@ -1,0 +1,1 @@
+.help-centre-page .informational-list{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.help-centre-page .informational-list article{border-left:4px solid #08d5cf;min-height:135px}@media(max-width:900px){.help-centre-page .informational-list{grid-template-columns:1fr 1fr}}@media(max-width:600px){.help-centre-page .informational-list{grid-template-columns:1fr}}

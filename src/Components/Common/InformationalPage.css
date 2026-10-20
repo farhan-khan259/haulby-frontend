@@ -26,6 +26,16 @@
 .informational-grid i { display: block; width: 36px; height: 3px; background: #08d5cf; }
 .informational-grid h3 { margin: 24px 0 42px; font-size: 18px; line-height: 1.3; }
 .informational-grid p { margin: 0; color: #62788a; font-size: 14px; line-height: 1.55; }
+.informational-search { display: block; margin: -20px 0 26px; }
+.informational-search input { width: 100%; height: 50px; padding: 0 18px; color: #102d45; background: #fff; border: 1px solid #cadbe5; border-radius: 7px; outline: none; }
+.informational-search input:focus { border-color: #08d5cf; box-shadow: 0 0 0 3px rgba(8,213,207,.12); }
+.informational-list { display: grid; gap: 12px; }
+.informational-list article { padding: 17px 20px; background: #f8fbfd; border: 1px solid #d5e2e9; border-radius: 8px; }
+.informational-list article i { display: none; }
+.informational-list h3 { margin: 0 0 7px; font-size: 15px; }
+.informational-list p { margin: 0; color: #62788a; font-size: 13px; }
+.informational-note { margin: 28px 0 0; color: #ad7300; font-size: 12px; font-weight: 700; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
 .informational-grid.compact article { min-height: 120px; padding: 20px 25px; }
 .informational-grid.compact strong { color: #009f9d; font-size: 25px; line-height: 1; }
 .informational-grid.compact h3 { margin: 18px 0 0; }

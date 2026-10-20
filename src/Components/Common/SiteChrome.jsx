@@ -33,9 +33,9 @@ export function Header() {
           <Link to="/services">Services</Link>
           <Link to="/how-it-works">How It Works</Link>
           <Link to="/for-businesses">For Businesses</Link>
-          <Link to="/how-it-works/transporters">For Transporters</Link>
-          <Link to="/how-it-works/transporters">Log In</Link>
-          <Link className="chrome-register" to="/how-it-works/transporters">
+          <Link to="/find-transport-work">For Transporters</Link>
+          <Link to="/">Log In</Link>
+          <Link className="chrome-register" to="/">
             Register
           </Link>
         </nav>
@@ -60,9 +60,9 @@ const columns = [
     "FOR TRANSPORTERS",
     [
       ["Find Work", "/how-it-works/transporters"],
-      ["Membership Plans", "/#work"],
-      ["Operator Requirements", "/#work"],
-      ["Backload Opportunities", "/#work"],
+      ["Membership Plans", "/transporter-membership"],
+      ["Operator Requirements", "/operator-requirements"],
+      ["Backload Opportunities", "/find-transport-work"],
       ["Transporter Login", "/how-it-works/transporters"],
     ],
   ],
@@ -71,15 +71,15 @@ const columns = [
     [
       ["How It Works", "/how-it-works"],
       ["For Businesses", "/for-businesses"],
-      ["About HAULBY", "/"],
-      ["Trust & Safety", "/"],
-      ["Help Centre", "/"],
+      ["About HAULBY", "/about"],
+      ["Trust & Safety", "/trust-safety"],
+      ["Help Centre", "/help-centre"],
     ],
   ],
   [
     "HELP & LEGAL",
     [
-      ["Contact Us", "/"],
+      ["Contact Us", "/contact"],
       ["Privacy Policy", "/"],
       ["Cookie Policy", "/"],
       ["Terms of Use", "/"],

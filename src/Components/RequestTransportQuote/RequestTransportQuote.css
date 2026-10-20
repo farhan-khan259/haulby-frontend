@@ -1,0 +1,2 @@
+.request-quote-page .informational-list { grid-template-columns: repeat(2,minmax(0,1fr)); }
+@media(max-width:600px){.request-quote-page .informational-list{grid-template-columns:1fr}}

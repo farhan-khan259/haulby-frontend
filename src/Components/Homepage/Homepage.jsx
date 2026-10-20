@@ -194,9 +194,9 @@ function Homepage() {
             <Link to="/services">Services</Link>
             <Link to="/how-it-works">How It Works</Link>
             <Link to="/for-businesses">For Businesses</Link>
-            <Link to="/how-it-works/transporters">For Transporters</Link>
-            <Link to="/how-it-works/transporters">Log In</Link>
-            <Link to="/how-it-works/transporters" className="nav-register">
+            <Link to="/find-transport-work">For Transporters</Link>
+            <Link to="/">Log In</Link>
+            <Link to="/" className="nav-register">
               Register
             </Link>
           </nav>

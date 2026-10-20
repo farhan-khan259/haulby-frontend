@@ -28,9 +28,12 @@ export default function InformationalPage({ data }) {
       "Keep requirements, eligibility and service details accurate and clearly explained.",
     ],
   ];
+  const renderCards = (cards, className = "informational-grid") => (
+    <div className={className}>{cards.map(([t,p]) => <article key={t}><i/><h3>{t}</h3><p>{p}</p></article>)}</div>
+  );
 
   return (
-    <main className="informational-page">
+    <main className={`informational-page ${data.pageClass || ""}`}>
       <Header />
       <section className="informational-hero">
         <div className="informational-hero-copy"><div className="informational-shell">
@@ -42,11 +45,13 @@ export default function InformationalPage({ data }) {
       </section>
       <section className="informational-section" id="overview"><div className="informational-shell">
         <Heading kicker={overview.kicker || "WHAT THIS PAGE HELPS YOU DO"} title={overview.title || "What this page helps you do"} text={overview.text || data.description} />
-        <div className="informational-grid">{(overview.cards || data.steps).map(([t,p]) => <article key={t}><i/><h3>{t}</h3><p>{p}</p></article>)}</div>
+        {overview.search && <label className="informational-search"><span className="sr-only">Search</span><input type="search" placeholder={overview.search} /></label>}
+        {renderCards(overview.cards || data.steps)}
       </div></section>
       <section className="informational-section alternate"><div className="informational-shell">
         <Heading kicker={information.kicker || "KEY INFORMATION AND REQUIREMENTS"} title={information.title || "Key information and requirements"} text={information.text || data.description} />
-        <div className="informational-grid">{informationCards.map(([t,p]) => <article key={t}><i/><h3>{t}</h3><p>{p}</p></article>)}</div>
+        {data.customInformation || renderCards(informationCards, information.layout === "list" ? "informational-list" : "informational-grid")}
+        {information.note && <p className="informational-note">{information.note}</p>}
       </div></section>
       <section className="informational-section"><div className="informational-shell">
         <Heading kicker={nextSteps.kicker || "NEXT STEPS"} title={nextSteps.title || "Next steps"} text={nextSteps.text || "Follow a clear journey and check relevant requirements before committing."} />

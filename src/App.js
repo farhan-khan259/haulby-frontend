@@ -26,6 +26,20 @@ import TransporterHowItWorks from './Components/TransporterHowItWorks/Transporte
 import ForBusinesses from './Components/ForBusinesses/ForBusinesses';
 import CarDealers from './Components/CarDealers/CarDealers';
 import RetailersOnlineSellers from './Components/RetailersOnlineSellers/RetailersOnlineSellers';
+import BusinessFreightQuotes from './Components/BusinessFreightQuotes/BusinessFreightQuotes';
+import FindTransportWork from './Components/FindTransportWork/FindTransportWork';
+import TransporterMembership from './Components/TransporterMembership/TransporterMembership';
+import OperatorRequirements from './Components/OperatorRequirements/OperatorRequirements';
+import TrustSafety from './Components/TrustSafety/TrustSafety';
+import AboutHaulby from './Components/AboutHaulby/AboutHaulby';
+import ContactHaulby from './Components/ContactHaulby/ContactHaulby';
+import HelpCentre from './Components/HelpCentre/HelpCentre';
+import RequestTransportQuote from './Components/RequestTransportQuote/RequestTransportQuote';
+import TransportAdvice from './Components/TransportAdvice/TransportAdvice';
+import CarTransportGuide from './Components/CarTransportGuide/CarTransportGuide';
+import UKTransportCoverage from './Components/UKTransportCoverage/UKTransportCoverage';
+import AreaLandingPage from './Components/AreaLandingPage/AreaLandingPage';
+import PageNotFound from './Components/PageNotFound/PageNotFound';
 
 function RouteScrollHandler() {
   const { pathname, hash } = useLocation();
@@ -78,7 +92,20 @@ function App() {
         <Route path="/for-businesses" element={<ForBusinesses />} />
         <Route path="/for-businesses/car-dealers" element={<CarDealers />} />
         <Route path="/for-businesses/retailers" element={<RetailersOnlineSellers />} />
-        <Route path="*" element={<Homepage />} />
+        <Route path="/business-freight-quotes" element={<BusinessFreightQuotes />} />
+        <Route path="/find-transport-work" element={<FindTransportWork />} />
+        <Route path="/transporter-membership" element={<TransporterMembership />} />
+        <Route path="/operator-requirements" element={<OperatorRequirements />} />
+        <Route path="/trust-safety" element={<TrustSafety />} />
+        <Route path="/about" element={<AboutHaulby />} />
+        <Route path="/contact" element={<ContactHaulby />} />
+        <Route path="/help-centre" element={<HelpCentre />} />
+        <Route path="/help-centre/request-a-transport-quote" element={<RequestTransportQuote />} />
+        <Route path="/transport-advice" element={<TransportAdvice />} />
+        <Route path="/transport-advice/car-transport-guide" element={<CarTransportGuide />} />
+        <Route path="/uk-transport-coverage" element={<UKTransportCoverage />} />
+        <Route path="/transport/:location" element={<AreaLandingPage />} />
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>
   );

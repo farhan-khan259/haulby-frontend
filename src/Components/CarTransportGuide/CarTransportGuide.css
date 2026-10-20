@@ -1,0 +1,3 @@
+.informational-note { letter-spacing: .01em; }
+.car-guide-page .informational-list { grid-template-columns: repeat(2,minmax(0,1fr)); }
+@media(max-width:600px){.car-guide-page .informational-list{grid-template-columns:1fr}}
