@@ -522,6 +522,7 @@
 @media (min-width: 901px) {
   .detail-hero h1 { font-size: clamp(50px, 4.2vw, 67px); line-height: 1.08; letter-spacing: -2.5px; margin: 21px 0 31px; }
   .detail-hero p { max-width: 620px; font-size: 20px; line-height: 1.5; margin: 0 0 38px; }
+  .detail-hero-image { box-shadow: inset 160px 0 120px -120px #031d31; }
 }
 
 /* Vehicle Transport reference layout and homepage typography. */
@@ -585,9 +586,6 @@
   .vehicle-detail .detail-hero p {
     max-width: 680px;
     margin-bottom: 48px;
-  }
-  .vehicle-detail .detail-hero-image {
-    box-shadow: inset 160px 0 120px -120px #031d31;
   }
   .vehicle-detail .detail-heading {
     max-width: 1220px;
