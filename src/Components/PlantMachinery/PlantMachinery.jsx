@@ -98,24 +98,24 @@ const data = {
   ],
   workTitle: "Find machinery transport work.",
   workText:
-    "With a suitable flatbed, plant trailer or specialist low-loader, quote for equipment collections and site-to-site machinery moves.",
+    "Have a suitable flatbed, plant trailer or specialist low-loader? Find machinery collections and quote for jobs matching your vehicle and capacity.",
   workImage: gardenEquipment,
   faqs: [
     [
       "Can HAULBY arrange mini digger transport?",
-      "Post accurate dimensions, mass and attachments so suitable operators can quote.",
+      "You can request mini plant transport. Provide the machine mass, dimensions and attachments for suitable operator quotes.",
     ],
     [
       "Can a 3.5-tonne van carry plant equipment?",
-      "Only when equipment and total loaded weight remain within legal limits.",
+      "Only smaller equipment within that vehicle's actual payload, dimensions and securing capabilities is suitable.",
     ],
     [
       "Do you provide loading equipment?",
-      "Loading equipment depends on the operator and quote.",
+      "The operator must bring the equipment and crew appropriate for the agreed service, including ramps, winches or lifting gear where needed.",
     ],
     [
       "What if my machinery does not run?",
-      "Disclose its condition and lifting or winching requirements.",
+      "Disclose its condition, ability to roll and lifting or winching requirements. Operators must assess loading arrangements.",
     ],
   ],
   costKicker: "UK PLANT TRANSPORT PRICING",
@@ -125,18 +125,18 @@ const data = {
   costs: [
     [
       "Machinery mass, dimensions and attachments",
-      "Give operating and loaded mass plus every detachable attachment.",
+      "Give the manufacturer and model, transport weight, height, width, length and all buckets or separate attachments. This information determines capacity and load restraint needs.",
       "Get Plant Transport Quotes",
     ],
     [
       "Collection access and loading conditions",
-      "Describe ground firmness, gradients, lifting support and restraints.",
+      "Describe ground firmness, gradients, gate width and whether the machine starts, drives or rolls. Operators must establish how loading and unloading can be carried out safely.",
       "Plant Transport Services",
     ],
     [
       "Distance, equipment and timings",
-      "Specialist ramps, low-loaders and planned delivery windows affect pricing.",
-      "View HAULBY Work",
+      "Specialist ramps, low-loaders, collection deadlines, site inductions and any abnormal-load requirements can affect suitability and pricing.",
+      "How HAULBY Works",
     ],
   ],
   compareKicker: "CHOOSE SUITABLE EQUIPMENT TRANSPORT",
@@ -146,34 +146,34 @@ const data = {
   compareCards: [
     [
       "Compact plant and small machinery",
-      "Very light equipment may suit light vehicles with rated capacity.",
+      "Very light equipment or compact machinery may suit a properly rated flatbed or plant trailer with suitable securing points. Always declare operating and loaded weights.",
     ],
     [
       "Garden equipment and trade tools",
-      "Vans may move mowers, tools and generators.",
+      "Vans may carry mowers, portable tools, generators and attachments when within legal limits and correctly restrained. State if the goods contain fuels or other hazards.",
     ],
     [
       "Heavy machinery and specialist movements",
-      "Bigger excavators or awkward industrial equipment may need low-loaders.",
+      "Bigger excavators or awkward industrial equipment may require low-loaders, suitable lifting equipment, route checks and operator licensing where applicable.",
     ],
   ],
   practicalTitle: "Plant transport and machinery delivery FAQs",
   practical: [
     [
       "How much does mini digger transport cost?",
-      "Quotes vary with machine weight, distance, journey dates and equipment.",
+      "Quotes vary with machine weight and dimensions, journey distance, transport equipment, access and collection timing. Post the actual load for offers.",
     ],
     [
       "What details are needed for machinery transport?",
-      "Include make, model, dimensions, total weight and attachments.",
+      "Include make, model, transport dimensions, total weight including attachments, running condition and how the equipment can be loaded at each site.",
     ],
     [
       "Can I send tools and garden machinery in a van?",
-      "Small equipment may fit a suitable rated vehicle.",
+      "Some light equipment may fit a suitable van if payload, load security and handling requirements are met. The operator must check suitability.",
     ],
     [
       "Who is responsible for securing the machine?",
-      "Agree loading, securing and equipment arrangements before the job.",
+      "The operator and others involved in loading have relevant responsibilities. Agree loading, securing and equipment arrangements before the job.",
     ],
   ],
   ctaTitle: "Ready to move your machinery?",

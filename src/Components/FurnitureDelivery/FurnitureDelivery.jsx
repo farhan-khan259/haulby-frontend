@@ -59,7 +59,7 @@ const data = {
   darkKicker: "EVERYDAY FURNITURE COLLECTIONS",
   darkTitle: "From the seller to your front door.",
   darkText:
-    "Specify each item, its condition and whether handling support is needed before booking.",
+    "Describe item dimensions, collection access, stairs and fragile surfaces so the operator can arrange suitable staff and handling equipment.",
   darkCards: [
     ["Second-hand sofas", "Collect a sofa purchased from a private seller."],
     ["Bedroom furniture", "Transport beds, wardrobes and cabinets."],
@@ -76,7 +76,7 @@ const data = {
     ["Describe the furniture", "List items, dimensions, access and condition."],
     [
       "Compare furniture quotes",
-      "Check vehicle space, protection and carrying assistance.",
+      "Check vehicle capacity, protective equipment and the operator's carrying crew.",
     ],
     [
       "Choose delivery arrangements",
@@ -101,77 +101,77 @@ const data = {
   faqs: [
     [
       "Can I arrange delivery for one sofa?",
-      "Yes. Give its approximate size, weight and access requirements.",
+      "Yes. Give its approximate size, weight and access requirements so operators can assess suitable transport.",
     ],
     [
       "Can an operator carry furniture upstairs?",
-      "Only when carrying help is included in the quote.",
+      "Only where carrying help is part of the quote. Tell the operator how many floors and whether a lift is available.",
     ],
     [
       "Do you offer delivery from online sellers?",
-      "Post a collection from a private seller or retailer.",
+      "You can post a collection from a private seller or retailer; the operator must confirm timing and access.",
     ],
     [
       "Does HAULBY deliver furniture itself?",
-      "No. Independent operators carry out the selected service.",
+      "No. Independent operators carry out the selected furniture collection or delivery under their agreed terms.",
     ],
   ],
   costKicker: "FURNITURE DELIVERY QUOTE FACTORS",
   costTitle: "What affects bulky furniture delivery quotes?",
   costText:
-    "Furniture delivery prices depend on the item, handling route and access requirements.",
+    "Furniture delivery prices depend on the item, handling, route and access requirements for collection and delivery.",
   costs: [
     [
       "Dimensions, condition and handling",
-      "Give width, height, depth and approximate weight.",
+      "Give width, height, depth and approximate weight. Describe fragile surfaces and whether the furniture is assembled or dismantled.",
       "Get Furniture Delivery Quotes",
     ],
     [
       "Floors, doorways and parking",
-      "Operators need to know stairs, narrow doors, lifts and parking access.",
-      "Find Work",
+      "Operators need to know about stairs, narrow doors, lift size, long carries and parking access at both addresses.",
+      "How It Works",
     ],
     [
-      "Delivery distance and assistance",
-      "Journey length, date flexibility and carrying help affect the quote.",
-      "Home Moves and Furniture Delivery",
+      "Delivery distance, access and handling requirements",
+      "Journey length, date flexibility, required crew size and protective packing needs can affect the transport quote.",
+      "Home Moves vs Furniture Delivery",
     ],
   ],
   compareKicker: "PREPARE A LARGE ITEM FOR MOVING",
   compareTitle: "How to prepare furniture for collection",
   compareText:
-    "Clear item information and agreed handling arrangements help independent operators plan collection.",
+    "Clear item information and agreed handling arrangements help independent operators plan an appropriate collection.",
   compareCards: [
     [
       "Record the item and its condition",
-      "Take photographs and describe existing marks or fragile fittings.",
+      "Take photographs and describe existing marks, damage or fragile fittings. Remove loose parts when appropriate.",
     ],
     [
       "Confirm the collection contact",
-      "Provide seller contact details, opening hours and access.",
+      "For store or private seller collections, share opening hours, release arrangements, parking and correct contact details.",
     ],
     [
       "Check what the quote includes",
-      "Agree protection, dismantling and carrying assistance.",
+      "Agree who carries, protects, dismantles and unloads the item. Confirm the service terms and relevant insurance information.",
     ],
   ],
   practicalTitle: "More questions about furniture delivery",
   practical: [
     [
       "How much does it cost to move a sofa?",
-      "It varies by size, access, distance and carrying help.",
+      "It varies by size, collection and delivery distance, access, whether one or two movers are required, and the service included.",
     ],
     [
       "Can I arrange delivery for a wardrobe?",
-      "Yes. Provide measurements and whether it can be dismantled.",
+      "Yes. Provide measurements, whether it can be dismantled and any access restrictions at both locations.",
     ],
     [
       "Can you move a fridge or washing machine?",
-      "Describe dimensions, weight and handling requirements.",
+      "You can request suitable operators. Describe dimensions, weight, safe handling and any preparation needed before collection.",
     ],
     [
       "Should I book Home Moves for several rooms?",
-      "Use House Moves for larger household inventories.",
+      "For a larger household inventory, use the separate Home Moves page so operators can plan suitable vehicles and teams.",
     ],
   ],
   ctaTitle: "Ready to move your furniture?",
