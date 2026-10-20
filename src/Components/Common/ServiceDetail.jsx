@@ -43,7 +43,7 @@ export default function ServiceDetail({ data }) {
       <section className="detail-quote" id="quote">
         <div className="detail-shell">
           <SectionHead
-            kicker={`START YOUR ${data.short.toUpperCase()} QUOTE`}
+            kicker={data.quoteKicker || `START YOUR ${data.short.toUpperCase()} QUOTE`}
             title={data.quoteTitle}
             text={data.quoteText}
           />
@@ -183,7 +183,7 @@ export default function ServiceDetail({ data }) {
         <div className="detail-shell">
           <SectionHead
             kicker="FREQUENT QUESTIONS"
-            title={`${data.short} questions, answered.`}
+            title={data.faqTitle || `${data.short} questions, answered.`}
           />
           <div className="detail-faq-grid">
             {data.faqs.map(([q, a]) => (

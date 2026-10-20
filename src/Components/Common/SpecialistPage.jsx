@@ -11,6 +11,7 @@ export default function SpecialistPage({ config }) {
     heroText: config.heroText,
     quoteCta: config.quoteCta,
     workCta: config.workCta,
+    quoteKicker: config.quoteKicker,
     heroImage: config.images[0],
     tags: config.tags,
     quoteTitle: config.quoteTitle || "Where does the load need to go?",
@@ -81,6 +82,7 @@ export default function SpecialistPage({ config }) {
       config.workText ||
       `Find suitable jobs matching your transport equipment, operating area and capacity.`,
     workImage: config.images[6],
+    faqTitle: config.faqTitle,
     faqs: config.faqs,
     costKicker:
       config.costKicker || `${service.toUpperCase()} QUOTE FACTORS`,
