@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Header, Footer, ArrowButton, LineIcon } from "./SiteChrome";
 import "./ServiceDetail.css";
 
@@ -12,6 +12,20 @@ const SectionHead = ({ kicker, title, text, light = false }) => (
 );
 
 export default function ServiceDetail({ data }) {
+  const navigate = useNavigate();
+
+  const startQuote = (event) => {
+    event.preventDefault();
+    const values = new FormData(event.currentTarget);
+    navigate("/quote/new", {
+      state: {
+        collectionPostcode: values.get("collectionPostcode"),
+        deliveryPostcode: values.get("deliveryPostcode"),
+        transportType: values.get("transportType"),
+      },
+    });
+  };
+
   return (
     <main className={`detail-page${data.variant ? ` ${data.variant}-detail` : ""}${data.styleVariant ? ` ${data.styleVariant}-detail` : ""}`}>
       <Header />
@@ -47,22 +61,22 @@ export default function ServiceDetail({ data }) {
             title={data.quoteTitle}
             text={data.quoteText}
           />
-          <form onSubmit={(e) => e.preventDefault()}>
+          <form onSubmit={startQuote}>
             <label>
               Collection postcode
-              <input placeholder="e.g. PE11 4TA" />
+              <input name="collectionPostcode" placeholder="e.g. PE11 4TA" required />
             </label>
             <label>
               Delivery postcode
-              <input placeholder="e.g. M1 1AE" />
+              <input name="deliveryPostcode" placeholder="e.g. M1 1AE" required />
             </label>
             <label>
               {data.typeLabel}
-              <select>
+              <select name="transportType" required>
                 <option>{data.typePlaceholder}</option>
               </select>
             </label>
-            <button>
+            <button type="submit">
               Continue <span>→</span>
             </button>
           </form>

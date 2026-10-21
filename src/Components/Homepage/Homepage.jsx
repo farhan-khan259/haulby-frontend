@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Footer } from "../Common/SiteChrome";
 import "./Homepage.css";
 import heroImage from "../../Assets/Pictures/APPROVED HAULBY Cinematic Transport Scene — Clean for editable text.png";
@@ -177,6 +177,7 @@ export function HomepageHeader() {
 function Homepage() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [openFaq, setOpenFaq] = useState(null);
+  const navigate = useNavigate();
 
   return (
     <main id="top">
@@ -200,8 +201,8 @@ function Homepage() {
             <Link to="/how-it-works">How It Works</Link>
             <Link to="/for-businesses">For Businesses</Link>
             <Link to="/find-transport-work">For Transporters</Link>
-            <Link to="/">Log In</Link>
-            <Link to="/" className="nav-register">
+            <Link to="/login">Log In</Link>
+            <Link to="/register" className="nav-register">
               Register
             </Link>
           </nav>
@@ -262,7 +263,7 @@ function Homepage() {
             title="Tell us what you need moved."
             text="A few details are all you need to begin comparing quotes from transport providers."
           />
-          <form className="quote-form" onSubmit={(e) => e.preventDefault()}>
+          <form className="quote-form" onSubmit={(e) => { e.preventDefault(); navigate("/quote/new"); }}>
             <label>
               Collection postcode
               <input

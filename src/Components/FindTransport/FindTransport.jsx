@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Header, Footer, ArrowButton, LineIcon } from "../Common/SiteChrome";
 import hero from "../../Assets/Pictures/APPROVED HAULBY Cinematic Transport Scene — Clean for editable text.png";
 import "./FindTransport.css";
@@ -20,6 +20,19 @@ const Head = ({ k, t, p, light = false, bar = false }) => (
 );
 export default function FindTransport() {
   const [selected, setSelected] = useState(0);
+  const navigate = useNavigate();
+
+  const continueQuote = (event) => {
+    event.preventDefault();
+    const values = new FormData(event.currentTarget);
+    navigate("/quote/new", {
+      state: {
+        category: cats[selected][0],
+        collectionPostcode: values.get("collectionPostcode"),
+        deliveryPostcode: values.get("deliveryPostcode"),
+      },
+    });
+  };
   return (
     <main className="find-page">
       <Header />
@@ -69,16 +82,16 @@ export default function FindTransport() {
             ))}
           </div>
           <b>2 / YOUR JOURNEY</b>
-          <form onSubmit={(e) => e.preventDefault()}>
+          <form onSubmit={continueQuote}>
             <label>
               Collection postcode
-              <input placeholder="e.g. PE11 4TA" />
+              <input name="collectionPostcode" placeholder="e.g. PE11 4TA" required />
             </label>
             <label>
               Delivery postcode
-              <input placeholder="e.g. M1 1AE" />
+              <input name="deliveryPostcode" placeholder="e.g. M1 1AE" required />
             </label>
-            <button>Continue To Transport Quote →</button>
+            <button type="submit">Continue To Transport Quote →</button>
           </form>
           <p className="find-note">
             <LineIcon type="shield" /> Tell us what needs moving. HAULBY works
