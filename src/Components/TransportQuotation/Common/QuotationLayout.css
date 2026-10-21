@@ -1,0 +1,74 @@
+:root {
+  --quotation-navy: #061e33;
+  --quotation-ink: #17324b;
+  --quotation-muted: #587087;
+  --quotation-cyan: #08cfca;
+  --quotation-bg: #f2f8fb;
+  --quotation-border: #cfdee7;
+}
+
+.quotation-page { min-height: 100vh; background: var(--quotation-bg); color: var(--quotation-ink); }
+.quotation-header { height: 90px; background: #061d31; color: #fff; }
+.quotation-header-inner { width: min(1440px, calc(100% - 96px)); height: 100%; margin: auto; display: flex; align-items: center; justify-content: space-between; }
+.quotation-header-inner > span { font-size: 16px; font-weight: 700; }
+.quotation-logo { width: 190px; height: 66px; overflow: hidden; display: flex; align-items: center; }
+.quotation-logo img { width: 100%; display: block; filter: invert(1) hue-rotate(180deg); mix-blend-mode: screen; }
+.quotation-main { width: min(1160px, calc(100% - 64px)); margin: 0 auto; padding: 49px 0 27px; }
+.quotation-main h1 { font-size: clamp(36px, 3vw, 42px); line-height: 1.15; letter-spacing: -1.3px; margin: 0 0 29px; }
+.quotation-subtitle { color: var(--quotation-muted); font-size: 17px; margin: 0; min-height: 48px; }
+.quotation-progress-label { color: #007f85; font-size: 13px; font-weight: 800; margin: 12px 0 14px; }
+.quotation-progress { height: 9px; overflow: hidden; border-radius: 20px; background: #dae6ec; }
+.quotation-progress span { display: block; height: 100%; border-radius: inherit; background: var(--quotation-cyan); }
+.quotation-form { margin-top: 32px; }
+.quotation-card { min-height: 492px; padding: 22px 30px; border: 1px solid var(--quotation-border); border-radius: 11px; background: #fff; }
+.quotation-card h2 { font-size: 25px; line-height: 1.2; margin: 0 0 13px; letter-spacing: -0.4px; }
+.quotation-card-description { color: var(--quotation-muted); font-size: 16px; margin: 0; line-height: 1.45; }
+.quotation-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-content: start; gap: 42px 30px; margin-top: 58px; }
+.quotation-field { display: flex; flex-direction: column; gap: 8px; }
+.quotation-field > span { font-size: 13px; font-weight: 800; color: var(--quotation-ink); }
+.quotation-field input, .quotation-field textarea { width: 100%; height: 58px; padding: 0 12px; border: 1px solid var(--quotation-border); border-radius: 12px; background: #fff; color: var(--quotation-ink); font: inherit; font-size: 13px; outline: none; resize: none; }
+.quotation-field textarea { padding-top: 16px; }
+.quotation-field input:focus, .quotation-field textarea:focus { border-color: #00aaa9; box-shadow: 0 0 0 3px rgba(8, 207, 202, .12); }
+.quotation-field input::placeholder, .quotation-field textarea::placeholder { color: #597086; opacity: 1; }
+.quotation-field input[type="file"] { padding: 10px 12px; cursor: pointer; }
+.quotation-field input[type="file"]::file-selector-button { height: 36px; margin-right: 12px; padding: 0 15px; border: 0; border-radius: 7px; background: var(--quotation-cyan); color: #001c2b; font-size: 12px; font-weight: 800; cursor: pointer; }
+.quotation-notice { margin-top: 32px; padding: 15px 18px 10px; border-radius: 10px; background: #e0f6f3; color: var(--quotation-ink); }
+.quotation-notice strong { display: block; color: #00858b; font-size: 13px; text-transform: uppercase; }
+.quotation-notice p { margin: 16px 0 0; font-size: 13px; line-height: 1.4; }
+.quotation-actions { display: flex; gap: 20px; margin-top: 27px; }
+.quotation-actions button { height: 59px; border: 0; border-radius: 10px; padding: 0 16px; font-size: 14px; font-weight: 800; cursor: pointer; }
+.quotation-primary { width: 310px; background: var(--quotation-cyan); color: #001c2b; display: flex; align-items: center; justify-content: space-between; }
+.quotation-previous { width: 226px; background: #0c2d4a; color: #fff; text-align: left; }
+.quotation-primary:hover { background: #04bbb7; }
+.quotation-previous:hover { background: #123a5c; }
+
+@media (max-width: 600px) {
+  .quotation-header { height: 84px; }
+  .quotation-header-inner { width: calc(100% - 46px); }
+  .quotation-logo { width: 161px; height: 60px; }
+  .quotation-header-inner > span { font-size: 14px; }
+  .quotation-main { width: calc(100% - 46px); padding: 25px 0 24px; }
+  .quotation-main h1 { font-size: 29px; letter-spacing: -0.65px; margin: 0 0 37px; }
+  .quotation-subtitle { font-size: 15px; line-height: 1.3; min-height: 50px; }
+  .quotation-progress-label { margin-top: 17px; }
+  .quotation-progress { height: 9px; }
+  .quotation-form { margin-top: 30px; }
+  .quotation-card { min-height: 660px; padding: 21px 15px; }
+  .quotation-card h2 { font-size: 21px; margin-bottom: 16px; }
+  .quotation-card-description { font-size: 13px; line-height: 1.25; }
+  .quotation-fields { grid-template-columns: 1fr; gap: 23px; margin-top: 15px; }
+  .quotation-field { gap: 8px; }
+  .quotation-field input, .quotation-field textarea { height: 57px; font-size: 13px; }
+  .quotation-notice { margin-top: 40px; padding: 14px 12px 12px; }
+  .quotation-notice strong { line-height: 1.3; }
+  .quotation-notice p { margin-top: 13px; }
+  .quotation-actions { margin-top: 41px; }
+  .quotation-primary { width: 100%; }
+  .quotation-previous { display: none; }
+}
+
+@media (max-width: 390px) {
+  .quotation-header-inner, .quotation-main { width: calc(100% - 32px); }
+  .quotation-logo { width: 150px; }
+  .quotation-header-inner > span { font-size: 13px; }
+}

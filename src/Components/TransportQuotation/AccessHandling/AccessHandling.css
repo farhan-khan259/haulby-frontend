@@ -1,0 +1,6 @@
+@import "../Common/QuotationLayout.css";
+
+.quotation-page .quotation-notice { grid-column: 1 / -1; }
+@media (max-width: 600px) {
+  .quotation-page .quotation-card { min-height: 660px; }
+}

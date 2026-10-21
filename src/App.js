@@ -51,6 +51,8 @@ import ResetPassword from './Components/Authentication/ResetPassword/ResetPasswo
 import EmailVerification from './Components/Authentication/EmailVerification/EmailVerification';
 import OrganisationInvitation from './Components/Authentication/OrganisationInvitation/OrganisationInvitation';
 import MultiFactorAuthentication from './Components/Authentication/MultiFactorAuthentication/MultiFactorAuthentication';
+import TransportQuotationRoutes from './Components/TransportQuotation/TransportQuotationRoutes';
+import RequestPublished from './Components/TransportQuotation/RequestPublished/RequestPublished';
 
 function RouteScrollHandler() {
   const { pathname, hash } = useLocation();
@@ -132,6 +134,8 @@ function App() {
         <Route path="/verify-email" element={<EmailVerification />} />
         <Route path="/invite/:token" element={<OrganisationInvitation />} />
         <Route path="/security/mfa" element={<MultiFactorAuthentication />} />
+        <Route path="/quote/new" element={<TransportQuotationRoutes />} />
+        <Route path="/quote/submitted" element={<RequestPublished />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>

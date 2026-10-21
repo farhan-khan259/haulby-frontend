@@ -1,0 +1,5 @@
+@import "../Common/QuotationLayout.css";
+
+@media (max-width: 600px) {
+  .quotation-page .quotation-card h2 { max-width: 280px; }
+}
