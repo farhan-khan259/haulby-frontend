@@ -1,0 +1,1 @@
+import DriverWorkspaceLayout from"../Common/DriverWorkspaceLayout";import"./MyDay.css";export default function MyDay(){return <DriverWorkspaceLayout title="My Day" description="Driver mobile workspace for assigned collections and deliveries" contentTitle="At-a-glance overview" next="/driver/jobs/assigned" button="View assigned jobs"/>}
