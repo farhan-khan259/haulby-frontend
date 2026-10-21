@@ -1,1 +1,14 @@
-import L from "../Common/BusinessPortalLayout";import"./BusinessLocations.css";export default function BusinessLocations(){return <L title="Business Locations" description="Company collection and delivery locations" cards={["Profile","Permissions","Preferences"]} type="settings" active="Account & Settings" next="/business/team"/>}
+import L from "../Common/BusinessPortalLayout";
+import "./BusinessLocations.css";
+export default function BusinessLocations() {
+  return (
+    <L
+      title="Business Locations"
+      description="Company collection and delivery locations"
+      cards={["Profile", "Permissions", "Preferences"]}
+      type="settings"
+      active="Account & Settings"
+      next="/business/team"
+    />
+  );
+}
