@@ -169,6 +169,11 @@ function SectionTitle({ eyebrow, title, text, light = false }) {
   );
 }
 
+export function HomepageHeader() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  return <header className="site-header"><div className="container nav-wrap"><Logo/><button className="menu-button" onClick={()=>setMenuOpen(!menuOpen)} aria-label="Toggle navigation" aria-expanded={menuOpen}><span/><span/><span/></button><nav className={menuOpen?"open":""}><Link to="/">Home</Link><Link to="/find-transport">Find Transport</Link><Link to="/services">Services</Link><Link to="/how-it-works">How It Works</Link><Link to="/for-businesses">For Businesses</Link><Link to="/find-transport-work">For Transporters</Link><Link to="/login">Log In</Link><Link to="/register" className="nav-register">Register</Link></nav></div></header>;
+}
+
 function Homepage() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [openFaq, setOpenFaq] = useState(null);

@@ -40,7 +40,14 @@ import CarTransportGuide from './Components/CarTransportGuide/CarTransportGuide'
 import UKTransportCoverage from './Components/UKTransportCoverage/UKTransportCoverage';
 import AreaLandingPage from './Components/AreaLandingPage/AreaLandingPage';
 import PageNotFound from './Components/PageNotFound/PageNotFound';
-import LegalPage from './Components/LegalPage/LegalPage';
+import WebsiteTermsOfUse from './Components/WebsiteTermsOfUse/WebsiteTermsOfUse';
+import CustomerMarketplaceTerms from './Components/CustomerMarketplaceTerms/CustomerMarketplaceTerms';
+import TransporterAgreementPage from './Components/TransporterAgreementPage/TransporterAgreementPage';
+import PrivacyPolicyPage from './Components/PrivacyPolicyPage/PrivacyPolicyPage';
+import CookiePolicyPage from './Components/CookiePolicyPage/CookiePolicyPage';
+import AcceptableUsePage from './Components/AcceptableUsePage/AcceptableUsePage';
+import ComplaintsDisputesPage from './Components/ComplaintsDisputesPage/ComplaintsDisputesPage';
+import AccessibilityStatementPage from './Components/AccessibilityStatementPage/AccessibilityStatementPage';
 import ChooseAccountType from './Components/Authentication/ChooseAccountType/ChooseAccountType';
 import CustomerRegistration from './Components/Authentication/CustomerRegistration/CustomerRegistration';
 import BusinessRegistration from './Components/Authentication/BusinessRegistration/BusinessRegistration';
@@ -122,12 +129,14 @@ function App() {
         <Route path="/transport-advice/car-transport-guide" element={<CarTransportGuide />} />
         <Route path="/uk-transport-coverage" element={<UKTransportCoverage />} />
         <Route path="/transport/:location" element={<AreaLandingPage />} />
-        <Route path="/privacy-policy" element={<LegalPage document="privacy" />} />
-        <Route path="/cookie-policy" element={<LegalPage document="cookies" />} />
-        <Route path="/terms-of-use" element={<LegalPage document="terms" />} />
-        <Route path="/transporter-agreement" element={<LegalPage document="transporter" />} />
-        <Route path="/complaints-procedure" element={<LegalPage document="complaints" />} />
-        <Route path="/accessibility" element={<LegalPage document="accessibility" />} />
+        <Route path="/terms-of-use" element={<WebsiteTermsOfUse />} />
+        <Route path="/customer-marketplace-terms" element={<CustomerMarketplaceTerms />} />
+        <Route path="/transporter-agreement" element={<TransporterAgreementPage />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+        <Route path="/cookie-policy" element={<CookiePolicyPage />} />
+        <Route path="/acceptable-use" element={<AcceptableUsePage />} />
+        <Route path="/complaints-procedure" element={<ComplaintsDisputesPage />} />
+        <Route path="/accessibility" element={<AccessibilityStatementPage />} />
         <Route path="/register" element={<ChooseAccountType />} />
         <Route path="/register/customer" element={<CustomerRegistration />} />
         <Route path="/register/business" element={<BusinessRegistration />} />
