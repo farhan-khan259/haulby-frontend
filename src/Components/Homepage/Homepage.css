@@ -10,6 +10,8 @@
   --line: #dce8ef;
 }
 
+.logo img{filter:none;mix-blend-mode:normal;background:transparent;object-fit:contain}
+
 .container {
   width: min(1680px, calc(100% - 80px));
   margin: 0 auto;
@@ -1359,3 +1361,4 @@ footer {
   .service-card h3 { font-size: 17px; }
   .service-card p { font-size: 12px; }
 }
+.logo img{filter:none;mix-blend-mode:normal;background:transparent;object-fit:contain}

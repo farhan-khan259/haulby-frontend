@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import logo from "../../../Assets/Pictures/APPROVED HAULBY Landscape Logo — transparent artwork.jpg";
+import logo from "../../../Assets/Pictures/HAULBY-logo-transparent.png";
 import "./CustomerPortalLayout.css";
 
 const sidebarLinks = [

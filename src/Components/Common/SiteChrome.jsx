@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import logoImage from "../../Assets/Pictures/APPROVED HAULBY Landscape Logo — transparent artwork.jpg";
+import logoImage from "../../Assets/Pictures/HAULBY-logo-transparent.png";
 import "./SiteChrome.css";
 
 export function Brand() {

@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import logo from "../../../Assets/Pictures/APPROVED HAULBY Landscape Logo — transparent artwork.jpg";
+import logo from "../../../Assets/Pictures/HAULBY-logo-transparent.png";
 import "./QuotationLayout.css";
 
 export const steps = [

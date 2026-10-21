@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import logo from "../../../Assets/Pictures/APPROVED HAULBY Landscape Logo — transparent artwork.jpg";
+import logo from "../../../Assets/Pictures/HAULBY-logo-transparent.png";
 import "./BusinessPortalLayout.css";
 
 const nav = [["Dashboard","/business/dashboard"],["Requests & Jobs","/business/requests"],["Bookings","/business/bookings"],["Quotes","/business/approvals"],["Messages","/business/team"],["Account & Settings","/business/settings"]];

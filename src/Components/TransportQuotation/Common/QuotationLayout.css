@@ -7,6 +7,8 @@
   --quotation-border: #cfdee7;
 }
 
+.quotation-logo img{height:auto;filter:none;mix-blend-mode:normal;background:transparent;object-fit:contain}
+
 .quotation-page { min-height: 100vh; background: var(--quotation-bg); color: var(--quotation-ink); }
 .quotation-header { height: 90px; background: #061d31; color: #fff; }
 .quotation-header-inner { width: min(1440px, calc(100% - 96px)); height: 100%; margin: auto; display: flex; align-items: center; justify-content: space-between; }
@@ -72,3 +74,4 @@
   .quotation-logo { width: 150px; }
   .quotation-header-inner > span { font-size: 13px; }
 }
+.quotation-logo img{height:auto;filter:none;mix-blend-mode:normal;background:transparent;object-fit:contain}

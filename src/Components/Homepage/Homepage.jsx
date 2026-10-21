@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Footer } from "../Common/SiteChrome";
 import "./Homepage.css";
 import heroImage from "../../Assets/Pictures/APPROVED HAULBY Cinematic Transport Scene — Clean for editable text.png";
-import logoImage from "../../Assets/Pictures/APPROVED HAULBY Landscape Logo — transparent artwork.jpg";
+import logoImage from "../../Assets/Pictures/HAULBY-logo-transparent.png";
 import servicesImage from "../../Assets/Pictures/services.png";
 import transportersImage from "../../Assets/Pictures/transporters.png";
 import businessImage from "../../Assets/Pictures/business.png";
