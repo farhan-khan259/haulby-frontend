@@ -1,0 +1,2 @@
+import Layout from "../Common/CustomerPortalLayout"; import "./QuoteDetail.css";
+export default function QuoteDetail(){return <Layout code="C05" pathLabel="/account/requests/[id]/quotes/[quoteId]" title="Quote Detail" description="Show operator fare, HAULBY fee, combined total, terms and checkout" cards={["Service included","Restrictions","Status"]} section="QUOTE DETAIL" contentTitle="Quote information" active="Quotes" nextPath="/account/requests/demo/messages"/>}

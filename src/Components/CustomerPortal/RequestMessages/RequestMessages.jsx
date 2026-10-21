@@ -1,0 +1,2 @@
+import Layout from "../Common/CustomerPortalLayout"; import "./RequestMessages.css";
+export default function RequestMessages(){return <Layout code="C06" pathLabel="/account/requests/[id]/messages" title="Request Messages" description="Secure correspondence before booking" cards={["Participants","Messages","Reply"]} section="MESSAGING" contentTitle="Conversation" rows={["No conversation is loaded in this design."]} active="Messages" nextPath="/account/bookings"/>}

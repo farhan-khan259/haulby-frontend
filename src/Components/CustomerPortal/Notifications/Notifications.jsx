@@ -1,0 +1,2 @@
+import Layout from "../Common/CustomerPortalLayout"; import "./Notifications.css";
+export default function Notifications(){return <Layout code="C12" pathLabel="/account/notifications" title="Notifications" description="Quotes, messages and status changes" cards={["Priority","Activity","Action"]} section="ALERTS/SUPPORT FEED" contentTitle="Notifications and support" nextPath="/account/addresses"/>}

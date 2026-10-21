@@ -1,0 +1,2 @@
+import Layout from "../Common/CustomerPortalLayout"; import "./MyBookings.css";
+export default function MyBookings(){return <Layout code="C07" pathLabel="/account/bookings" title="My Bookings" description="Booking paid-fee status, carrier fare and separate receipts" cards={["Reference","Status","Updated"]} type="search" active="Requests & Jobs" actionLabel="New / Manage" nextPath="/account/bookings/demo"/>}

@@ -1,0 +1,2 @@
+import Layout from "../Common/CustomerPortalLayout"; import "./SecuritySettings.css";
+export default function SecuritySettings(){return <Layout code="C17" pathLabel="/account/settings/security" title="Security Settings" description="Login, password, MFA and sessions" cards={["Profile","Permissions","Preferences"]} type="settings" active="Account & Settings" nextPath="/account/settings/notifications"/>}

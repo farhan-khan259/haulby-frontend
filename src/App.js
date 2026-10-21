@@ -53,6 +53,7 @@ import OrganisationInvitation from './Components/Authentication/OrganisationInvi
 import MultiFactorAuthentication from './Components/Authentication/MultiFactorAuthentication/MultiFactorAuthentication';
 import TransportQuotationRoutes from './Components/TransportQuotation/TransportQuotationRoutes';
 import RequestPublished from './Components/TransportQuotation/RequestPublished/RequestPublished';
+import CustomerPortalRoutes from './Components/CustomerPortal/CustomerPortalRoutes';
 
 function RouteScrollHandler() {
   const { pathname, hash } = useLocation();
@@ -136,6 +137,7 @@ function App() {
         <Route path="/security/mfa" element={<MultiFactorAuthentication />} />
         <Route path="/quote/new" element={<TransportQuotationRoutes />} />
         <Route path="/quote/submitted" element={<RequestPublished />} />
+        <Route path="/account/*" element={<CustomerPortalRoutes />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>

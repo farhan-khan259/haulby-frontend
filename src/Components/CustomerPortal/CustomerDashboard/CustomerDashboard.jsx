@@ -1,0 +1,2 @@
+import Layout from "../Common/CustomerPortalLayout"; import "./CustomerDashboard.css";
+export default function CustomerDashboard(){return <Layout code="C01" pathLabel="/account/dashboard" title="Customer Dashboard" description="Active requests, quotes, bookings and alerts" cards={["Requests","Bookings","Actions"]} cardText="—" section="DASHBOARD" contentTitle="At-a-glance overview" rows={["Current status / authorised data","Marketplace activity"]} nextPath="/account/requests"/>}

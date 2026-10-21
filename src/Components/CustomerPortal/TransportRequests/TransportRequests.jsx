@@ -1,0 +1,2 @@
+import Layout from "../Common/CustomerPortalLayout"; import "./TransportRequests.css";
+export default function TransportRequests(){return <Layout code="C02" pathLabel="/account/requests" title="My Transport Requests" description="Search and filter draft/active/completed requests" cards={["Reference","Status","Updated"]} type="search" active="Requests & Jobs" actionLabel="New / Manage" nextPath="/quote/new?step=category"/>}
