@@ -15,9 +15,7 @@
 .auth-header span { font-size: 14px; font-weight: 700; }
 .auth-main { width: min(1160px, calc(100% - 48px)); margin: auto; padding: 48px 0 28px; }
 .auth-intro { min-height: 257px; }
-.auth-route { display: flex; gap: 9px; align-items: center; color: #008488; font-size: 12px; }
-.auth-route i { font-style: normal; }
-.auth-intro h1 { margin: 31px 0 27px; font-size: clamp(36px, 3vw, 42px); line-height: 1.06; letter-spacing: -1.3px; }
+.auth-intro h1 { margin: 0 0 27px; font-size: clamp(36px, 3vw, 42px); line-height: 1.06; letter-spacing: -1.3px; }
 .auth-intro > p { margin: 0; color: var(--auth-muted); font-size: 16px; }
 .auth-form { margin: 0; }
 .auth-card { min-height: 492px; padding: 22px 30px 30px; border: 1px solid var(--auth-line); border-radius: 11px; background: #fff; }
@@ -42,7 +40,7 @@
   .auth-header span { font-size: 13px; }
   .auth-main { width: calc(100% - 46px); padding: 25px 0 58px; }
   .auth-intro { min-height: 251px; }
-  .auth-intro h1 { margin: 28px 0 38px; font-size: 29px; line-height: 1.24; letter-spacing: -.7px; }
+  .auth-intro h1 { margin: 0 0 38px; font-size: 29px; line-height: 1.24; letter-spacing: -.7px; }
   .auth-intro > p { font-size: 14px; line-height: 1.35; }
   .auth-card { min-height: 660px; padding: 21px 15px 28px; }
   .auth-card h2 { font-size: 21px; margin-bottom: 17px; }

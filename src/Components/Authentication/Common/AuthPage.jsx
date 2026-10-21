@@ -1,8 +1,8 @@
-import { Link, useNavigate } from "react-router-dom";
-import logo from "../../../Assets/Pictures/APPROVED HAULBY Landscape Logo — transparent artwork.jpg";
+import { useNavigate } from "react-router-dom";
+import { Header } from "../../Common/SiteChrome";
 import "./AuthPage.css";
 
-export default function AuthPage({ code, path, title, subtitle, fields, action = "Continue Securely", next, children }) {
+export default function AuthPage({ title, subtitle, fields, action = "Continue Securely", next, children }) {
   const navigate = useNavigate();
 
   const submit = (event) => {
@@ -12,18 +12,10 @@ export default function AuthPage({ code, path, title, subtitle, fields, action =
 
   return (
     <div className="auth-page">
-      <header className="auth-header">
-        <div className="auth-header-inner">
-          <Link to="/" className="auth-logo" aria-label="HAULBY home">
-            <img src={logo} alt="HAULBY — Your transport. Sorted." />
-          </Link>
-          <span>Secure account access</span>
-        </div>
-      </header>
+      <Header />
 
       <main className="auth-main">
         <section className="auth-intro">
-          <div className="auth-route"><b>{code}</b><i>/</i><b>{path}</b></div>
           <h1>{title}</h1>
           <p>{subtitle}</p>
         </section>

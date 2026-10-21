@@ -28,14 +28,14 @@ export function Header() {
           <i />
         </button>
         <nav className={open ? "is-open" : ""}>
-        <Link to="/">Home</Link>
-          <Link to="/find-transport">Find Transport</Link>
-          <Link to="/services">Services</Link>
-          <Link to="/how-it-works">How It Works</Link>
-          <Link to="/for-businesses">For Businesses</Link>
-          <Link to="/find-transport-work">For Transporters</Link>
-          <Link to="/login">Log In</Link>
-          <Link className="chrome-register" to="/register">
+        <Link to="/" onClick={() => setOpen(false)}>Home</Link>
+          <Link to="/find-transport" onClick={() => setOpen(false)}>Find Transport</Link>
+          <Link to="/services" onClick={() => setOpen(false)}>Services</Link>
+          <Link to="/how-it-works" onClick={() => setOpen(false)}>How It Works</Link>
+          <Link to="/for-businesses" onClick={() => setOpen(false)}>For Businesses</Link>
+          <Link to="/find-transport-work" onClick={() => setOpen(false)}>For Transporters</Link>
+          <Link to="/login" onClick={() => setOpen(false)}>Log In</Link>
+          <Link className="chrome-register" to="/register" onClick={() => setOpen(false)}>
             Register
           </Link>
         </nav>
