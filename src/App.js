@@ -55,6 +55,7 @@ import TransportQuotationRoutes from './Components/TransportQuotation/TransportQ
 import RequestPublished from './Components/TransportQuotation/RequestPublished/RequestPublished';
 import CustomerPortalRoutes from './Components/CustomerPortal/CustomerPortalRoutes';
 import BusinessPortalRoutes from './Components/BuisnessPortal/BusinessPortalRoutes';
+import TransporterPortalRoutes from './Components/TransporterPortal/TransporterPortalRoutes';
 
 function RouteScrollHandler() {
   const { pathname, hash } = useLocation();
@@ -140,6 +141,7 @@ function App() {
         <Route path="/quote/submitted" element={<RequestPublished />} />
         <Route path="/account/*" element={<CustomerPortalRoutes />} />
         <Route path="/business/*" element={<BusinessPortalRoutes />} />
+        <Route path="/transporter/*" element={<TransporterPortalRoutes />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>

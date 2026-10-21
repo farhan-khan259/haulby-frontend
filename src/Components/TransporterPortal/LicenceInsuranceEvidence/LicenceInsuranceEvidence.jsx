@@ -1,0 +1,1 @@
+import ConfiguredPage from"../Common/ConfiguredPage";import"./LicenceInsuranceEvidence.css";export default function LicenceInsuranceEvidence(){return <ConfiguredPage name="LicenceInsuranceEvidence"/>}

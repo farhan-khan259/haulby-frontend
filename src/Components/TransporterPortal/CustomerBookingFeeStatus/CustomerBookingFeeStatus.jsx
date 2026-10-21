@@ -1,0 +1,1 @@
+import ConfiguredPage from"../Common/ConfiguredPage";import"./CustomerBookingFeeStatus.css";export default function CustomerBookingFeeStatus(){return <ConfiguredPage name="CustomerBookingFeeStatus"/>}
