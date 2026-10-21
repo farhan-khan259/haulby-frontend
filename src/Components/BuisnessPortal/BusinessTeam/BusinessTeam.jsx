@@ -1,0 +1,1 @@
+import L from "../Common/BusinessPortalLayout";import"./BusinessTeam.css";export default function BusinessTeam(){return <L title="Business Team" description="Invite staff and set their permissions" cards={["Profile","Permissions","Preferences"]} type="settings" active="Messages" next="/business/bulk-upload"/>}

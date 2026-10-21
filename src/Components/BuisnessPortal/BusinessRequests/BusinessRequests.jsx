@@ -1,0 +1,1 @@
+import L from "../Common/BusinessPortalLayout";import"./BusinessRequests.css";export default function BusinessRequests(){return <L title="Business Transport Requests" description="Shared requests and team filters" cards={["Reference","Status","Updated"]} type="search" active="Requests & Jobs" next="/quote/new?step=category" button="New / Manage"/>}

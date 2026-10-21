@@ -1,0 +1,1 @@
+import L from "../Common/BusinessPortalLayout";import"./CompanyBookings.css";export default function CompanyBookings(){return <L title="Company Bookings" description="All bookings for the organisation" cards={["Reference","Status","Updated"]} type="search" active="Bookings" next="/business/bookings/demo" button="New / Manage" extras="booking"/>}

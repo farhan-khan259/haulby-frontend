@@ -1,0 +1,1 @@
+import L from "../Common/BusinessPortalLayout";import"./BusinessRequestDetail.css";export default function BusinessRequestDetail(){return <L title="Business Request Detail" description="Reuses customer job component with company permissions" active="Requests & Jobs" next="/business/bookings"/>}

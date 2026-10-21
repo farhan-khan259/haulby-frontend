@@ -54,6 +54,7 @@ import MultiFactorAuthentication from './Components/Authentication/MultiFactorAu
 import TransportQuotationRoutes from './Components/TransportQuotation/TransportQuotationRoutes';
 import RequestPublished from './Components/TransportQuotation/RequestPublished/RequestPublished';
 import CustomerPortalRoutes from './Components/CustomerPortal/CustomerPortalRoutes';
+import BusinessPortalRoutes from './Components/BuisnessPortal/BusinessPortalRoutes';
 
 function RouteScrollHandler() {
   const { pathname, hash } = useLocation();
@@ -138,6 +139,7 @@ function App() {
         <Route path="/quote/new" element={<TransportQuotationRoutes />} />
         <Route path="/quote/submitted" element={<RequestPublished />} />
         <Route path="/account/*" element={<CustomerPortalRoutes />} />
+        <Route path="/business/*" element={<BusinessPortalRoutes />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>

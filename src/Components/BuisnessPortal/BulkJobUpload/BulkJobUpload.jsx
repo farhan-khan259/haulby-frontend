@@ -1,0 +1,1 @@
+import L from "../Common/BusinessPortalLayout";import"./BulkJobUpload.css";export default function BulkJobUpload(){return <L title="Bulk Job Upload" description="Upload several transport requests with validation" cards={["Input","Review","Submit"]} section="WORKFLOW/ACTION PAGE" contentTitle="Complete workflow" active="Requests & Jobs" next="/business/templates"/>}

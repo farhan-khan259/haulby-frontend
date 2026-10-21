@@ -1,0 +1,1 @@
+import L from "../Common/BusinessPortalLayout";import"./BusinessReporting.css";export default function BusinessReporting(){return <L title="Business Reporting" description="Spend, jobs and completion reports" cards={["Requests","Bookings","Actions"]} section="DASHBOARD" contentTitle="At-a-glance overview" next="/business/settings"/>}

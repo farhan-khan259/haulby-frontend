@@ -1,0 +1,1 @@
+import L from "../Common/BusinessPortalLayout";import"./BusinessDashboard.css";export default function BusinessDashboard(){return <L title="Business Dashboard" description="Company-wide requests, bookings and status" cards={["Requests","Bookings","Actions"]} section="DASHBOARD" contentTitle="At-a-glance overview" next="/business/requests"/>}

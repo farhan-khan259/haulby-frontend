@@ -1,0 +1,1 @@
+import L from "../Common/BusinessPortalLayout";import"./OrganisationSettings.css";export default function OrganisationSettings(){return <L title="Organisation Settings" description="Company profile, billing contact and security" cards={["Profile","Permissions","Preferences"]} type="settings" active="Account & Settings" next="/business/invoices"/>}
