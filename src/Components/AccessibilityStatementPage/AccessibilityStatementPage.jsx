@@ -1,1 +1,29 @@
-import LegalDocumentLayout from"../LegalDocumentCommon/LegalDocumentLayout";import"./AccessibilityStatementPage.css";const sections=[["Accessibility goals and testing","HAULBY aims for WCAG 2.2 AA where applicable; this is a design target, not a claim of completed certification. Real website and iOS/Android accessibility audits are required before publishing a conformance statement."],["Website and app usability","Quote journeys, login, support, memberships and bookings should support keyboard use, screen readers, meaningful labels, contrast, text resizing and understandable error messages."],["Accessible delivery confirmation","Recipients unable to sign must have a documented alternative delivery pathway without falsely confirming undelivered goods. Real handover evidence and authorised exception handling remain mandatory."],["Feedback and known limitations","Users can report accessibility barriers or request help through a monitored support channel. Final limitations, audit dates and target improvements must reflect tested software, including maps and third-party features."]];export default function AccessibilityStatementPage(){return <LegalDocumentLayout title="Accessibility Statement" description="Our accessibility goals, reasonable alternatives and how to report barriers on the website and apps." sections={sections}/>}
+import LegalDocumentLayout from "../LegalDocumentCommon/LegalDocumentLayout";
+import "./AccessibilityStatementPage.css";
+const sections = [
+  [
+    "Accessibility goals and testing",
+    "HAULBY aims for WCAG 2.2 AA where applicable; this is a design target, not a claim of completed certification. Real website and iOS/Android accessibility audits are required before publishing a conformance statement.",
+  ],
+  [
+    "Website and app usability",
+    "Quote journeys, login, support, memberships and bookings should support keyboard use, screen readers, meaningful labels, contrast, text resizing and understandable error messages.",
+  ],
+  [
+    "Accessible delivery confirmation",
+    "Recipients unable to sign must have a documented alternative delivery pathway without falsely confirming undelivered goods. Real handover evidence and authorised exception handling remain mandatory.",
+  ],
+  [
+    "Feedback and known limitations",
+    "Users can report accessibility barriers or request help through a monitored support channel. Final limitations, audit dates and target improvements must reflect tested software, including maps and third-party features.",
+  ],
+];
+export default function AccessibilityStatementPage() {
+  return (
+    <LegalDocumentLayout
+      title="Accessibility Statement"
+      description="Our accessibility goals, reasonable alternatives and how to report barriers on the website and apps."
+      sections={sections}
+    />
+  );
+}
