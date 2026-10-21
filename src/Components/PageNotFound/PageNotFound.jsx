@@ -1,4 +1,65 @@
-import { Header,Footer,ArrowButton } from "../Common/SiteChrome";
+import { Header, Footer, ArrowButton } from "../Common/SiteChrome";
 import hero from "../../Assets/Pictures/transporters.png";
 import "./PageNotFound.css";
-export default function PageNotFound(){return <main className="not-found"><Header/><section className="not-found-hero"><div className="not-found-copy"><span>ANYTHING. ANYWHERE. NATIONWIDE.</span><h1>Page Not Found</h1><p>This address is unavailable. Find transport, browse services or return to the HAULBY homepage.</p><ArrowButton href="/find-transport">Find Transport</ArrowButton></div><div className="not-found-image" style={{backgroundImage:`url("${hero}")`}}><strong>404</strong></div></section><section className="not-found-links"><div><span>PAGE NOT FOUND</span><h2>Helpful places to go</h2><p>The link may be mistyped or out of date. Use these HAULBY destinations to continue.</p><div className="not-found-grid"><a href="/find-transport"><i/> <b>Find Transport</b><small>Return to the quotation page to find transport.</small></a><a href="/services"><i/><b>Browse Services</b><small>Explore service categories for the intended job.</small></a><a href="/help-centre"><i/><b>Visit Help Centre</b><small>Get help when a route or account link is not working.</small></a></div></div></section><section className="not-found-cta"><span>HAULBY</span><h2>Find your way back</h2><p>That address could not be found. Use the main HAULBY navigation to continue.</p><ArrowButton href="/find-transport">Find Transport</ArrowButton></section><Footer/></main>}
+export default function PageNotFound() {
+  return (
+    <main className="not-found">
+      <Header />
+      <section className="not-found-hero">
+        <div className="not-found-copy">
+          <span>ANYTHING. ANYWHERE. NATIONWIDE.</span>
+          <h1>Page Not Found</h1>
+          <p>
+            This address is unavailable. Find transport, browse services or
+            return to the HAULBY homepage.
+          </p>
+          <ArrowButton href="/find-transport">Find Transport</ArrowButton>
+        </div>
+        <div
+          className="not-found-image"
+          style={{ backgroundImage: `url("${hero}")` }}
+        >
+          <strong>404</strong>
+        </div>
+      </section>
+      <section className="not-found-links">
+        <div>
+          <span>PAGE NOT FOUND</span>
+          <h2>Helpful places to go</h2>
+          <p>
+            The link may be mistyped or out of date. Use these HAULBY
+            destinations to continue.
+          </p>
+          <div className="not-found-grid">
+            <a href="/find-transport">
+              <i /> <b>Find Transport</b>
+              <small>Return to the quotation page to find transport.</small>
+            </a>
+            <a href="/services">
+              <i />
+              <b>Browse Services</b>
+              <small>Explore service categories for the intended job.</small>
+            </a>
+            <a href="/help-centre">
+              <i />
+              <b>Visit Help Centre</b>
+              <small>
+                Get help when a route or account link is not working.
+              </small>
+            </a>
+          </div>
+        </div>
+      </section>
+      <section className="not-found-cta">
+        <span>HAULBY</span>
+        <h2>Find your way back</h2>
+        <p>
+          That address could not be found. Use the main HAULBY navigation to
+          continue.
+        </p>
+        <ArrowButton href="/find-transport">Find Transport</ArrowButton>
+      </section>
+      <Footer />
+    </main>
+  );
+}
