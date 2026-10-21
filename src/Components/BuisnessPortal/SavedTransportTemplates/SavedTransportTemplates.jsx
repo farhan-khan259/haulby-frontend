@@ -1,1 +1,14 @@
-import L from "../Common/BusinessPortalLayout";import"./SavedTransportTemplates.css";export default function SavedTransportTemplates(){return <L title="Saved Transport Templates" description="Fast repeat shipments" cards={["Profile","Permissions","Preferences"]} type="settings" active="Requests & Jobs" next="/business/approvals"/>}
+import L from "../Common/BusinessPortalLayout";
+import "./SavedTransportTemplates.css";
+export default function SavedTransportTemplates() {
+  return (
+    <L
+      title="Saved Transport Templates"
+      description="Fast repeat shipments"
+      cards={["Profile", "Permissions", "Preferences"]}
+      type="settings"
+      active="Requests & Jobs"
+      next="/business/approvals"
+    />
+  );
+}
