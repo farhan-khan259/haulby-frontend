@@ -1,4 +1,58 @@
-import AdminPage from '../AdminPage/AdminPage';
-import './Notifications.css';
-const page={title:'Notifications & Templates',description:'Configure email, SMS and in-app notifications for matching, verification, jobs and account updates.',stats:['Templates configured','Delivery failures','Scheduled sends','Opt-out requests'],filters:['Channel','Trigger event','Template status'],actions:['Create template','Preview message','Test send','Schedule notification'],primary:'New template',columns:['Message template','Channel / trigger','Last version','Approval state'],recordsTitle:'Message templates, triggers and sending',detail:'Notification campaign',detailFields:['Recipient audience','Trigger logic','Consent restrictions','Deliverability logs'],detailText:'Selected record: none',detailAction:'Review template',inspectorNote:'Configure email, SMS and in-app notifications for matching, verification, jobs and account updates.',required:'Preview variables, localisation, consent, rate limits, transactional vs marketing boundaries, delivery receipts, test-send sandbox and approval of bulk campaigns.',requiredSecond:'All sensitive updates: permission checks, reason codes, audit entry, confirmation, and reversible operations where appropriate.',specialTitle:'Message templates, triggers and sending',specialties:['Edit event variables','Preview channel','Configure retry rules','Approve & test send'],specialNote:'Configure valid input, confirm destructive actions, record reason/actor and show success/failure states.',realCaseLabel:'actual record',secureDataText:'No live data',rowAction:'Inspect'};
-export default function Notifications(){return <AdminPage config={page}/>;}
+import AdminPage from "../AdminPage/AdminPage";
+import "./Notifications.css";
+const page = {
+  title: "Notifications & Templates",
+  description:
+    "Configure email, SMS and in-app notifications for matching, verification, jobs and account updates.",
+  stats: [
+    "Templates configured",
+    "Delivery failures",
+    "Scheduled sends",
+    "Opt-out requests",
+  ],
+  filters: ["Channel", "Trigger event", "Template status"],
+  actions: [
+    "Create template",
+    "Preview message",
+    "Test send",
+    "Schedule notification",
+  ],
+  primary: "New template",
+  columns: [
+    "Message template",
+    "Channel / trigger",
+    "Last version",
+    "Approval state",
+  ],
+  recordsTitle: "Message templates, triggers and sending",
+  detail: "Notification campaign",
+  detailFields: [
+    "Recipient audience",
+    "Trigger logic",
+    "Consent restrictions",
+    "Deliverability logs",
+  ],
+  detailText: "Selected record: none",
+  detailAction: "Review template",
+  inspectorNote:
+    "Configure email, SMS and in-app notifications for matching, verification, jobs and account updates.",
+  required:
+    "Preview variables, localisation, consent, rate limits, transactional vs marketing boundaries, delivery receipts, test-send sandbox and approval of bulk campaigns.",
+  requiredSecond:
+    "All sensitive updates: permission checks, reason codes, audit entry, confirmation, and reversible operations where appropriate.",
+  specialTitle: "Message templates, triggers and sending",
+  specialties: [
+    "Edit event variables",
+    "Preview channel",
+    "Configure retry rules",
+    "Approve & test send",
+  ],
+  specialNote:
+    "Configure valid input, confirm destructive actions, record reason/actor and show success/failure states.",
+  realCaseLabel: "actual record",
+  secureDataText: "No live data",
+  rowAction: "Inspect",
+};
+export default function Notifications() {
+  return <AdminPage config={page} />;
+}
