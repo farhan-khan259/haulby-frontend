@@ -1,4 +1,46 @@
-import AdminPage from '../AdminPage/AdminPage';
-import './Organisations.css';
-const page={title:'Organisations',description:'Business shipper and transporter company records, contacts, users and permissions.',stats:['Active organisations','Awaiting setup','Suspended organisations','Pending invitations'],filters:['Business type','Organisation status','Team size'],actions:['Create organisation','Manage members','Check billing','Export records'],primary:'Add organisation',columns:['Company','Primary contact','Team members','Organisation status'],recordsTitle:'Business and fleet organisations',detail:'Company administration',detailFields:['Registered details','Team roles','Billing owner','Account restrictions'],detailText:'Selected record: none',detailAction:'Manage organisation',inspectorNote:'Do not merge companies without an approved data process.',required:'Organisation workspace: authorised users, role inheritance, account transfers, identity verification, free operator access, data ownership and full audit.',requiredSecond:'All sensitive updates: permission checks, reason codes, audit entry, confirmation, and reversible operations where appropriate.',specialties:[]};
-export default function Organisations(){return <AdminPage config={page}/>;}
+import AdminPage from "../AdminPage/AdminPage";
+import "./Organisations.css";
+const page = {
+  title: "Organisations",
+  description:
+    "Business shipper and transporter company records, contacts, users and permissions.",
+  stats: [
+    "Active organisations",
+    "Awaiting setup",
+    "Suspended organisations",
+    "Pending invitations",
+  ],
+  filters: ["Business type", "Organisation status", "Team size"],
+  actions: [
+    "Create organisation",
+    "Manage members",
+    "Check billing",
+    "Export records",
+  ],
+  primary: "Add organisation",
+  columns: [
+    "Company",
+    "Primary contact",
+    "Team members",
+    "Organisation status",
+  ],
+  recordsTitle: "Business and fleet organisations",
+  detail: "Company administration",
+  detailFields: [
+    "Registered details",
+    "Team roles",
+    "Billing owner",
+    "Account restrictions",
+  ],
+  detailText: "Selected record: none",
+  detailAction: "Manage organisation",
+  inspectorNote: "Do not merge companies without an approved data process.",
+  required:
+    "Organisation workspace: authorised users, role inheritance, account transfers, identity verification, free operator access, data ownership and full audit.",
+  requiredSecond:
+    "All sensitive updates: permission checks, reason codes, audit entry, confirmation, and reversible operations where appropriate.",
+  specialties: [],
+};
+export default function Organisations() {
+  return <AdminPage config={page} />;
+}
