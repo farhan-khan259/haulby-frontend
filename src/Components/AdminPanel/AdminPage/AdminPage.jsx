@@ -92,7 +92,7 @@ export default function AdminPage({ config = {} }) {
   };
 
   return <div className="admin-app">
-    <header className="admin-mobile-head"><img src={logo} alt="HAULBY"/><div><button aria-label="Open alerts" onClick={() => setAlertsOpen(true)}>♢<span>{alerts.filter((alert) => alert.unread).length}</span></button><button aria-label="Open admin menu" onClick={() => setDrawer(true)}>☰</button></div></header>
+    <header className="admin-mobile-head"><img src={logo} alt="HAULBY"/><div><button className="mobile-alert-button" aria-label="Open alerts" onClick={() => setAlertsOpen(true)}>Alerts<span>{alerts.filter((alert) => alert.unread).length}</span></button><button aria-label="Open admin menu" onClick={() => setDrawer(true)}>☰</button></div></header>
     {drawer && <button className="admin-scrim" aria-label="Close menu" onClick={() => setDrawer(false)}/>} 
     <aside className={`admin-sidebar ${drawer ? 'is-open' : ''}`}>
       <div className="admin-brand"><img src={logo} alt="HAULBY"/><button onClick={() => setDrawer(false)}>×</button></div>
