@@ -1,4 +1,4 @@
 import AdminPage from '../AdminPage/AdminPage';
-import { adminConfigs } from '../adminConfigs';
 import './Users.css';
-export default function Users(){ return <AdminPage config={adminConfigs['users']} />; }
+const page={title:'User Accounts',description:'Search, review and manage customer, business and transporter accounts securely.',stats:['Total user accounts','Pending verification','Restricted accounts','New registrations'],filters:['Account type','Account status','Verification'],actions:['Invite account','Assign staff','Request verification','Export filtered'],primary:'Invite user',columns:['Account / email','Account role','Account status','Last activity'],recordsTitle:'User account directory',detail:'User account controls',detailFields:['Identity status','Contact details','Account permissions','Support history'],detailText:'Selected record: none',detailAction:'Review account',inspectorNote:'Suspensions require reason, user notice and audit log.',required:'Implement role-specific actions: verify contacts, reset login securely, suspend with reason, invite staff, revoke sessions, data-export/delete workflows with approvals.',requiredSecond:'All sensitive updates: permission checks, reason codes, audit entry, confirmation, and reversible operations where appropriate.',specialties:[]};
+export default function Users(){return <AdminPage config={page}/>;}

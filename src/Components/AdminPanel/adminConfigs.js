@@ -37,4 +37,72 @@ const specs = [
 ['telephony-settings','Telephony Settings & Numbers','/admin/telephony/settings',['Numbers','Extensions','Queues','Policy changes'],['Number status','Team','Permission'],['Add number','Assign extension','Edit policy','Save settings'],['Phone number','Assignment','Recording policy'],'Telephony configuration','Number & policy controls'],
 ];
 
-export const adminConfigs = Object.fromEntries(specs.map((s,i)=>[s[0],{key:s[0],code:`M${String(i+1).padStart(2,'0')}`,title:s[1],path:s[2],stats:s[3],filters:s[4],actions:s[5],columns:s[6],recordsTitle:s[7],detail:s[8],primary:s[5][0],detailAction:s[5][0],description:`Manage ${s[1].toLowerCase()} with secure workflows, clear ownership and complete audit visibility.`}]));
+const configs = Object.fromEntries(specs.map((s,i)=>[s[0],{key:s[0],code:`M${String(i+1).padStart(2,'0')}`,title:s[1],path:s[2],stats:s[3],filters:s[4],actions:s[5],columns:s[6],recordsTitle:s[7],detail:s[8],primary:s[5][0],detailAction:s[5][0],description:`Manage ${s[1].toLowerCase()} with secure workflows, clear ownership and complete audit visibility.`}]));
+
+const auditFooter = 'All sensitive updates: permission checks, reason codes, audit entry, confirmation, and reversible operations where appropriate.';
+
+Object.assign(configs.admin, {
+  description: 'Real-time operations, job coverage, verification workload, support and platform health.',
+  primary: 'Create alert', columns: ['Request / case','Transport type','Age / priority','Next owner'],
+  recordsTitle: 'Coverage exceptions & urgent work', detailFields: ['Job route','Matching radius','Last operator contact','Escalation owner'],
+  detailText: 'Selected record: none', detailAction: 'Open intervention', inspectorNote: 'Only authorised staff can manually intervene in matching.',
+  required: 'Wire live coverage KPIs; SLA ageing; unfilled request sorting; widen search; notify matching operators; assign owner; alert routing and action history.', requiredSecond: auditFooter, specialties: [],
+});
+Object.assign(configs.users, {
+  description: 'Search, review and manage customer, business and transporter accounts securely.', primary: 'Invite user',
+  columns: ['Account / email','Account role','Account status','Last activity'], recordsTitle: 'User account directory',
+  detailFields: ['Identity status','Contact details','Account permissions','Support history'], detailText: 'Selected record: none', detailAction: 'Review account',
+  inspectorNote: 'Suspensions require reason, user notice and audit log.', required: 'Implement role-specific actions: verify contacts, reset login securely, suspend with reason, invite staff, revoke sessions, data-export/delete workflows with approvals.', requiredSecond: auditFooter, specialties: [],
+});
+Object.assign(configs.organisations, {
+  description: 'Business shipper and transporter company records, contacts, users and permissions.', primary: 'Add organisation',
+  columns: ['Company','Primary contact','Team members','Organisation status'], recordsTitle: 'Business and fleet organisations',
+  detailFields: ['Registered details','Team roles','Billing owner','Account restrictions'], detailText: 'Selected record: none', detailAction: 'Manage organisation',
+  inspectorNote: 'Do not merge companies without an approved data process.', required: 'Organisation workspace: authorised users, role inheritance, account transfers, identity verification, free operator access, data ownership and full audit.', requiredSecond: auditFooter, specialties: [],
+});
+Object.assign(configs.transporters, {
+  description: 'Driver and operator fleet search, eligibility status and service coverage.', primary: 'Invite operator',
+  columns: ['Operator name','Vehicle class','Coverage area','Eligibility'], recordsTitle: 'Operator fleet and coverage directory',
+  detailFields: ['Vehicle types','Insurances on file','Service categories','Latest activity'], detailText: 'Selected record: none', detailAction: 'Open operator',
+  inspectorNote: 'Do not mark an operator approved without a verified audit.', required: 'Operator filters: towing/load capacity, vehicle class, regions, availability preference, cover expiry, eligibility, service permissions; support manual matching and audit.', requiredSecond: auditFooter,
+  specialEyebrow: 'NEW: HAULBY OPERATOR CONTROLS', specialTitle: 'OPERATOR COVERAGE & ZONE VERIFICATION', specialDescription: 'Inspect operator-saved postcodes, radius distances, cities and vehicle assignment when reviewing coverage and matching.', specialties: ['Operator coverage records →','Unmatched job queue →'], specialNote: 'Coverage preferences are not licence or weight endorsements. Check independently verified eligibility.',
+});
+Object.assign(configs['transporter-profile'], {
+  description: 'Operator profile, fleet, documents, work history, permissions and verification decisions.', primary: 'Review eligibility',
+  columns: ['Vehicle / document','Document status','Expiry','Review action'], recordsTitle: 'Operator documents and fleet records',
+  detailFields: ['Business ID','Insurance evidence','Operator licence (if needed)','Audit decision'], detailText: 'Selected record: none', detailAction: 'Record decision',
+  inspectorNote: 'Verification is category-specific, not a universal safety guarantee.', required: 'Tabbed operator view: Profile, vehicles, documents, categories, quotations, jobs, messages, incidents. Accept/reject with reason, evidence and immutable reviewer audit.', requiredSecond: auditFooter,
+  specialEyebrow: 'HAULBY OPERATOR SERVICE STANDARD / STAFF + EQUIPMENT', specialTitle: 'COMPLIANCE REVIEW — HANDLING CAPABILITY', specialDescription: 'Review declared crew, equipment, vehicle categories and relevant evidence when assessing a transporter. Do not display blanket verified safety claims.', specialties: ['Category-appropriate evidence on file','Restricted equipment/services recorded','Operator rechecks for changing capacity'], specialMode: 'checks', specialNote: "Admin verification supports screening; safe execution remains the operator's responsibility for each accepted job.",
+});
+Object.assign(configs.verification, {
+  description: 'Evidence-based operator approval with maker-checker review, category eligibility and expiring-document alerts.', primary: 'Review queue',
+  columns: ['Operator / case','Check type','Risk priority','Assigned reviewer'], recordsTitle: 'Verification decisions & reviewer queue',
+  detailFields: ['Applicant identity','Document authenticity','Licence suitability','Reviewer decision'], detailText: 'Selected record: none', detailAction: 'Open review', detailTabs: true,
+  inspectorNote: 'Approve, reject or request evidence with reviewer reason and timestamp.', required: 'RBAC approval rules; expiry reminders; proof review; reject reason codes; reviewer assignment; re-verification; immutable decision records.', requiredSecond: auditFooter, specialties: [], realCaseLabel: 'real case', secureDataText: 'Secure data only', rowAction: 'Inspect',
+});
+Object.assign(configs.documents, {
+  description: 'Manage operator identity, insurance, vehicle and licence evidence with expiry tracking.', primary: 'Upload review',
+  columns: ['Document / operator','Category','Expiry date','Check status'], recordsTitle: 'Compliance evidence & expiry register',
+  detailFields: ['Document owner','Valid-from date','Expiry and scope','Verification notes'], detailText: 'Selected record: none', detailAction: 'Review evidence', detailTabs: true,
+  inspectorNote: 'Flag expired evidence and notify operator before disabling permitted work.', required: 'Implement secure private document access, encryption, restricted download, expiry watches, eligibility propagation, action reasons and audit log.', requiredSecond: auditFooter, specialties: [], realCaseLabel: 'real case', secureDataText: 'Secure data only', rowAction: 'Inspect',
+});
+Object.assign(configs.requests, {
+  description: 'Every suitable transport request stays visible until matched, resolved or appropriately closed.', primary: 'Create job alert',
+  columns: ['Job reference','Route / category','Matching stage','SLA age / owner'], recordsTitle: 'Nationwide job coverage & matching queue',
+  detailFields: ['Coverage radius','Invited operators','Last matching attempt','Intervention owner'], detailText: 'Selected record: none', detailAction: 'Expand search', detailTabs: true,
+  inspectorNote: 'No eligible match? Widen search, broadcast to verified operators and queue follow-up.', required: 'Persistent unmatched queue, postcode/radius & route-aware matching, retry/escalation SLA, manual outreach, provider response history, customer updates and closure reasons.', requiredSecond: auditFooter, specialties: [], realCaseLabel: 'real case', secureDataText: 'Secure data only', rowAction: 'Inspect',
+});
+Object.assign(configs['request-inspection'], {
+  description: 'Deep inspection of a posted job: items, route, matching progress, operators and customer status.', primary: 'Manage matching',
+  columns: ['Timeline event','Operator / staff','Response','Recorded time'], recordsTitle: 'Job matching timeline & intervention history',
+  detailFields: ['Pickup / destination','Load and requirements','Matching attempts','Customer updates'], detailText: 'Selected record: none', detailAction: 'Escalate job', detailTabs: true,
+  inspectorNote: "Audit every manual update and preserve customer's agreed scope.", required: 'Show quotation requests, operator alerts, matching radius, accepted/declined responses, anonymised customer contact, audit events and escalation clock.', requiredSecond: auditFooter, specialties: [], realCaseLabel: 'real case', secureDataText: 'Secure data only', rowAction: 'Inspect',
+});
+Object.assign(configs.quotes, {
+  description: 'Read-only quote oversight with controlled fraud review, terms and dispute escalation.', primary: 'Inspect quotes',
+  columns: ['Quote / job','Operator','Quoted amount','Quote state'], recordsTitle: 'Quotation oversight & exception handling',
+  detailFields: ['Price and VAT basis','Service inclusions','Validity / expiry','Amendment history'], detailText: 'Selected record: none', detailAction: 'Review quotation', detailTabs: true,
+  inspectorNote: 'Admins must not silently change independent operator bids.', required: 'Show actual quotes and rate history; compare service scope; flag invalid or suspicious offers; controlled withdrawal/reissue, status notices and full audit.', requiredSecond: auditFooter, specialties: [], realCaseLabel: 'real case', secureDataText: 'Secure data only', rowAction: 'Inspect',
+});
+
+export const adminConfigs = configs;

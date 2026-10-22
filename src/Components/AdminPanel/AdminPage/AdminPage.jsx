@@ -4,14 +4,20 @@ import logo from '../../../Assets/Pictures/HAULBY-logo-transparent.png';
 import './AdminPage.css';
 import './AdminAlerts.css';
 import './AdminActionModal.css';
+import './AdminFirstTen.css';
 
-const mainNav = [
-  ['Overview', '/admin'], ['Users & Organisations', '/admin/users'],
-  ['Transporters & Checks', '/admin/transporters'], ['Requests & Matching', '/admin/requests'],
-  ['Quotes & Bookings', '/admin/quotes'], ['Support & Trust', '/admin/support'],
-  ['Fees & Finance', '/admin/booking-fees/finance'], ['Content & Reports', '/admin/reports'],
-  ['Audit, Risk & Settings', '/admin/audit-logs'], ['Sales & Onboarding', '/admin/sales'],
-  ['Communications', '/admin/telephony'],
+const navGroups = [
+  { label: 'Overview', to: '/admin' },
+  { label: 'Users & Organisations', links: [['User Accounts','/admin/users'],['Organisations','/admin/organisations']] },
+  { label: 'Transporters & Checks', links: [['Transporter Directory','/admin/transporters'],['Verification Queue','/admin/verification'],['Compliance Documents','/admin/documents'],['Transport Categories','/admin/categories']] },
+  { label: 'Requests & Matching', links: [['Posted Requests','/admin/requests']] },
+  { label: 'Quotes & Bookings', links: [['Quotes','/admin/quotes'],['Transport Bookings','/admin/bookings'],['Review Moderation','/admin/reviews']] },
+  { label: 'Support & Trust', links: [['Support Queue','/admin/support'],['Complaints & Disputes','/admin/disputes']] },
+  { label: 'Fees & Finance', links: [['Booking Fee Rules','/admin/booking-fees/rules'],['Booking Fee Finance','/admin/booking-fees/finance']] },
+  { label: 'Content & Reports', links: [['Notifications & Templates','/admin/notifications'],['Marketplace Reports','/admin/reports'],['Content Manager','/admin/content']] },
+  { label: 'Audit, Risk & Settings', links: [['Audit Logs','/admin/audit-logs'],['Fraud & Safety','/admin/risk'],['Admin Settings','/admin/settings']] },
+  { label: 'Sales & Onboarding', links: [['Sales Overview','/admin/sales'],['Transporter Leads','/admin/sales/leads'],['Email Journeys','/admin/sales/sequences'],['Sales Reports','/admin/sales/reports']] },
+  { label: 'Communications', links: [['Call Centre Overview','/admin/telephony'],['CRM Softphone','/admin/telephony/softphone'],['Call Queues','/admin/telephony/queues'],['Call Logs','/admin/telephony/calls'],['Recordings & QA','/admin/telephony/recordings'],['Telephony Settings','/admin/telephony/settings']] },
 ];
 
 const workflowRoutes = {
@@ -53,11 +59,15 @@ export default function AdminPage({ config = {} }) {
     { id: 3, title: 'Document expiry reminder', detail: 'Compliance evidence is approaching its review date.', type: 'compliance', unread: false },
   ]);
   const [sort, setSort] = useState('Sort newest first');
+  const [pageSize, setPageSize] = useState('25');
+  const [selectRows, setSelectRows] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
   const rows = useMemo(() => c.columns.slice(0, 3), [c.columns]);
+  const detailFields = c.detailFields || c.columns;
   const run = (label) => {
     if (label === 'Alerts') { setAlertsOpen(true); return; }
+    if (c.actionRoutes?.[label]) { navigate(c.actionRoutes[label]); return; }
     if (workflowRoutes[label]) { navigate(workflowRoutes[label]); return; }
     if (/export/i.test(label)) {
       const blob = new Blob([`HAULBY ${c.title} export\nNo live data connected.`], { type: 'text/csv' });
@@ -85,8 +95,16 @@ export default function AdminPage({ config = {} }) {
     <aside className={`admin-sidebar ${drawer ? 'is-open' : ''}`}>
       <div className="admin-brand"><img src={logo} alt="HAULBY"/><button onClick={() => setDrawer(false)}>×</button></div>
       <p className="admin-side-label">{c.eyebrow}</p>
-      <nav>{mainNav.map(([label, to]) => <Link key={to} className={location.pathname === to || (to !== '/admin' && location.pathname.startsWith(to)) ? 'active' : ''} to={to} onClick={() => setDrawer(false)}>{label}</Link>)}</nav>
+      <nav>{navGroups.map((group) => {
+        if (group.to) return <Link key={group.to} className={location.pathname === group.to ? 'active' : ''} to={group.to} onClick={() => setDrawer(false)}>{group.label}</Link>;
+        const groupActive = group.links.some(([,to]) => location.pathname === to || location.pathname.startsWith(`${to}/`));
+        return <details className="admin-nav-group" key={group.label} open={groupActive}>
+          <summary className={groupActive ? 'active' : ''}>{group.label}<span>⌄</span></summary>
+          <div>{group.links.map(([label,to]) => <Link key={to} className={location.pathname === to ? 'active child-active' : ''} to={to} onClick={() => setDrawer(false)}>{label}</Link>)}</div>
+        </details>;
+      })}</nav>
       <p className="admin-side-foot">Roles • audit • protected actions</p>
+      <small className="admin-environment">DESIGN / NO LIVE DATA</small>
     </aside>
     <div className="admin-stage">
       <div className="admin-topbar"><span>Administration&nbsp; / &nbsp;{c.title}</span><div><button onClick={() => document.querySelector('.admin-search')?.focus()}>⌕ Search records</button><button onClick={() => run('Alerts')}>Alerts {alerts.some((alert) => alert.unread) && <i>{alerts.filter((alert) => alert.unread).length}</i>}</button><b>ADMIN</b></div></div>
@@ -97,12 +115,12 @@ export default function AdminPage({ config = {} }) {
         <section className="admin-panel admin-filters"><h3>OPERATIONS &amp; FILTERS</h3><div><input className="admin-search" value={query} onChange={e=>setQuery(e.target.value)} placeholder="⌕ Search record or ID"/>{c.filters.slice(0,3).map(x=><select key={x} defaultValue=""><option value="">{x}</option><option>All</option><option>Needs action</option><option>Completed</option></select>)}<select value={sort} onChange={e=>setSort(e.target.value)}><option>Sort newest first</option><option>Sort oldest first</option></select></div></section>
         <section className="admin-action-strip"><h3>AVAILABLE ADMINISTRATIVE ACTIONS</h3><div>{c.actions.map((x,i)=><button className={i===0?'primary':''} key={x} onClick={()=>run(x)}>{x}</button>)}</div></section>
         <div className="admin-workspace">
-          <section className="admin-panel admin-records"><h2>{c.recordsTitle || c.title}</h2><h3>ILLUSTRATIVE STATE — CONNECT RECORDS</h3><div className="admin-table-head">{[...c.columns, 'Review action'].map(x=><b key={x}>{x}</b>)}</div><div className="admin-table-body">{[0,1,2,3].map(n=><button key={n} onClick={()=>{setSelected(`Illustrative record ${n+1}`);setNotice('Illustrative record selected.')}}><span>— Select actual record</span><span>No live data</span><span>Awaiting data</span><em>Inspect →</em></button>)}</div><div className="admin-mobile-cards">{rows.map(x=><article key={x}><b>{x}</b><mark>Awaiting data</mark><p>No live records loaded. Show real status and ID from the API.</p><button onClick={()=>run('View details')}>View details →</button></article>)}</div><footer>□ Select rows　 •　 25 / 50 / 100 per page　 •　 Prev / Next　 •　 Sort by column</footer></section>
-          <aside className="admin-panel admin-detail"><h3>DETAILS &amp; FOLLOW-UP</h3><h2>{c.detail}</h2><p>{selected || c.detailText}</p><div className="admin-detail-fields">{c.columns.map(x=><label key={x}>{x}<input placeholder="Connect authorised data"/></label>)}</div><button className="primary" onClick={()=>run(c.detailAction || 'Open workflow')}>{c.detailAction || 'Open workflow'}</button></aside>
+          <section className="admin-panel admin-records"><h2>{c.recordsTitle || c.title}</h2><h3>{c.emptyStateText || 'ILLUSTRATIVE EMPTY STATE — no production records used'}</h3><div className="admin-table-head">{c.columns.map(x=><b key={x}>{x}</b>)}</div><div className="admin-table-body">{[0,1,2,3].map(n=><button key={n} onClick={()=>{setSelected(`Illustrative record ${n+1}`);setNotice('Illustrative record selected.')}}><span>— &nbsp; Select {c.realCaseLabel || 'live record'}</span><span>{c.secureDataText || 'From secure API'}</span><span>{c.awaitingText || 'Awaiting data'}</span><em>{c.rowAction || 'Open record'} &nbsp;→</em></button>)}</div><div className="admin-mobile-cards">{rows.map(x=><article key={x}><b>{x}</b><mark>Awaiting data</mark><p>No live records loaded. Show real status and ID from the API.</p><button onClick={()=>run('View details')}>View details →</button></article>)}</div><footer><div className="admin-pagination"><label><input type="checkbox" checked={selectRows} onChange={(event)=>setSelectRows(event.target.checked)}/>Select rows</label><i>•</i><label className="page-size"><select value={pageSize} onChange={(event)=>setPageSize(event.target.value)}><option>25</option><option>50</option><option>100</option></select><span>/ 50 / 100 per page</span></label><i>•</i><div className="page-controls"><button type="button" onClick={()=>setNotice('Already on the first page.')}>Prev</button><span>/</span><button type="button" onClick={()=>setNotice('Connect live pagination to load the next page.')}>Next</button></div><i>•</i><button className="sort-column" type="button" onClick={()=>setNotice('Column sorting is ready for authorised data.')}>Sort by column</button></div><p>Connect pagination, saved views, permission-filtered results, bulk actions and record-level auditing.</p></footer></section>
+          <aside className="admin-panel admin-detail"><h3><span className="detail-desktop-label">DETAIL INSPECTOR</span><span className="detail-mobile-label">DETAILS &amp; FOLLOW-UP</span></h3><h2>{c.detail}</h2><p>{selected || c.detailText || 'Selected record: none'}</p><div className="admin-detail-fields">{detailFields.map(x=><div className="admin-detail-field" key={x}><b>{x}</b><span>— Connect authorised data</span></div>)}</div>{c.detailTabs && <div className="admin-detail-tabs"><button>Comments</button><button>Decisions</button><button>History</button></div>}<button className="primary" onClick={()=>run(c.detailAction || 'Open workflow')}>{c.detailAction || 'Open workflow'}</button>{c.inspectorNote && <small className="admin-inspector-note">{c.inspectorNote}</small>}</aside>
         </div>
         <p className="admin-required-copy">{c.required}</p>
-        <section className="admin-required"><h3>REQUIRED BEHAVIOUR · RBAC · AUDIT</h3><p>{c.required}</p></section>
-        {c.specialties?.length > 0 && <section className="admin-panel admin-special"><h3>SPECIALIST WORKFLOW CONTROLS</h3><h2>{c.specialTitle || c.title}</h2><div>{c.specialties.map((x,i)=><button key={x} className={i===0?'tint':''} onClick={()=>run(x)}>{x}<small>Requires policy &amp; permissions</small></button>)}</div></section>}
+        <section className="admin-required"><h3>REQUIRED BEHAVIOUR · RBAC · AUDIT</h3><p>{c.required}</p>{c.requiredSecond && <p>{c.requiredSecond}</p>}</section>
+        {c.specialties?.length > 0 && <section className={`admin-panel admin-special ${c.specialMode === 'checks' ? 'is-checklist' : ''}`}><h3>{c.specialEyebrow || 'SPECIALIST WORKFLOW CONTROLS'}</h3><h2>{c.specialTitle || c.title}</h2>{c.specialDescription && <p>{c.specialDescription}</p>}<div>{c.specialties.map((x,i)=>c.specialMode === 'checks' ? <p key={x}><b>✓</b>{x}</p> : <button key={x} className={i===0?'tint':''} onClick={()=>run(x)}>{x}</button>)}</div>{c.specialNote && <small className="admin-special-note">{c.specialNote}</small>}</section>}
         {notice && <div className="admin-toast" role="status">{notice}<button onClick={()=>setNotice('')}>×</button></div>}
       </main>
     </div>
