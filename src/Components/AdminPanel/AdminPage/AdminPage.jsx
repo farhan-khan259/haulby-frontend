@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import logo from '../../../Assets/Pictures/HAULBY-logo-transparent.png';
 import './AdminPage.css';
+import './AdminAlerts.css';
 
 const mainNav = [
   ['Overview', '/admin'], ['Users & Organisations', '/admin/users'],
@@ -41,11 +42,19 @@ export default function AdminPage({ config = {} }) {
   const [query, setQuery] = useState('');
   const [selected, setSelected] = useState(null);
   const [notice, setNotice] = useState('');
+  const [alertsOpen, setAlertsOpen] = useState(false);
+  const [alertFilter, setAlertFilter] = useState('all');
+  const [alerts, setAlerts] = useState([
+    { id: 1, title: 'Verification review due', detail: 'An operator verification case is awaiting review.', type: 'verification', unread: true },
+    { id: 2, title: 'Unmatched request requires attention', detail: 'Review matching radius and eligible operators.', type: 'operations', unread: true },
+    { id: 3, title: 'Document expiry reminder', detail: 'Compliance evidence is approaching its review date.', type: 'compliance', unread: false },
+  ]);
   const [sort, setSort] = useState('Sort newest first');
   const location = useLocation();
   const navigate = useNavigate();
   const rows = useMemo(() => c.columns.slice(0, 3), [c.columns]);
   const run = (label) => {
+    if (label === 'Alerts') { setAlertsOpen(true); return; }
     if (workflowRoutes[label]) { navigate(workflowRoutes[label]); return; }
     if (/export/i.test(label)) {
       const blob = new Blob([`HAULBY ${c.title} export\nNo live data connected.`], { type: 'text/csv' });
@@ -58,7 +67,7 @@ export default function AdminPage({ config = {} }) {
   };
 
   return <div className="admin-app">
-    <header className="admin-mobile-head"><img src={logo} alt="HAULBY"/><button aria-label="Open admin menu" onClick={() => setDrawer(true)}>☰</button></header>
+    <header className="admin-mobile-head"><img src={logo} alt="HAULBY"/><div><button aria-label="Open alerts" onClick={() => setAlertsOpen(true)}>♢<span>{alerts.filter((alert) => alert.unread).length}</span></button><button aria-label="Open admin menu" onClick={() => setDrawer(true)}>☰</button></div></header>
     {drawer && <button className="admin-scrim" aria-label="Close menu" onClick={() => setDrawer(false)}/>} 
     <aside className={`admin-sidebar ${drawer ? 'is-open' : ''}`}>
       <div className="admin-brand"><img src={logo} alt="HAULBY"/><button onClick={() => setDrawer(false)}>×</button></div>
@@ -67,7 +76,7 @@ export default function AdminPage({ config = {} }) {
       <p className="admin-side-foot">Roles • audit • protected actions</p>
     </aside>
     <div className="admin-stage">
-      <div className="admin-topbar"><span>Administration&nbsp; / &nbsp;{c.title}</span><div><button onClick={() => document.querySelector('.admin-search')?.focus()}>⌕ Search records</button><button onClick={() => run('Alerts')}>Alerts</button><b>ADMIN</b></div></div>
+      <div className="admin-topbar"><span>Administration&nbsp; / &nbsp;{c.title}</span><div><button onClick={() => document.querySelector('.admin-search')?.focus()}>⌕ Search records</button><button onClick={() => run('Alerts')}>Alerts {alerts.some((alert) => alert.unread) && <i>{alerts.filter((alert) => alert.unread).length}</i>}</button><b>ADMIN</b></div></div>
       <main className="admin-main">
         <section className="admin-title-row"><div><h1>{c.title}</h1><p>{c.description}</p></div><div className="admin-title-actions"><button onClick={() => run('Export CSV')}>Export CSV</button><button className="primary" onClick={() => run(c.primary || c.actions[0])}>{c.primary || c.actions[0]}</button></div></section>
         <div className="admin-mobile-actions"><button className="primary" onClick={() => run(c.primary || c.actions[0])}>{c.primary || c.actions[0]}</button><button onClick={() => document.querySelector('.admin-search')?.focus()}>Search / Filter</button></div>
@@ -84,5 +93,11 @@ export default function AdminPage({ config = {} }) {
         {notice && <div className="admin-toast" role="status">{notice}<button onClick={()=>setNotice('')}>×</button></div>}
       </main>
     </div>
+    {alertsOpen && <><button className="alerts-scrim" aria-label="Close alerts" onClick={() => setAlertsOpen(false)}/><aside className="admin-alerts" aria-label="Admin alerts">
+      <header><div><small>ADMIN NOTIFICATIONS</small><h2>Alerts</h2></div><button aria-label="Close alerts" onClick={() => setAlertsOpen(false)}>×</button></header>
+      <div className="alert-tools"><select value={alertFilter} onChange={(event) => setAlertFilter(event.target.value)}><option value="all">All alerts</option><option value="unread">Unread only</option><option value="verification">Verification</option><option value="operations">Operations</option><option value="compliance">Compliance</option></select><button onClick={() => setAlerts((current) => current.map((alert) => ({ ...alert, unread: false })))}>Mark all read</button></div>
+      <div className="alert-list">{alerts.filter((alert) => alertFilter === 'all' || (alertFilter === 'unread' ? alert.unread : alert.type === alertFilter)).map((alert) => <article className={alert.unread ? 'unread' : ''} key={alert.id}><button className="alert-content" onClick={() => setAlerts((current) => current.map((item) => item.id === alert.id ? { ...item, unread: false } : item))}><span>{alert.unread ? 'NEW' : 'READ'}</span><b>{alert.title}</b><p>{alert.detail}</p></button><button className="alert-dismiss" aria-label={`Dismiss ${alert.title}`} onClick={() => setAlerts((current) => current.filter((item) => item.id !== alert.id))}>Dismiss</button></article>)}</div>
+      {alerts.length === 0 && <p className="alerts-empty">No alerts. You are all caught up.</p>}
+    </aside></>}
   </div>
 }
