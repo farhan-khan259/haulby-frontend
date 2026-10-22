@@ -1,6 +1,4 @@
 import AdminPage from "../AdminPage/AdminPage";
-import { adminConfigs } from "../adminConfigs";
 import "./SupportCase.css";
-export default function SupportCase() {
-  return <AdminPage config={adminConfigs["support-case"]} />;
-}
+const page={title:'Support Case Detail',description:'Investigate an individual case with conversation, linked records, notes and audit trail.',stats:['Case status','SLA remaining','Customer replies','Related bookings'],filters:['Message channel','Evidence type','Internal activity'],actions:['Send reply','Save internal note','Assign owner','Open dispute'],primary:'Resolve support',actionRoutes:{'Open dispute':'/admin/disputes/resolution'},columns:['Interaction','Author','Visibility','Event time'],recordsTitle:'Support conversation & case activity',detail:'Case resolution controls',detailFields:['Case category','Evidence files','Related job / account','Resolution code'],detailText:'Selected record: none',detailAction:'Escalate case',detailTabs:true,inspectorNote:'Public replies and private staff notes must be distinct.',required:'Threaded inbound/outbound replies, saved macro preview, note visibility guardrails, canned responses, escalation/timer policies and case closure reason.',requiredSecond:'All sensitive updates: permission checks, reason codes, audit entry, confirmation, and reversible operations where appropriate.',specialties:[],realCaseLabel:'real case',secureDataText:'Secure data only',rowAction:'Inspect'};
+export default function SupportCase(){return <AdminPage config={page}/>;}

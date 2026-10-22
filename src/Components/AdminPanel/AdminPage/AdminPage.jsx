@@ -5,6 +5,7 @@ import './AdminPage.css';
 import './AdminAlerts.css';
 import './AdminActionModal.css';
 import './AdminFirstTen.css';
+import './AdminBatchTwo.css';
 
 const navGroups = [
   { label: 'Overview', to: '/admin' },
@@ -120,7 +121,12 @@ export default function AdminPage({ config = {} }) {
         </div>
         <p className="admin-required-copy">{c.required}</p>
         <section className="admin-required"><h3>REQUIRED BEHAVIOUR · RBAC · AUDIT</h3><p>{c.required}</p>{c.requiredSecond && <p>{c.requiredSecond}</p>}</section>
-        {c.specialties?.length > 0 && <section className={`admin-panel admin-special ${c.specialMode === 'checks' ? 'is-checklist' : ''}`}><h3>{c.specialEyebrow || 'SPECIALIST WORKFLOW CONTROLS'}</h3><h2>{c.specialTitle || c.title}</h2>{c.specialDescription && <p>{c.specialDescription}</p>}<div>{c.specialties.map((x,i)=>c.specialMode === 'checks' ? <p key={x}><b>✓</b>{x}</p> : <button key={x} className={i===0?'tint':''} onClick={()=>run(x)}>{x}</button>)}</div>{c.specialNote && <small className="admin-special-note">{c.specialNote}</small>}</section>}
+        {c.specialties?.length > 0 && <section className={`admin-panel admin-special ${c.specialMode === 'checks' ? 'is-checklist' : ''}`}><h3>{c.specialEyebrow || 'SPECIALIST WORKFLOW CONTROLS'}</h3><h2>{c.specialTitle || c.title}</h2>{c.specialDescription && <p>{c.specialDescription}</p>}<div>{c.specialties.map((x,i)=>c.specialMode === 'checks' ? <p key={x}><b>✓</b>{x}</p> : <button key={x} className={i===0?'tint':''} onClick={()=>run(x)}>{x}{c.specialItemHelp && <small>{c.specialItemHelp}</small>}</button>)}</div>{c.specialNote && <small className="admin-special-note">{c.specialNote}</small>}</section>}
+        {c.extraSections?.map((section)=><section className={`admin-panel admin-extra ${section.type || ''}`} key={section.title}>
+          {section.eyebrow && <h3>{section.eyebrow}</h3>}<h2>{section.title}</h2>{section.description && <p>{section.description}</p>}
+          {section.type === 'tracking' ? <div className="tracking-grid"><div className="tracking-map"><small>EXAMPLE MAP / LOCATION FROM API</small><i/><b>↗</b><em/></div><div className="tracking-status"><strong>TRACKING STATUS ・ API REQUIRED</strong><p>Last GPS update: —<br/>Vehicle position: —<br/>Estimated arrival: —<br/>Position accuracy: —</p><small>Active-job location only. When delayed, show the time of the last successful update and a tracking-unavailable state.</small></div></div> : <div className="admin-extra-grid">{section.items?.map((item,index)=><button className={index===0?'tint':''} key={item} onClick={()=>run(item)}>{item}{section.itemHelp && <small>{section.itemHelp}</small>}</button>)}</div>}
+          {section.note && <small className="admin-extra-note">{section.note}</small>}{section.action && <button className="primary admin-extra-action" onClick={()=>run(section.action)}>{section.action}</button>}
+        </section>)}
         {notice && <div className="admin-toast" role="status">{notice}<button onClick={()=>setNotice('')}>×</button></div>}
       </main>
     </div>
