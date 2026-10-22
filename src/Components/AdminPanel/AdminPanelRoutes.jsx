@@ -35,6 +35,18 @@ import TelephonyQueues from './TelephonyQueues/TelephonyQueues';
 import TelephonyCalls from './TelephonyCalls/TelephonyCalls';
 import TelephonyRecordings from './TelephonyRecordings/TelephonyRecordings';
 import TelephonySettings from './TelephonySettings/TelephonySettings';
+import VerificationDecision from './VerificationDecision/VerificationDecision';
+import ExpandJobMatching from './ExpandJobMatching/ExpandJobMatching';
+import DisputeResolution from './DisputeResolution/DisputeResolution';
+import CreateFeeRule from './CreateFeeRule/CreateFeeRule';
+import PrepareRefund from './PrepareRefund/PrepareRefund';
+import ApproveRefund from './ApproveRefund/ApproveRefund';
+import AdminRolePermissions from './AdminRolePermissions/AdminRolePermissions';
+import RiskIntervention from './RiskIntervention/RiskIntervention';
+import CreateTransporterLead from './CreateTransporterLead/CreateTransporterLead';
+import CompleteOperatorOnboarding from './CompleteOperatorOnboarding/CompleteOperatorOnboarding';
+import SendOnboardingEmail from './SendOnboardingEmail/SendOnboardingEmail';
+import BuildEmailJourney from './BuildEmailJourney/BuildEmailJourney';
 
 export default function AdminPanelRoutes(){
   return <Routes>
@@ -74,6 +86,18 @@ export default function AdminPanelRoutes(){
     <Route path="/telephony/calls" element={<TelephonyCalls/>} />
     <Route path="/telephony/recordings" element={<TelephonyRecordings/>} />
     <Route path="/telephony/settings" element={<TelephonySettings/>} />
+    <Route path="/verification/decision" element={<VerificationDecision/>} />
+    <Route path="/requests/expand-matching" element={<ExpandJobMatching/>} />
+    <Route path="/disputes/resolution" element={<DisputeResolution/>} />
+    <Route path="/booking-fees/rules/create" element={<CreateFeeRule/>} />
+    <Route path="/booking-fees/finance/refund-request" element={<PrepareRefund/>} />
+    <Route path="/booking-fees/finance/refund-approval" element={<ApproveRefund/>} />
+    <Route path="/settings/roles" element={<AdminRolePermissions/>} />
+    <Route path="/risk/intervention" element={<RiskIntervention/>} />
+    <Route path="/sales/leads/create" element={<CreateTransporterLead/>} />
+    <Route path="/sales/leads/:leadId/onboarding" element={<CompleteOperatorOnboarding/>} />
+    <Route path="/sales/leads/:leadId/email" element={<SendOnboardingEmail/>} />
+    <Route path="/sales/sequences/create" element={<BuildEmailJourney/>} />
     <Route path="*" element={<Navigate to="/admin" replace/>}/>
   </Routes>;
 }

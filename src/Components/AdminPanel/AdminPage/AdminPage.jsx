@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import logo from '../../../Assets/Pictures/HAULBY-logo-transparent.png';
 import './AdminPage.css';
 
@@ -11,6 +11,18 @@ const mainNav = [
   ['Audit, Risk & Settings', '/admin/audit-logs'], ['Sales & Onboarding', '/admin/sales'],
   ['Communications', '/admin/telephony'],
 ];
+
+const workflowRoutes = {
+  'Open review':'/admin/verification/decision', 'Approve with evidence':'/admin/verification/decision',
+  'Expand matching':'/admin/requests/expand-matching', 'Expand match radius':'/admin/requests/expand-matching',
+  'Open dispute':'/admin/disputes/resolution', 'Record decision':'/admin/disputes/resolution',
+  'Create fee rule':'/admin/booking-fees/rules/create', 'Review refund':'/admin/booking-fees/finance/refund-request',
+  'Reconcile payment':'/admin/booking-fees/finance/refund-approval', 'Edit role matrix':'/admin/settings/roles',
+  'Open investigation':'/admin/risk/intervention', 'Hold risky action':'/admin/risk/intervention',
+  'Create transporter lead':'/admin/sales/leads/create', 'Create lead':'/admin/sales/leads/create',
+  'Verify account':'/admin/sales/leads/demo/onboarding', 'Send invitation':'/admin/sales/leads/demo/email',
+  'Create journey':'/admin/sales/sequences/create',
+};
 
 const defaults = {
   eyebrow: 'ADMIN CONTROL CENTRE', description: 'Manage platform operations securely with traceable, permission-aware controls.',
@@ -31,8 +43,10 @@ export default function AdminPage({ config = {} }) {
   const [notice, setNotice] = useState('');
   const [sort, setSort] = useState('Sort newest first');
   const location = useLocation();
+  const navigate = useNavigate();
   const rows = useMemo(() => c.columns.slice(0, 3), [c.columns]);
   const run = (label) => {
+    if (workflowRoutes[label]) { navigate(workflowRoutes[label]); return; }
     if (/export/i.test(label)) {
       const blob = new Blob([`HAULBY ${c.title} export\nNo live data connected.`], { type: 'text/csv' });
       const url = URL.createObjectURL(blob); const a = document.createElement('a');
