@@ -3,7 +3,6 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import logo from '../../../Assets/Pictures/HAULBY-logo-transparent.png';
 import './AdminPage.css';
 import './AdminAlerts.css';
-import './AdminActionModal.css';
 import './AdminFirstTen.css';
 import './AdminBatchTwo.css';
 
@@ -53,8 +52,6 @@ export default function AdminPage({ config = {} }) {
   const [notice, setNotice] = useState('');
   const [alertsOpen, setAlertsOpen] = useState(false);
   const [alertFilter, setAlertFilter] = useState('all');
-  const [actionDialog, setActionDialog] = useState(null);
-  const [actionForm, setActionForm] = useState({ details: '', assignee: '', reason: '' });
   const [alerts, setAlerts] = useState([
     { id: 1, title: 'Verification review due', detail: 'An operator verification case is awaiting review.', type: 'verification', unread: true },
     { id: 2, title: 'Unmatched request requires attention', detail: 'Review matching radius and eligible operators.', type: 'operations', unread: true },
@@ -78,17 +75,7 @@ export default function AdminPage({ config = {} }) {
       setNotice('CSV export prepared.'); return;
     }
     if (/view details|open record|inspect/i.test(label)) { setSelected(label); setNotice('Illustrative record selected.'); return; }
-    setActionForm({ details: '', assignee: '', reason: '' });
-    setActionDialog(label);
-  };
-  const confirmAction = (event) => {
-    event.preventDefault();
-    if (!actionForm.details.trim() || !actionForm.reason.trim()) {
-      setNotice('Add workflow details and a reason before confirming.');
-      return;
-    }
-    setActionDialog(null);
-    setNotice(`${actionDialog} recorded successfully.`);
+    setNotice(`${label} is ready for authorised workflow input.`);
   };
 
   return <div className="admin-app">
@@ -137,16 +124,5 @@ export default function AdminPage({ config = {} }) {
       <div className="alert-list">{alerts.filter((alert) => alertFilter === 'all' || (alertFilter === 'unread' ? alert.unread : alert.type === alertFilter)).map((alert) => <article className={alert.unread ? 'unread' : ''} key={alert.id}><button className="alert-content" onClick={() => setAlerts((current) => current.map((item) => item.id === alert.id ? { ...item, unread: false } : item))}><span>{alert.unread ? 'NEW' : 'READ'}</span><b>{alert.title}</b><p>{alert.detail}</p></button><button className="alert-dismiss" aria-label={`Dismiss ${alert.title}`} onClick={() => setAlerts((current) => current.filter((item) => item.id !== alert.id))}>Dismiss</button></article>)}</div>
       {alerts.length === 0 && <p className="alerts-empty">No alerts. You are all caught up.</p>}
     </aside></>}
-    {actionDialog && <div className="admin-action-modal" role="dialog" aria-modal="true" aria-labelledby="admin-action-title">
-      <button className="action-modal-scrim" aria-label="Cancel action" onClick={() => setActionDialog(null)}/>
-      <form onSubmit={confirmAction}>
-        <header><div><small>AUTHORISED ADMIN WORKFLOW</small><h2 id="admin-action-title">{actionDialog}</h2></div><button type="button" aria-label="Close action" onClick={() => setActionDialog(null)}>×</button></header>
-        <p>Record the required information before applying this action. The frontend preserves this state for later API integration.</p>
-        <label>Workflow details<textarea autoFocus value={actionForm.details} onChange={(event) => setActionForm((current) => ({ ...current, details: event.target.value }))} placeholder={`Enter details for ${actionDialog.toLowerCase()}`}/></label>
-        <label>Assign to<select value={actionForm.assignee} onChange={(event) => setActionForm((current) => ({ ...current, assignee: event.target.value }))}><option value="">Current administrator</option><option>Operations team</option><option>Compliance team</option><option>Finance team</option><option>Support team</option></select></label>
-        <label>Reason / audit note<textarea value={actionForm.reason} onChange={(event) => setActionForm((current) => ({ ...current, reason: event.target.value }))} placeholder="Required reason for the audit record"/></label>
-        <div className="action-modal-buttons"><button type="button" onClick={() => setActionDialog(null)}>Cancel</button><button className="primary" type="submit">Confirm {actionDialog}</button></div>
-      </form>
-    </div>}
   </div>
 }
