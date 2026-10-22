@@ -64,6 +64,7 @@ import CustomerPortalRoutes from './Components/CustomerPortal/CustomerPortalRout
 import BusinessPortalRoutes from './Components/BuisnessPortal/BusinessPortalRoutes';
 import TransporterPortalRoutes from './Components/TransporterPortal/TransporterPortalRoutes';
 import DriverWorkspaceRoutes from './Components/DriverWorkspace/DriverWorkspaceRoutes';
+import AdminPanelRoutes from './Components/AdminPanel/AdminPanelRoutes';
 
 function RouteScrollHandler() {
   const { pathname, hash } = useLocation();
@@ -153,6 +154,7 @@ function App() {
         <Route path="/business/*" element={<BusinessPortalRoutes />} />
         <Route path="/transporter/*" element={<TransporterPortalRoutes />} />
         <Route path="/driver/*" element={<DriverWorkspaceRoutes />} />
+        <Route path="/admin/*" element={<AdminPanelRoutes />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>

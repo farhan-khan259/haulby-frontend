@@ -1,0 +1,80 @@
+import { Navigate, Route, Routes } from 'react-router-dom';
+import Admin from './Admin/Admin';
+import Users from './Users/Users';
+import Organisations from './Organisations/Organisations';
+import Transporters from './Transporters/Transporters';
+import TransporterProfile from './TransporterProfile/TransporterProfile';
+import Verification from './Verification/Verification';
+import Documents from './Documents/Documents';
+import Requests from './Requests/Requests';
+import RequestInspection from './RequestInspection/RequestInspection';
+import Quotes from './Quotes/Quotes';
+import Bookings from './Bookings/Bookings';
+import BookingInspection from './BookingInspection/BookingInspection';
+import Reviews from './Reviews/Reviews';
+import Support from './Support/Support';
+import SupportCase from './SupportCase/SupportCase';
+import Disputes from './Disputes/Disputes';
+import Categories from './Categories/Categories';
+import BookingFeesRules from './BookingFeesRules/BookingFeesRules';
+import BookingFeesFinance from './BookingFeesFinance/BookingFeesFinance';
+import Notifications from './Notifications/Notifications';
+import Reports from './Reports/Reports';
+import AuditLogs from './AuditLogs/AuditLogs';
+import Settings from './Settings/Settings';
+import Content from './Content/Content';
+import Risk from './Risk/Risk';
+import Sales from './Sales/Sales';
+import SalesLeads from './SalesLeads/SalesLeads';
+import SalesLeadProfile from './SalesLeadProfile/SalesLeadProfile';
+import SalesSequences from './SalesSequences/SalesSequences';
+import SalesReports from './SalesReports/SalesReports';
+import Telephony from './Telephony/Telephony';
+import TelephonySoftphone from './TelephonySoftphone/TelephonySoftphone';
+import TelephonyQueues from './TelephonyQueues/TelephonyQueues';
+import TelephonyCalls from './TelephonyCalls/TelephonyCalls';
+import TelephonyRecordings from './TelephonyRecordings/TelephonyRecordings';
+import TelephonySettings from './TelephonySettings/TelephonySettings';
+
+export default function AdminPanelRoutes(){
+  return <Routes>
+    <Route path="/" element={<Admin/>} />
+    <Route path="/users" element={<Users/>} />
+    <Route path="/organisations" element={<Organisations/>} />
+    <Route path="/transporters" element={<Transporters/>} />
+    <Route path="/transporters/:id" element={<TransporterProfile/>} />
+    <Route path="/verification" element={<Verification/>} />
+    <Route path="/documents" element={<Documents/>} />
+    <Route path="/requests" element={<Requests/>} />
+    <Route path="/requests/:id" element={<RequestInspection/>} />
+    <Route path="/quotes" element={<Quotes/>} />
+    <Route path="/bookings" element={<Bookings/>} />
+    <Route path="/bookings/:id" element={<BookingInspection/>} />
+    <Route path="/reviews" element={<Reviews/>} />
+    <Route path="/support" element={<Support/>} />
+    <Route path="/support/:ticketId" element={<SupportCase/>} />
+    <Route path="/disputes" element={<Disputes/>} />
+    <Route path="/categories" element={<Categories/>} />
+    <Route path="/booking-fees/rules" element={<BookingFeesRules/>} />
+    <Route path="/booking-fees/finance" element={<BookingFeesFinance/>} />
+    <Route path="/notifications" element={<Notifications/>} />
+    <Route path="/reports" element={<Reports/>} />
+    <Route path="/audit-logs" element={<AuditLogs/>} />
+    <Route path="/settings" element={<Settings/>} />
+    <Route path="/content" element={<Content/>} />
+    <Route path="/risk" element={<Risk/>} />
+    <Route path="/sales" element={<Sales/>} />
+    <Route path="/sales/leads" element={<SalesLeads/>} />
+    <Route path="/sales/leads/:leadId" element={<SalesLeadProfile/>} />
+    <Route path="/sales/sequences" element={<SalesSequences/>} />
+    <Route path="/sales/reports" element={<SalesReports/>} />
+    <Route path="/telephony" element={<Telephony/>} />
+    <Route path="/telephony/softphone" element={<TelephonySoftphone/>} />
+    <Route path="/telephony/queues" element={<TelephonyQueues/>} />
+    <Route path="/telephony/calls" element={<TelephonyCalls/>} />
+    <Route path="/telephony/recordings" element={<TelephonyRecordings/>} />
+    <Route path="/telephony/settings" element={<TelephonySettings/>} />
+    <Route path="*" element={<Navigate to="/admin" replace/>}/>
+  </Routes>;
+}
+
