@@ -1,3 +1,80 @@
 import InformationalPage from "../Common/InformationalPage";
 import "./TrustSafety.css";
-export default function TrustSafety(){return <InformationalPage data={{title:"Trust & Safety",description:"Understand HAULBY operator verification, customer reviews, delivery evidence and how to report a transport or account concern.",overview:{kicker:"HOW HAULBY CHECKS OPERATORS",title:"How HAULBY manages operator eligibility",cards:[["Provider verification information","See what has actually been verified about an operator."],["Booking terms and cover","Compare applicable booking conditions and insurance details."],["Support and reporting","Use reporting and customer support procedures when needed."]]},information:{kicker:"TRUST, REPORTING & DELIVERY EVIDENCE",title:"Reviews, delivery evidence and reporting",cards:[["What to include in your request","Review available operator verification and service details."],["Operator and service terms","Keep messages, collection records and signed delivery proof."],["Before confirming the booking","Report fraud, damage or delivery disputes through support."]]},steps:[["Provider verification information",""],["Booking terms and cover",""],["Support and reporting",""]],importantDetails:{title:"Key terms and responsibilities",text:"Verification reduces uncertainty but cannot guarantee outcomes. Confirm the operator's cover and agreed service terms."},faqs:[["Does operator verification guarantee safety?","No. Claims should describe the specific checks completed."],["How can I check a transporter's offer?","Review available verification details, agreed scope, insurance evidence and service terms."],["What should I do after damage or a delivery problem?","Keep the job details and evidence, contact the transporter and raise a HAULBY support case if needed."],["Does a delivery signature guarantee no dispute?","No. A signed handover record is evidence of receipt, not proof that all items arrived undamaged."]],cta:{title:"Ready to arrange transport?",text:"Understand operator checks, reviews and ways to raise concerns."}}}/>}
+export default function TrustSafety() {
+  return (
+    <InformationalPage
+      data={{
+        title: "Trust & Safety",
+        description:
+          "Understand HAULBY operator verification, customer reviews, delivery evidence and how to report a transport or account concern.",
+        overview: {
+          kicker: "HOW HAULBY CHECKS OPERATORS",
+          title: "How HAULBY manages operator eligibility",
+          cards: [
+            [
+              "Provider verification information",
+              "See what has actually been verified about an operator.",
+            ],
+            [
+              "Booking terms and cover",
+              "Compare applicable booking conditions and insurance details.",
+            ],
+            [
+              "Support and reporting",
+              "Use reporting and customer support procedures when needed.",
+            ],
+          ],
+        },
+        information: {
+          kicker: "TRUST, REPORTING & DELIVERY EVIDENCE",
+          title: "Reviews, delivery evidence and reporting",
+          cards: [
+            [
+              "What to include in your request",
+              "Review available operator verification and service details.",
+            ],
+            [
+              "Operator and service terms",
+              "Keep messages, collection records and signed delivery proof.",
+            ],
+            [
+              "Before confirming the booking",
+              "Report fraud, damage or delivery disputes through support.",
+            ],
+          ],
+        },
+        steps: [
+          ["Provider verification information", ""],
+          ["Booking terms and cover", ""],
+          ["Support and reporting", ""],
+        ],
+        importantDetails: {
+          title: "Key terms and responsibilities",
+          text: "Verification reduces uncertainty but cannot guarantee outcomes. Confirm the operator's cover and agreed service terms.",
+        },
+        faqs: [
+          [
+            "Does operator verification guarantee safety?",
+            "No. Claims should describe the specific checks completed.",
+          ],
+          [
+            "How can I check a transporter's offer?",
+            "Review available verification details, agreed scope, insurance evidence and service terms.",
+          ],
+          [
+            "What should I do after damage or a delivery problem?",
+            "Keep the job details and evidence, contact the transporter and raise a HAULBY support case if needed.",
+          ],
+          [
+            "Does a delivery signature guarantee no dispute?",
+            "No. A signed handover record is evidence of receipt, not proof that all items arrived undamaged.",
+          ],
+        ],
+        cta: {
+          title: "Ready to arrange transport?",
+          text: "Understand operator checks, reviews and ways to raise concerns.",
+        },
+      }}
+    />
+  );
+}
