@@ -13,6 +13,12 @@ const SectionHead = ({ kicker, title, text, light = false }) => (
 
 export default function ServiceDetail({ data }) {
   const navigate = useNavigate();
+  const transportTypeOptions =
+    data.typeOptions ||
+    data.typePlaceholder
+      .split("/")
+      .map((option) => option.trim())
+      .filter(Boolean);
 
   const startQuote = (event) => {
     event.preventDefault();
@@ -72,8 +78,15 @@ export default function ServiceDetail({ data }) {
             </label>
             <label>
               {data.typeLabel}
-              <select name="transportType" required>
-                <option>{data.typePlaceholder}</option>
+              <select name="transportType" defaultValue="" required>
+                <option value="" disabled>
+                  {data.typePlaceholder}
+                </option>
+                {transportTypeOptions.map((option) => (
+                  <option key={option} value={option}>
+                    {option}
+                  </option>
+                ))}
               </select>
             </label>
             <button type="submit">
