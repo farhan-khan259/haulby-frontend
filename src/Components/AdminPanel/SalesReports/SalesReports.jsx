@@ -1,4 +1,4 @@
-import AdminPage from '../AdminPage/AdminPage';
-import { adminConfigs } from '../adminConfigs';
+import AdminBoardPage from '../AdminBoardPage/AdminBoardPage';
 import './SalesReports.css';
-export default function SalesReports(){ return <AdminPage config={adminConfigs['sales-reports']} />; }
+const config={code:'M30 / /admin/sales/reports',title:'Sales & Conversion Reports',description:'Measure leads, outbound calls, verified operator accounts and conversion to active quoting.',stats:['Calls','Verified','Active quoting','Opt-outs'],sections:[{title:'FUNNEL & COHORT METRICS',description:'Compare new leads, contacted businesses, verified operators and activations.',items:['New leads → contact → invite','Registration → verification','Invited → registered','Registered → verified','Conversion by cohort and source'],action:'Open workflow'},{title:'TEAM PERFORMANCE',wide:false,description:'Agent contact outcomes, callbacks completed and verified sign-ups.',items:['Calls and outcomes per agent','Callbacks completed on time','Qualified operators registered','Verified versus unverified leads','Verified → quoting / inactive'],action:'Open record'},{title:'EMAIL HEALTH & COMPLIANCE',wide:false,tint:true,description:'Bounce rates, complaints, opted-out contacts and blocked outreach.',items:['Delivery, bounce and unsubscribe','Blocked sends by legal form','Suppression compliance reports','Agent override attempts and audits','True measures from API only'],action:'Open controls'}]};
+export default function SalesReports(){return <AdminBoardPage config={config}/>;}
