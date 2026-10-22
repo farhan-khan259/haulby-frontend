@@ -25,6 +25,7 @@ const workflowRoutes = {
   'Open review':'/admin/verification/decision', 'Approve with evidence':'/admin/verification/decision',
   'Expand matching':'/admin/requests/expand-matching', 'Expand match radius':'/admin/requests/expand-matching',
   'Open dispute':'/admin/disputes/resolution', 'Record decision':'/admin/disputes/resolution',
+  'Open ticket':'/admin/support/demo',
   'Create fee rule':'/admin/booking-fees/rules/create', 'Review refund':'/admin/booking-fees/finance/refund-request',
   'Reconcile payment':'/admin/booking-fees/finance/refund-approval', 'Edit role matrix':'/admin/settings/roles',
   'Open investigation':'/admin/risk/intervention', 'Hold risky action':'/admin/risk/intervention',
